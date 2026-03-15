@@ -1,0 +1,374 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Resumen 01: Matrices}
+\autor[A. Merino]{Andrés Merino}
+\fecha{Periodo 2026-1}
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Matrices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+En este curso, tomaremos:
+\begin{itemize}
+    \item
+        $n,m\in \N$ con $n>0$ y $m>0$;
+    \item 
+        $I = \{ 1, 2, \ldots, m\}$ y $J =  \{1, 2 , \ldots, n \}$; y
+    \item 
+        $\K$ un cuerpo o campo (es decir, cualquier conjunto que cumpla con los axiomas de cuerpo), puede ser $\Q$, $\R$ o $\C$.
+\end{itemize}
+
+\begin{defi}[Matriz]
+    Una matriz sobre un cuerpo $\mathbb{K}$ es una función 
+    \[
+        \funcion{A}{I\times J}{\mathbb{K}}
+        {(i,j)}{A(i,j)=a_{ij},}
+    \]
+    la cual se representa por
+    \[
+        A = 
+        \begin{pmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\ 
+        a_{21} & a_{22} & \cdots & a_{2n} \\ 
+        \vdots & \vdots & \ddots & \vdots\\ 
+        a_{m1} & a_{m2} & \cdots & a_{mn}
+        \end{pmatrix}.
+    \]
+    Con esto, se dice que $A$ es de orden $m \times n$ y que tiene $m$ filas y $n$ columnas. Al conjunto de todas las matrices de orden $m \times n$ sobre el campo $\mathbb{K}$ se denota por $\Mat[\K]{m}{n}$.
+\end{defi}
+
+% Una manera para trabajar con matrices en Python, es utilizando la librería \texttt{sympy}, con la siguiente línea de comandos:
+
+% \begin{pycodigo}
+% \begin{lstlisting}[language=Python]
+% from sympy import *
+% \end{lstlisting}
+% \end{pycodigo}
+
+% Con esto, podemos almacenar y visualizar una matriz de la siguiente manera:
+
+% \begin{pycodigo}
+% \begin{lstlisting}[language=Python]
+% A = Matrix([[1,2,3], [4,5,6],[-1,0,2]])
+% A
+% \end{lstlisting}
+% \end{pycodigo}
+
+
+\begin{advertencia}
+    Dada una matriz $A$, esta se la representa también por $A=(a_{ij})$.
+\end{advertencia}
+
+\begin{advertencia}
+    Otras notaciones usuales para el conjunto de la matrices, que se puede encontrar en la literatura, son $\M_{m\times n}$, $M_{m\times n}$, $\M_{mn}$ o $M_{mn}$.
+\end{advertencia}
+
+\begin{defi}[Filas y columnas]
+    Sean $A\in\Mat[\K]{m}{n}$, $i\in I$ y $j\in J$. A la matriz
+    \[
+        \begin{pmatrix}
+        a_{1j} \\ 
+        a_{2j} \\ 
+        \vdots \\ 
+        a_{mj} 
+        \end{pmatrix}
+    \]
+    se la llama la $j$-ésima columna de $A$ y a la matriz
+    \[
+        \begin{pmatrix}
+        a_{i1}& a_{i2}&\cdots& a_{in}
+        \end{pmatrix}
+    \]
+    se la llama la $i$-ésima fila de $A$.
+\end{defi}
+
+\begin{prop}[Igualdad de matrices]
+    Sean $A \in \Mat[\K]{m}{n}$ y $B \in \Mat[\K]{p}{q}$. Se dice que las $A$ y $B$ son iguales, y se representa por $A=B$, si:
+    \begin{itemize}
+    \item 
+        $m=p$ y $n=q$; y
+    \item 
+        $a_{ij}=b_{ij}$ para todo $i\in I$ y $j \in J$.
+    \end{itemize}
+\end{prop}
+
+\begin{defi}[Vectores]
+    El conjunto $\K^n$ es:
+    \[
+        \K^n=\underbrace{\K\times\K\times\cdots\times\K}_{n\text{ veces}},
+    \]
+    es decir,
+    \[
+        \K^n=\{(a_1,a_2,\ldots,a_n):a_i\in\K\text{ para todo }i \in J\}.
+    \]
+\end{defi}
+
+\begin{advertencia}
+    Por notación, si $a\in\K^n$, se asumirá $a=(a_1,a_2,\ldots,a_n)$.
+\end{advertencia}
+
+\begin{advertencia}
+    Podemos identificar cada elemento de $\K^n$ con una matriz de $\Mat[\K]{n}{1}$ de la siguiente manera: si
+    \[
+        a = (a_1,a_2,\ldots,a_n) \in \K^n,
+    \]
+    entonces, visto como matriz es
+    \[
+        a = 
+        \begin{pmatrix}
+            a_1\\a_2\\
+            \vdots\\a_n
+        \end{pmatrix}
+        \in \Mat[\K]{n}{1}.
+    \]
+\end{advertencia}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Operaciones de matrices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Suma de matrices]
+    Sean $A, B \in \Mat[\K]{m}{n}$. La suma de las matrices $A$ y $B$ es la matriz $C\in \Mat[\K]{m}{n}$ tal que:
+    \[ 
+        c_{ij} = a_{ij} + b_{ij}
+    \]
+    para todo $i \in I$ y $j \in J$. A esta matriz se la denota por $A+B$.
+\end{defi}
+
+\begin{advertencia}
+    Con esto, tenemos que $(a_{ij})+(b_{ij})=(a_{ij} + b_{ij})$.
+\end{advertencia}
+
+\begin{defi}[Multiplicación por un escalar]
+    Sea $A\in \Mat[\K]{m}{n}$ y $\alpha \in \mathbb{K}$. El producto del escalar $\alpha$ por la matriz $A$ es la matriz $B\in \Mat[\K]{m}{n}$ tal que:
+    \[ 
+        b_{ij} = \alpha a_{ij}
+    \]
+    para todo $i \in I$ y $j \in J$. A esta matriz se la denota por $\alpha A$.
+\end{defi}
+
+\begin{advertencia}
+    Con esto, tenemos que $\alpha (a_{ij}) =(\alpha a_{ij})$.
+\end{advertencia}
+
+\begin{defi}[Transpuesta de una matriz]
+    Sea $A \in \Mat[\K]{m}{n}$. La matriz transpuesta de $A$ es la matriz $B\in \Mat[\K]{n}{m}$ tal que: 
+    \[
+        (b_{ij}) = (a_{ji})
+    \]
+    para todo $i\in I$ y $j \in J$. A esta matriz se la denota por $A^\intercal$.
+\end{defi}
+
+\begin{advertencia}
+    Con esto, tenemos que si $A\in \Mat[\K]{m}{n}$, entonces $A^\intercal\in \Mat[\K]{n}{m}$ y $(a_{ij})^\intercal =(a_{ji})$.
+\end{advertencia}
+
+\begin{teo}
+    Sean $A,B,C\in\Mat[\K]{m}{n}$. Se tiene que
+    \begin{itemize}
+    \item 
+        $A + B = B + A$.
+    \item 
+        $A + (B+C) = (A + B)+C$.
+    \item 
+        Existe una única matriz $0$ de orden $m \times n$ tal que 
+        \[ 
+            A + 0 =  A 
+        \]
+        para cualquier matriz $A$ de orden $m \times n$. La matriz $0$ se denomina neutro aditivo de orden $m \times n$, también llamada la matriz nula.
+    \item 
+        Para cada matriz $A$ de orden $m \times n$, existe una única matriz, denotada por $-A$, de orden $m \times n$ tal que:
+        \[
+            A + (-A) = 0.
+        \]
+        A la matriz $-A$ se la denomina el inverso aditivo $A$.
+    \end{itemize}
+\end{teo}
+
+\begin{teo}
+    Sean $\alpha,\beta \in \K$ y $A,B\in\Mat[\K]{m}{n}$. Se tiene que
+    \begin{itemize}
+    \item 
+        $\alpha(\beta A) = (\alpha\beta)A$;
+    \item 
+        $(\alpha+\beta)A = \alpha A + \beta A$; y
+    \item 
+        $\alpha(A+B) = \alpha A + \alpha B$.
+    \end{itemize}
+\end{teo}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsubsection{Multiplicación de matrices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+En esta sección consideramos  $p,q\in \N$ con $p>0$ y $q>0$.
+
+
+% \begin{defi}[Producto punto]
+%     Sean $a, b \in \K^n$ donde, se define el producto punto o el producto interno de $a$ y $b$ por
+%     \[ 
+%         a \cdot b = \sum_{j=1}^n a_j b_j
+%         = a_1 b_1 + a_2 b_2 + \cdots + a_n b_n.
+%     \]
+% \end{defi}
+
+\begin{defi}[Multiplicación de matrices]
+    Sean $A \in \Mat[\K]{m}{n}$ y $B \in \Mat[\K]{n}{p}$, el producto de las matrices $A$ y $B$ es la matriz $C \in \Mat[\K]{m}{p}$ tal que
+    \begin{align*}
+        c_{ij} & = a_{i1}b_{1j} + a_{i2} b_{2j} + \cdots + a_{1n}b_{nj} \\
+               & = \sum_{k=1}^n a_{ik} b_{kj}
+    \end{align*}
+    para todo $i \in I$ y $j \in J$. A esta matriz se la denota por $AB$.
+\end{defi}
+
+
+
+\begin{teo}
+    Sean $A, B\in \mathbb{K}^{m \times n}$, $C,D\in \mathbb{K}^{n \times p}$, $E\in \mathbb{K}^{p \times q}$ y $\alpha \in\K$. Se tiene que
+    \begin{itemize}
+    \item 
+        $A(DE) = (AD)E$;
+    \item 
+        $A(C+D) = AC + AD$; 
+    \item 
+        $(A+B)C = AC + BC$; 
+    
+    \item 
+        $A(\alpha C) = \alpha (AC) = (\alpha A) C$.
+    \end{itemize}
+\end{teo}
+
+\begin{advertencia}
+    En general, $AB\neq BA$.
+\end{advertencia}
+
+\begin{defi}[Matriz cuadrada]
+    Si $A$ es un elemento de $\K^{n \times n}$, se dice que $A$ es una matriz cuadrada de orden $n$. 
+\end{defi}
+
+\begin{defi}[Matriz identidad de orden $n$]
+    Se define la matriz identidad de orden $n$ al elemento $A$ de $\K^{n \times n}$ tal que
+    \[
+        a_{ij} =
+            \begin{cases}
+            1 & \text{si } i=j, \\
+            0 & \text{si } i \neq j,
+            \end{cases}
+    \]
+    para todo $i,j\in I$. A esta matriz se la denota por $I_n$.
+\end{defi} 
+
+\begin{prop}
+    Sea $A\in\Mat[\K]{m}{n}$ se tiene que
+    \[ 
+        I_m A = A I_n = A.
+    \]
+\end{prop}
+
+\begin{defi}
+    Sean $A \in \mathbb{K}^{n \times n}$ y $r\in\N$. Se define $A$ a la potencia $r$ por
+    \begin{itemize}
+    \item 
+        $A^0 = I_n$; y
+    \item 
+        $A^{r+1} = A^rA$.
+    \end{itemize}
+\end{defi}
+
+\begin{teo}
+    Sean $A \in \mathbb{K}^{n \times n}$ y $r,s\in\N$. Se tiene que
+    \begin{itemize}
+    \item 
+        $A^r A^s = A^{r+s}$; y 
+    \item 
+        $(A^r)^s = A^{rs}$.
+    \end{itemize}
+\end{teo}
+
+\begin{advertencia}
+    Note que en general $(AB)^r \neq A^r B^r$.
+\end{advertencia}
+
+
+\begin{teo}
+    Sean $\alpha \in \mathbb{K}$, $A,B\in\mathbb{K}^{m \times n}$ y  $C\in\mathbb{K}^{n \times p}$. Se tiene que
+    \begin{itemize}
+    \item 
+        $\left(A^\intercal\right)^\intercal = A$;
+    \item 
+        $(A+B)^\intercal = A^\intercal + B^\intercal$;
+    \item 
+        $(AC)^\intercal = C^\intercal A^\intercal$;
+    \item 
+        $(\alpha A)^\intercal = \alpha A^\intercal$.
+    \end{itemize}
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Tipos de matrices}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Matriz diagonal]
+    Sea $A\in \mathbb{K}^{n \times n}$. Se dice que $A$ es una matriz diagonal si verifica que:
+    \[ 
+        a_{ij} = 0
+    \]
+    para todo $i\in I$ y $j\in J$ con $i\neq j$.
+\end{defi}
+
+\begin{defi}[Matriz escalar]
+    Sea $A\in \mathbb{K}^{n \times n}$. Se dice que $A$ es una matriz escalar si es una matriz diagonal que verifica:
+    \[ 
+        a_{ii} = \alpha
+    \]
+    para todo $i\in I$, con $\alpha\in\K$.
+\end{defi}
+
+\begin{defi}[Matriz simétrica]
+    Sea $A\in \mathbb{K}^{n \times n}$. Se dice que $A$ es simétrica si $A^\intercal = A$.
+\end{defi}
+
+\begin{defi}[Matriz antisimétrica]
+    Sea $A\in \mathbb{K}^{n \times n}$. Se dice que $A$ es simétrica si $A^\intercal = -A$.
+\end{defi}
+
+\begin{defi}[Matriz triangular]
+    Sea $A\in \mathbb{K}^{n \times n}$. Se dice que $A$ es
+    \begin{itemize}
+    \item 
+        una matriz triangular superior si $a_{ij} = 0 $ para todo $i>j$ con $i,j \in J$; y
+    \item 
+        una matriz triangular inferior si $a_{ij} = 0 $ para todo $i<j$ con $i,j \in J$.
+    \end{itemize}
+\end{defi}
+
+\begin{defi}[Matriz nilpotente]
+    Sea $A\in \mathbb{K}^{n \times n}$ y $r \in \N$. Se dice que $A$ es nilpotente de orden $r$ si $r$ es el menor entero positivo tal que
+    \[ 
+        A^r = 0.
+    \]
+\end{defi}
+
+\begin{defi}[Matriz idempotente]
+    Sea $A\in \mathbb{K}^{n \times n}$. Se dice que $A$ es una matriz idempotente si $A^2 = A$.
+\end{defi}
+
+\end{document}
