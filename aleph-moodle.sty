@@ -20,6 +20,7 @@
 %% --- Opciones
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%  Opciones predeterminadas ninguna
+\DeclareOption*{\PassOptionsToPackage{\CurrentOption}{moodle}}
 \ProcessOptions\relax
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %% --- Paquetes
@@ -326,12 +327,6 @@
       \ifmoodle@handout
         \moodle@makelatextag@qtype{matching}
       \else
-        % \moodle@latex@writetags
-        % \par
-        % \noindent
-        % \moodle@makelatextag@qtype{matching}
-        % \moodle@makelatextag@value{default grade}{\moodle@marks{\csname moodle@default grade\endcsname}}
-        % \moodle@makelatextag@value{penalty}{penalty}
       \fi
       % \moodle@makelatextag@shortanswer
       \par
@@ -367,11 +362,6 @@
       \ifmoodle@handout
         \moodle@makelatextag@qtype{cloze}
       \else
-        % \moodle@latex@writetags
-        % \par
-        % \noindent
-        % \moodle@makelatextag@qtype{cloze}
-        % \moodle@makelatextag@value{penalty}{penalty}
       \fi
       \par
       \noindent
@@ -414,16 +404,8 @@
     \else
       %LaTeX version
       \global\advance\moodle@totalmarks by \csname moodle@default grade\endcsname pt
-      \moodle@questionheader% %Any introductory text just continues to be typeset.
-      % \par
-      % \noindent
-      % \moodle@makelatextag@qtype{numerical}
+      \moodle@questionheader
       \ifmoodle@handout\else
-        % \moodle@makelatextag@value{default grade}{\moodle@marks{\csname moodle@default grade\endcsname}}
-        % \moodle@makelatextag@numerical
-        % \ \blank\ 
-        % \par
-        % \noindent
         \def\cloze@numerical@table@text{}%
         \loopthroughitemswithcommand{\moodle@print@clozenumerical@answer}%
         \begin{tabular}[t]{|l@{}p{0\linewidth}|}
