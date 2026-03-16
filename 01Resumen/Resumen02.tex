@@ -1,0 +1,277 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Resumen 02: Sistemas de ecuaciones lineales}
+\autor[A. Merino]{Andrés Merino}
+\fecha{Periodo 2026-1}
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Soluciones de sistemas de ecuaciones lineales}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{defi}[Matriz aumentada]
+    Dado un sistema de ecuaciones lineales de $m$ ecuaciones lineales en las cuales figuran $n$ incógnitas:
+    \begin{align*}
+        a_{11}x_1 + a_{12}x_2 + \cdots + a_{1n}x_n &= b_1,\\
+        a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n &= b_2,\\
+            & \hspace{2mm} \vdots\\
+        a_{m1}x_1 + a_{m2}x_2 + \cdots + a_{mn}x_n &= b_m.
+    \end{align*}
+    donde $a_{ij}\in\R$ y $b_i\in \R$ con $i\in I$ y $j\in J$. A la matriz
+    \[
+        A=\begin{pmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n}\\
+        a_{21} & a_{22} & \cdots & a_{2n}\\
+        \vdots & \vdots & \ddots & \vdots\\
+        a_{m1} & a_{m2} & \cdots & a_{mn}
+        \end{pmatrix}
+    \]
+    se la llama matriz de coeficientes del sistema y a 
+    \[
+        b=\begin{pmatrix}
+        b_1 \\ b_2 \\ \vdots \\ b_m
+        \end{pmatrix}
+        \texty
+        x=\begin{pmatrix}
+        x_1 \\ x_2 \\ \vdots \\ x_n
+        \end{pmatrix}
+    \]
+    se las llama columnas de constantes y de incógnitas, respectivamente.
+\end{defi}
+
+\begin{advertencia}
+    Bajo estas definiciones, dado un sistema de ecuaciones lineales, se dice que
+    \[
+        Ax=b
+    \]
+    es la representación matricial del sistema de ecuaciones.
+\end{advertencia}
+
+\begin{defi}[Matriz ampliada]
+    Sean $A\in\Mat[\K]{m}{n}$ y $B\in\Mat[\K]{m}{p}$, se define la matriz ampliada de $A$ y $B$ al elemento de $\Mat[\K]{m}{(m+p)}$ dado por:
+    \[
+        \begin{pmatrix}
+        a_{11}&a_{12}&\cdots&a_{1n}&|&b_{11}&b_{12}&\cdots&b_{1p}\\
+        a_{21}&a_{22}&\cdots&a_{2n}&|&b_{21}&b_{22}&\cdots&b_{2p}\\
+        \vdots&\vdots&\ddots&\vdots&|&\vdots&\vdots&\ddots&\vdots\\
+        a_{m1}&a_{m2}&\cdots&a_{mn}&|&b_{m1}&b_{m2}&\cdots&b_{mp}
+        \end{pmatrix}
+    \]
+    y se la denota por $(A|B)$.
+\end{defi}
+
+\begin{defi}
+    Dado el sistema de ecuaciones lineales en forma matricial
+    \[
+        Ax=b
+    \]
+    con $A\in \Mat[\K]{m}{n}$ y $b\in\K^m$, se dice que 
+    \[
+        (A|b)
+    \]
+    es la matriz ampliada asociada al sistema.
+\end{defi}
+
+\begin{defi}[Matriz escalonada reducida por filas]
+    Se dice que una matriz está en forma escalonada reducida por filas cuando satisface las siguientes propiedades:
+    \begin{enumerate}
+    \item 
+        Todas las filas que constan de ceros, si las hay, están en la parte inferior de la matriz. 
+    \item 
+        La primera entrada distinta de cero de la fila, al leer de izquierda a derecha, es un $1$. Esta entrada se denomina entrada principal o uno principal de su fila. 
+    \item 
+        Para cada fila que no consta sólo de ceros, el uno principal aparece a la derecha y abajo de cualquier uno principal en las filas que le preceden. 
+    \item 
+        Si una columna contiene un uno principal, el resto de las entradas de dicha columna son iguales a cero. 
+    \end{enumerate}
+    Se dice que una matriz está en forma escalonada por filas si satisface las primeras tres propiedades . 
+\end{defi}
+
+\begin{defi}[Operaciones elementales de fila]
+    Dada una matriz $A\in\K^{m \times n}$, una operación elemental por filas sobre $A$ es una de las siguientes:
+    \begin{itemize}
+    \item   
+        \textbf{Intercambio de filas:} dados $i\in I$ y $j\in J$, intercambiar la fila $i$ por la fila $j$, denotado por
+        \[
+            F_i \leftrightarrow F_j,
+        \]
+        es reemplazar la fila
+        \[
+            \begin{pmatrix}a_{i1}&a_{i2}&\ldots& a_{in}\end{pmatrix}
+        \]
+        por la fila
+        \[
+            \begin{pmatrix}a_{j1}&a_{j2}&\ldots& a_{jn}\end{pmatrix}
+        \]
+        y viceversa.
+    \item 
+        \textbf{Multiplicar una fila por un escalar:} dados $i\in I$ y $\alpha\in \K$, con $\alpha\neq 0$, multiplicar la fila $i$ por $\alpha$, denotado por
+        \[
+            \alpha F_i \rightarrow F_i,
+        \]
+        es reemplazar la fila
+        \[
+            \begin{pmatrix}a_{i1}&a_{i2}&\ldots& a_{in}\end{pmatrix}
+        \]
+        por 
+        \[
+            \begin{pmatrix}\alpha a_{i1}&\alpha a_{i2}&\ldots&\alpha a_{in}\end{pmatrix}.
+        \]
+    \item 
+        \textbf{Sumar un múltiplo de una fila con otra:} dados $i,j\in I$ y $\alpha\in \K$, multiplicar la fila $i$ por $\alpha$ y sumarlo a la fila $j$, denotado por
+        \[
+            \alpha F_i + F_j\rightarrow F_j,
+        \]
+        es reemplazar la fila
+        \[
+            \begin{pmatrix}a_{j1}&a_{j2}&\ldots& a_{jn}\end{pmatrix}
+        \]
+        por 
+        \[
+            \begin{pmatrix}\alpha a_{i1} + a_{j1}&\alpha a_{i2} + a_{j2}&\ldots&\alpha a_{in} + a_{jn}\end{pmatrix}.
+        \]
+\end{itemize}
+\end{defi}
+
+\begin{defi}[Matriz elemental]
+    Dada una operación elemental por fila, se llama matriz elemental correspondiente a la operación al resultado de aplicar dicha operación a la matriz identidad.
+\end{defi}
+
+\begin{teo}
+    Sean $E\in \Mat[\K]{n}{n}$ una matriz elemental y $A\in\Mat[\K]{n}{m}$, el resultado aplicar la operación por filas correspondiente a $E$ a la matriz $A$ es $EA$.
+\end{teo}
+
+\begin{defi}[Equivalente por filas]
+    Sean $A,B\in \Mat[\K]{m}{n}$, se dice que la matriz $A$ es equivalente por filas a una matriz $B$, denotado por $A\sim B$, si $B$ se puede obtener al aplicar a la matriz $A$ una sucesión de operaciones elementales por fila.
+\end{defi}
+
+\begin{teo}
+    Toda matriz $A\in\Mat[\K]{m}{n}$ es equivalente por filas a una única matriz en forma escalonada reducida por filas. 
+\end{teo}
+
+\begin{advertencia}
+    El proceso para obtener una matriz escalonada reducida por filas a partir de una matriz cualquiera se conoce como eliminación de Gauss-Jordan.
+\end{advertencia}
+
+\begin{defi}
+    Sean $A\in\Mat[\K]{m}{n}$ y $B\in\Mat[\K]{m}{n}$ la única matriz escalonada reducida por filas equivalente a $A$. El rango de $A$, denotado por $\rang(A)$, es el número de filas no nulas que tiene la matriz $B$.  
+\end{defi}
+
+\begin{prop}
+    Sean $A, B\in\Mat[\K]{m}{n}$. Se tiene que si $A\sim B$, entonces 
+    \[
+        \rang(A) = \rang(B).
+    \]
+\end{prop}
+
+\begin{prop}
+    Sean $A\in\Mat[\K]{m}{n}$. Se tiene que si $A$ es una matriz escalonada, entonces $\rang(A)$ es el número de filas no nulas que tiene $A$.
+\end{prop}
+
+\subsection{Resolución de sistemas lineales}
+
+\begin{teo}
+    Sean $A,C\in \Mat[\K]{m}{n}$ y $b,d\in \K^m$, se tiene que los sistemas de ecuaciones lineales
+    \[
+        Ax=b
+        \texty
+        Cx=d
+    \]
+    tienen las mismas soluciones si y solo si
+    \[
+        (A|b)\sim (C|d),
+    \]
+    es decir, si las matrices aumentadas de los sistemas son equivalentes por filas. 
+\end{teo}
+
+
+\begin{defi}
+    Sean $A\in \Mat[\K]{m}{n}$ y $b\in \K^m$, dado el sistema de ecuaciones lineales
+    \[
+        Ax=b,
+    \]
+    se dice que
+    \begin{itemize}
+    \item
+        el sistema es \textbf{inconsistente} si no tiene solución;
+    \item
+        el sistema es \textbf{consistente} si tiene solución.
+    \end{itemize}
+\end{defi}
+
+\begin{teo}
+    Sean $A\in \Mat[\K]{m}{n}$ y $b\in \K^m$, dado el sistema de ecuaciones lineales
+    \[
+        Ax=b,
+    \]
+    se tiene una y solo una de las siguientes
+    \begin{itemize}
+    \item
+        el sistema es inconsistente;
+    \item
+        el sistema es consistente y tiene una única solución; o
+    \item
+        el sistema es consistente y tiene infinitas soluciones.
+    \end{itemize}
+\end{teo}
+
+
+\begin{teo}[Teorema de Rouché–Frobenius]
+    Sean $A\in \Mat[\K]{m}{n}$ y $b\in \K^m$, dado el sistema de ecuaciones lineales
+    \[
+        Ax=b,
+    \]
+    se tiene que
+    \begin{itemize}
+    \item
+        el sistema es consistente si y solo si $\rang(A)=\rang(A|b)$;
+    \item
+        en caso de que el sistema sea consistente, la solución es única si y solo si $\rang(A)=n$.
+    \end{itemize}
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Sistemas homogéneos}
+
+\begin{defi}[Sistema homogéneo]
+    Sea $A\in \Mat[\K]{m}{n}$ al sistema
+    \[ 
+        Ax = 0
+    \]
+    se lo denomina sistema de ecuaciones lineales homogéneo.
+\end{defi}
+
+\begin{defi}
+    Sea $A\in \Mat[\K]{m}{n}$, dado el sistema homogéneo
+    \[ 
+        Ax = 0,
+    \]
+    entonces
+    \begin{itemize}
+    \item 
+        a $x = 0$ se la llama la solución trivial del sistema;
+    \item 
+        a $x \neq 0$ tal que $Ax=0$ se la llama una solución no trivial. 
+    \end{itemize}
+\end{defi}
+
+\begin{teo}
+    Un sistema homogéneo de $m$ ecuaciones con $n$ incógnitas siempre tiene una solución no trivial si $m<n$, es decir, si el número de incógnitas es mayor que el número de ecuaciones. 
+\end{teo}
+
+\end{document}

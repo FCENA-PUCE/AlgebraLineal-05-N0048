@@ -1,0 +1,109 @@
+\documentclass[a4,11pt]{aleph-notas}
+% Se puede ver la documentación aquí:
+% https://github.com/alephsub0/LaTeX_aleph-notas
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{url}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\hypersetup{
+    urlcolor=blue,
+    linkcolor=blue,
+}
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Clase 02: Sistemas de ecuaciones lineales}
+\autor{Andrés Merino}
+\fecha{Periodo 2026-01}
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Resultado de Aprendizaje}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{RdA de la asignatura:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{RdA 1:} Comprender los conceptos fundamentales del Álgebra Lineal, incluyendo el estudio de matrices, determinantes, sistemas de ecuaciones lineales y espacios vectoriales, destacando su importancia en el análisis y resolución de problemas matemáticos.
+    \item \textbf{RdA 2:} Resolver problemas prácticos y teóricos relacionados con el Álgebra Lineal, utilizando técnicas de cálculo con matrices, determinantes y sistemas de ecuaciones, así como en el análisis de espacios vectoriales.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{RdA de la actividad:}
+\begin{itemize}[leftmargin=*]
+    \item Identificar la forma matricial de un sistema de ecuaciones lineales.
+    \item Aplicar operaciones elementales por filas para obtener formas escalonadas.
+    \item Determinar si un sistema es consistente, inconsistente o con infinitas soluciones.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Introducción}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Control de lectura:}
+Antes de iniciar la clase, se aplicará el control de lectura del siguiente enlace:
+\href{https://gemini.google.com/share/def9847cb644}{Control de lectura - Clase 02}.
+
+\paragraph{Pregunta inicial:}
+¿Un sistema con el mismo número de ecuaciones que incógnitas siempre tiene solución? ¿Por qué a veces no?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Desarrollo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Actividad 1: Resolución de sistemas mediante eliminación de Gauss-Jordan}
+
+La clase inicia con un problema contextual que conduce a un sistema de ecuaciones lineales. Luego, mediante clase magistral y práctica guiada, se trabaja la representación matricial, la matriz ampliada y el proceso de eliminación de Gauss-Jordan para analizar el tipo de solución.
+
+\paragraph{¿Cómo lo haremos?}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Motivación:} se presenta una situación aplicada (por ejemplo, mezcla o balance) y se plantea el sistema lineal correspondiente.
+    \item \textbf{Clase magistral:} se explican matriz de coeficientes, matriz ampliada, operaciones elementales por filas, forma escalonada y forma escalonada reducida. Se usa el resumen \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/01Resumen/Resumen02.pdf}{Resumen02.pdf}.
+    \item \textbf{Resolución de ejercicios:} los estudiantes resolverán, de manera guiada, ejercicios de clasificación y resolución de sistemas lineales del documento \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/04Ejercicios/Ejercicios02.pdf}{Ejercicios02.pdf}.
+    \item \textbf{Visualización de videos:} se recomendará el estudio con los videos:  
+    \begin{itemize}
+        \item \href{https://www.youtube.com/watch?v=IF7WV5VVci4}{Sistemas de dos Ecuaciones}
+        \item \href{https://www.youtube.com/watch?v=dFmGzr1j6eY}{Solución de sistemas de 3x3 método de Gauss Jordan}
+    \end{itemize}  
+    \item \textbf{Implementación computacional:} se realiza mediante cuadernos de Jupyter usando el documento \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/02ResumenPython/ResumenPy02.pdf}{ResumenPy02.pdf}.
+\end{itemize}
+
+\paragraph{Verificación de aprendizaje:}
+\begin{itemize}[leftmargin=*]
+    \item ¿Qué diferencia existe entre la matriz de coeficientes y la matriz ampliada?
+    \item ¿Cómo se interpreta una fila de la forma $[0\ 0\ \cdots\ 0\ |\ b]$ con $b\neq 0$?
+    \item ¿Qué criterio permite decidir si un sistema tiene solución única o infinitas soluciones?
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Cierre}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Tarea:}  
+Resolver del libro \href{https://catalogobiblioteca.puce.edu.ec/cgi-bin/koha/opac-detail.pl?biblionumber=86083&query_desc=kw%2Cwrdl%3A%20%C3%81lgebra%20lineal%20y%20sus%20aplicaciones}{Fundamentos de álgebra lineal de Larson}, sección 1.2, los ejercicios: 11, 13, 25, 29, 30, 33, 35, 37, 49, 50.
+
+\paragraph{Pregunta de investigación:}
+\begin{enumerate}[leftmargin=*]
+    \item ¿Qué papel juegan los sistemas lineales en el entrenamiento de modelos de inteligencia artificial?
+    \item ¿Qué significa que una matriz tenga rango completo? ¿Y qué consecuencias tiene para la resolución de sistemas?
+\end{enumerate}
+
+\paragraph{Para la próxima clase:}  
+Leer la sección 2.5 del libro \href{https://catalogobiblioteca.puce.edu.ec/cgi-bin/koha/opac-detail.pl?biblionumber=86081&query_desc=kw%2Cwrdl%3A%20larson%20lineal}{Álgebra lineal con aplicaciones y Python de Aranda} y la sección 2.3 del libro \href{https://catalogobiblioteca.puce.edu.ec/cgi-bin/koha/opac-detail.pl?biblionumber=86081&query_desc=kw%2Cwrdl%3A%20larson%20lineal}{Fundamentos de álgebra lineal de Larson}.
+
+\end{document}
