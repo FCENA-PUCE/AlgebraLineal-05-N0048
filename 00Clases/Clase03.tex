@@ -1,0 +1,131 @@
+\documentclass[a4,11pt]{aleph-notas}
+% Se puede ver la documentación aquí:
+% https://github.com/alephsub0/LaTeX_aleph-notas
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{url}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\hypersetup{
+    urlcolor=blue,
+    linkcolor=blue,
+}
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Clase 03: Matriz inversa}
+\autor{Andrés Merino}
+\fecha{Periodo 2026-01}
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Resultado de Aprendizaje}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{RdA de la asignatura:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{RdA 1:} Comprender los conceptos fundamentales del Álgebra Lineal, incluyendo el estudio de matrices, determinantes, sistemas de ecuaciones lineales y espacios vectoriales, destacando su importancia en el análisis y resolución de problemas matemáticos.
+    \item \textbf{RdA 2:} Resolver problemas prácticos y teóricos relacionados con el Álgebra Lineal, utilizando técnicas de cálculo con matrices, determinantes y sistemas de ecuaciones, así como en el análisis de espacios vectoriales.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{RdA de la actividad:}
+\begin{itemize}[leftmargin=*]
+    \item Identificar cuándo una matriz cuadrada es invertible.
+    \item Relacionar la existencia de la inversa con el determinante y con la reducción por filas.
+    \item Calcular la matriz inversa mediante el método de Gauss-Jordan sobre $(A|I)$.
+    \item Verificar resultados analíticos con apoyo de herramientas computacionales.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Introducción}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Control de lectura:}
+Antes de iniciar la clase, se aplicará el control de avance:
+\href{hhttps://gemini.google.com/share/773ea3fbeaf3}{Control de avance - Clase 02}.
+
+\paragraph{Pregunta inicial:}
+En los número reales, la ecuación $ax=b$ tiene solución única $x=a^{-1}b$ siempre que $a\neq 0$. ¿Podemos extender esta idea a matrices? 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Desarrollo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Actividad 1: Inversa de una matriz y criterios de invertibilidad}
+
+La clase inicia con una exploración de casos concretos para reconocer el significado de «matriz inversa» y su conexión con el determinante. Luego, mediante clase magistral y práctica guiada, se formaliza el concepto, se estudian propiedades y se aplica el método de Gauss-Jordan para calcular inversas.
+
+\paragraph{¿Cómo lo haremos?}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Exploración guiada:} los estudiantes trabajan con dos matrices $2\times 2$ que son inversas entre sí:
+    \[
+        A = \begin{pmatrix}
+            3 & 2 \\
+            5 & 3
+        \end{pmatrix},\quad
+        B = \begin{pmatrix}
+            -3 & 2 \\
+            5 & -3
+        \end{pmatrix}.
+    \]
+    Se les solicita multiplicarlas en ambos órdenes y justificar por qué en ambos casos se obtiene la identidad. Después, se analiza la matriz
+    \[
+        \begin{pmatrix}
+            1 & 1 \\
+            1 & 1
+        \end{pmatrix}
+    \]
+    para discutir, con argumentos, por qué no admite inversa.
+    \item \textbf{Clase magistral:} se define formalmente la matriz inversa, sus propiedades algebraicas y su relación con la invertibilidad. Se conecta con la equivalencia por filas de $A$ con $I_n$. Se apoya la explicación en el resumen del curso: \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/01Resumen/Resumen03.pdf}{Resumen03.pdf}.
+    \item \textbf{Resolución de ejercicios:} se desarrollan ejercicios del documento \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/04Ejercicios/Ejercicios03.pdf}{Ejercicios03.pdf}, enfatizando el cálculo de inversas por el método
+    \[
+        (A|I_n)\sim(I_n|A^{-1}).
+    \]
+    \item \textbf{Implementación computacional:} se realiza mediante cuadernos de Jupyter usando el documento \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/02ResumenPython/ResumenPy03.pdf}{ResumenPy03.pdf}.
+\end{itemize}
+
+\paragraph{Verificación de aprendizaje:}
+\begin{enumerate}[leftmargin=*]
+    \item ¿Qué significa que una matriz $A$ tenga inversa? 
+    \item ¿Cómo se relaciona la existencia de la inversa con el determinante de $A$?
+    \item ¿Qué método se puede usar para calcular la inversa de una matriz?
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Cierre}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Tarea:}
+Resolver del libro \href{https://catalogobiblioteca.puce.edu.ec/cgi-bin/koha/opac-detail.pl?biblionumber=86081}{Fundamentos de álgebra lineal de Larson}, sección 2.3, los ejercicios: 1, 5, 7, 13, 45, 55.
+
+Además, completar el \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/05Proyectos-Retos/FactorizacionLU.pdf}{Reto: Factorización $LU$}.
+
+\paragraph{Pregunta de investigación:}
+\begin{enumerate}[leftmargin=*]
+    \item ¿Qué tan costoso es calcular la inversa de una matriz grande? 
+    \item ¿Existen métodos alternativos para resolver sistemas de ecuaciones lineales sin calcular la inversa?
+\end{enumerate}
+
+\paragraph{Para la próxima clase:}
+Visualizar el video \href{https://www.youtube.com/watch?v=Bd7XboIfsU4}{¿Qué son LOS DETERMINANTES? ¿Son amigos o enemigos?}. Luego realizar la Clase Invertida disponible en \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/07Act-ClaseInvertida/01ClsInv-Determinantes.pdf}{01ClsInv-Determinantes.pdf}.
+
+
+
+\end{document}
