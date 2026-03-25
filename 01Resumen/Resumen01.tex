@@ -54,24 +54,6 @@ En este curso, tomaremos:
     Con esto, se dice que $A$ es de orden $m \times n$ y que tiene $m$ filas y $n$ columnas. Al conjunto de todas las matrices de orden $m \times n$ sobre el campo $\mathbb{K}$ se denota por $\Mat[\K]{m}{n}$.
 \end{defi}
 
-% Una manera para trabajar con matrices en Python, es utilizando la librería \texttt{sympy}, con la siguiente línea de comandos:
-
-% \begin{pycodigo}
-% \begin{lstlisting}[language=Python]
-% from sympy import *
-% \end{lstlisting}
-% \end{pycodigo}
-
-% Con esto, podemos almacenar y visualizar una matriz de la siguiente manera:
-
-% \begin{pycodigo}
-% \begin{lstlisting}[language=Python]
-% A = Matrix([[1,2,3], [4,5,6],[-1,0,2]])
-% A
-% \end{lstlisting}
-% \end{pycodigo}
-
-
 \begin{advertencia}
     Dada una matriz $A$, esta se la representa también por $A=(a_{ij})$.
 \end{advertencia}
@@ -221,24 +203,14 @@ En este curso, tomaremos:
 
 En esta sección consideramos  $p,q\in \N$ con $p>0$ y $q>0$.
 
-
-% \begin{defi}[Producto punto]
-%     Sean $a, b \in \K^n$ donde, se define el producto punto o el producto interno de $a$ y $b$ por
-%     \[ 
-%         a \cdot b = \sum_{j=1}^n a_j b_j
-%         = a_1 b_1 + a_2 b_2 + \cdots + a_n b_n.
-%     \]
-% \end{defi}
-
 \begin{defi}[Multiplicación de matrices]
     Sean $A \in \Mat[\K]{m}{n}$ y $B \in \Mat[\K]{n}{p}$, el producto de las matrices $A$ y $B$ es la matriz $C \in \Mat[\K]{m}{p}$ tal que
     \begin{align*}
-        c_{ij} & = a_{i1}b_{1j} + a_{i2} b_{2j} + \cdots + a_{1n}b_{nj} \\
+        c_{ij} & = a_{i1}b_{1j} + a_{i2} b_{2j} + \cdots + a_{in}b_{nj} \\
                & = \sum_{k=1}^n a_{ik} b_{kj}
     \end{align*}
     para todo $i \in I$ y $j \in J$. A esta matriz se la denota por $AB$.
 \end{defi}
-
 
 
 \begin{teo}
@@ -347,7 +319,7 @@ En esta sección consideramos  $p,q\in \N$ con $p>0$ y $q>0$.
 \end{defi}
 
 \begin{defi}[Matriz antisimétrica]
-    Sea $A\in \mathbb{K}^{n \times n}$. Se dice que $A$ es simétrica si $A^\intercal = -A$.
+    Sea $A\in \mathbb{K}^{n \times n}$. Se dice que $A$ es antisimétrica si $A^\intercal = -A$.
 \end{defi}
 
 \begin{defi}[Matriz triangular]

@@ -1,0 +1,227 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Resumen 03: Matriz inversa}
+\autor[A. Merino]{Andrés Merino}
+\fecha{Periodo 2026-1}
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Inversa de una matriz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}
+    Sea $A\in \Mat[\K]{n}{n}$ una matriz no singular o invertible si existe una matriz $B\in \Mat[\K]{n}{n}$ tal que 
+    \[
+        AB = BA = I_n.
+    \]
+    A la matriz $B$ se la denomina inversa de $A$ y se la denota por $A^{-1}$. Si no existe tal matriz, entonces se dice que $A$ es singular o no invertible. 
+\end{defi}
+
+\begin{teo}
+    Si una matriz tiene inversa, la inversa es única. 
+\end{teo}
+
+\begin{teo}
+    Sea $A\in \Mat[\K]{n}{n}$. 
+    \begin{itemize}
+    \item 
+        Si $A$ es una matriz no singular, entonces $A^{-1}$ es no singular y 
+        \[ 
+            (A^{-1})^{-1} = A.
+        \]
+    \item 
+        Si $A$ y $B$ son matrices no singulares, entonces $AB$ es no singular y 
+        \[ 
+            (AB)^{-1} = B^{-1}A^{-1}.
+        \]
+    \item 
+        Si $A$ es una matriz no singular, entonces
+        \[
+            {(A^\intercal)}^{-1} = {(A^{-1})}^\intercal.
+        \]
+    \end{itemize}
+\end{teo}
+
+\begin{teo}
+    Sean $p\in\N^*$ y $A_1, A_2, \ldots, A_p \in \Mat[\K]{n}{n}$ matrices no singulares. Se tiene que $A_1 A_2 \cdots A_p$ es no singular y 
+    \[
+        (A_1 A_2 \cdots A_p)^{-1} = A_p^{-1} A_{p-1}^{-1} \cdots A_1^{-1}.
+    \]
+\end{teo}
+
+\begin{teo}
+    Sean $A, B \in \Mat[\K]{n}{n}$. Se tiene que si $AB=I_n$, entonces $BA=I_n$.
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$, se tiene que $A$ es no singular si y solo si es equivalente por filas a $I_n$. Es más
+    \[
+        (A|I_n) \sim (I_n|A^{-1}).
+    \]
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$, el sistema homogéneo 
+    \[
+        Ax = 0
+    \]
+    tiene una solución no trivial si y solo si $A$ es singular. 
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$. Se tiene que $A$ es no singular si y solo si el sistema lineal $Ax=b$ tiene una solución única para cada vector $b \in \K^{n}$.
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$, se tienen que las siguientes son equivalentes:
+    \begin{enumerate}
+    \item 
+        $A$ es no singular;
+    \item 
+        el sistema $Ax=0$ solamente tiene la solución trivial;
+    \item 
+        $A$ es equivalente por filas a $I_n$;
+    \item 
+        $\rang(A)=n$; y 
+    \item 
+        el sistema lineal $Ax=b$ tiene una solución única para cada vector $b \in \K^{n}$. 
+    \end{enumerate}
+\end{teo}
+
+\section{Aplicaciones de sistemas de ecuaciones}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Factorización LU}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Sea $U\in\Mat[\K]{n}{n}$ una matriz triangular superior cuyas entradas en la diagonal sean distintas de $0$, dado $b\in\K^n$, el sistema 
+\[
+    Ux = b,
+\]
+cuya matriz ampliada es
+\[
+    \begin{pmatrix}
+        u_{11} & u_{12} & u_{13} & \cdots & u_{1n} & | & b_1 \\
+        0      & u_{22} & u_{23} & \cdots & u_{2n} & | & b_2 \\
+        0      & 0      & u_{33} & \cdots & u_{3n} & | & b_3 \\
+        \vdots & \vdots & \vdots & \ddots & \vdots & | & \vdots \\
+        0      & 0      & 0      & \cdots & u_{nn} & | & b_n 
+    \end{pmatrix},
+\]
+se puede resolver por \emph{sustitución regresiva}, obteniendo que la solución del sistema es
+\[
+    x_n = \frac{b_n}{u_{nn}}
+    \texty
+    x_k = \dfrac{b_k - \displaystyle\sum_{j=k+1}^n u_{kj}x_j}{u_{kk}},
+\]
+para $k=n-1,\ldots,1$.
+
+De manera análoga, sea $L\in\Mat[\K]{n}{n}$ una matriz triangular inferior cuyas entradas en la diagonal sean distintas de $0$, dado $b\in\K^n$, el sistema 
+\[
+    Lx = b,
+\]
+cuya matriz ampliada es
+\[
+    \begin{pmatrix}
+        l_{11} & 0      & 0      & \cdots & 0      & | & b_1 \\
+        l_{21} & l_{22} & 0      & \cdots & 0      & | & b_2 \\
+        l_{31} & l_{32} & l_{33} & \cdots & 0      & | & b_3 \\
+        \vdots & \vdots & \vdots & \ddots & \vdots & | & \vdots \\
+        l_{n1} & l_{n2} & l_{n3} & \cdots & l_{nn} & | & b_n 
+    \end{pmatrix},
+\]
+se puede resolver por \emph{sustitución progresiva}, obteniendo que la solución del sistema es
+\[
+    x_1 = \frac{b_1}{l_{11}}
+    \texty
+    x_k = \dfrac{b_k - \displaystyle\sum_{j=1}^{k-1} l_{kj}x_j}{l_{kk}},
+\]
+para $k=2,\ldots,n$.
+
+Finalmente, si $A \in \Mat[\K]{n}{n}$ se puede escribir como el producto de una matriz triangular inferior $L$ y una matriz triangular superior $U$, es decir, 
+\[
+    A = LU,
+\]
+entonces se dice que $A$ tiene una factorización $LU$, y dado $b\in\K^n$, se tiene que el sistema
+\[
+    Ax=b
+\]
+equivale al sistema
+\[
+    L(Ux) = b,
+\]
+con esto, podríamos resolver el sistema inicial, resolviendo los sistemas
+\[
+    Ly = b
+    \texty
+    Ux = y.
+\]
+
+
+\begin{teo}[Factorización LU]
+    Sean $A\in \Mat[\K]{n}{n}$ una matriz tal que sea equivalente por filas a una matriz $U\in \Mat[\K]{n}{n}$ triangular superior, entonces se tiene que
+    \[
+        U = E_{m}\cdots E_2 E_1 A,
+    \]
+    donde $E_k$, para $k=1,\ldots,m$, son las matrices elementales correspondientes a las operaciones por filas. Si no se ha utilizado intercambio de filas y únicamente se han eliminado los elementos bajo la diagonal, entonces
+    \[
+        L = E_{1}^{-1} E_2^{-1} \cdots E_m^{-1}
+    \]
+    es una matriz triangular inferior y se tiene que $A=LU$.
+\end{teo}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Mínimos cuadrados}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Problema de la recta de mínimos cuadrados]
+    En $\R^2$, dados $n$ puntos $(x_1,y_1)$, $(x_2,y_2)$, \ldots, $(x_n,y_n)$, se plantea encontrar la ecuación de la recta que minimice la suma de los cuadrados de las distancias verticales de los puntos a la recta, es decir, se busca la pendiente $m$ y el intercepto $b$ de una recta que minimice la función definida por
+    \[
+        L(b,m)=\sum_{k=1}^n(y_k-mx_k-b)^2.
+    \]
+    A la recta de pendiente $m$ e intercepto $b$ que minimizan la función anterior se la llama recta de mínimos cuadrados.
+\end{defi}
+
+\begin{teo}
+    Dados los puntos $(x_1,y_1)$, $(x_2,y_2)$, \ldots, $(x_n,y_n)$, definimos
+    \[
+        y = \begin{pmatrix}
+            y_1 \\ y_2 \\ \vdots \\ y_n
+        \end{pmatrix},
+        \qquad
+        A = \begin{pmatrix}
+            1 & x_1 \\ 1 & x_2 \\ \vdots & \vdots \\ 1 & x_n
+        \end{pmatrix}
+        \texty
+        u = \begin{pmatrix}
+            b \\ m
+        \end{pmatrix}.
+    \]
+    Se tiene que el problema de la recta de mínimos cuadrados es equivalente a resolver el sistema
+    \[
+        A^\intercal A u = A^\intercal y.
+    \]
+\end{teo}
+
+\begin{teo}
+    Sea $A\in\Mat[\K]{m}{n}$ tal que $\rang(A)=n$, entonces, $A^\intercal A$ es no singular.
+\end{teo}
+
+\end{document}
