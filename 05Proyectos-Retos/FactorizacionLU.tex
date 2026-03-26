@@ -39,100 +39,118 @@
 \end{itemize}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Descripción}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\section{Descripción}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
 
-La factorización $LU$ es un método fundamental en el Álgebra Lineal para la resolución de sistemas de ecuaciones lineales, que ofrece eficiencia y profundidad en la comprensión de las matrices. Este reto está diseñado para guiarte desde el aprendizaje teórico de la factorización $LU$ hasta su aplicación práctica en la resolución de problemas reales.
+La factorización $LU$ es una herramienta fundamental en el Álgebra Lineal para la resolución eficiente de sistemas de ecuaciones lineales. Este reto tiene como objetivo conectar el aprendizaje teórico de esta técnica con su uso práctico en problemas reales de distintas disciplinas, mediante la construcción de recursos educativos y el análisis computacional.
 
-\subsection{Parte 1: Investigación}
-
-Vas a investigar qué es la factorización $LU$, sus componentes, y el proceso de cálculo, desarrollando un minitutorial (video) que sirva como guía de aprendizaje.
-
-\begin{itemize}
-\item
-    Define qué es la factorización $LU$ y para qué se utiliza.
-\item
-    Explica las matrices $L$ (lower triangular) y $U$ (upper triangular) y cómo se relacionan con la matriz original $A$.
-\item
-    Crea un tutorial breve que explique paso a paso cómo realizar una factorización LU, incluyendo ejemplos sencillos.
+\subsection*{Pregunta esencial}  
+\begin{itemize}[leftmargin=*]
+\item ¿Cómo nos ayuda la factorización $LU$ a resolver de forma más eficiente sistemas de ecuaciones en contextos reales?
 \end{itemize}
 
-Para este punto, puedes usar esta referencia: 
-\begin{enumerate}
-    \item Página 107 del libro de Aranda.
-    \item Página 74 del libro de Larson.
-    \item Este \href{https://espanol.libretexts.org/Matematicas/Algebra_lineal/Un_Primer_Curso_de_%C3%81lgebra_Lineal_(Kuttler)/02%3A_Matrices/2.10%3A_Factorizaci%C3%B3n_LU}{enlace}.
+\subsection*{Reto}  
+
+Tu desafío es doble: primero, comunicar de manera clara y didáctica qué es la factorización $LU$ y cómo se realiza; luego, aplicar esta técnica para resolver problemas reales modelados mediante sistemas de ecuaciones.
+
+Debes entregar:
+\begin{itemize}[leftmargin=*]
+\item Un videotutorial (máx. 5 minutos) que explique de forma clara y visual el proceso de factorización $LU$ con al menos un ejemplo sencillo.
+\item Un informe en formato PDF que incluya la formulación y solución de tres problemas reales mediante factorización $LU$, con apoyo de herramientas computacionales.
+\end{itemize}
+
+\subsection*{Preguntas guía}  
+\begin{itemize}[leftmargin=*]
+\item ¿Qué significa descomponer una matriz en $L$ y $U$?
+\item ¿En qué casos es útil aplicar factorización $LU$ en lugar de otros métodos?
+\item ¿Cómo se implementa la factorización $LU$ en herramientas computacionales?
+\item ¿Qué ventajas tiene aplicar $LU$ en problemas reales con múltiples sistemas?
+\item ¿Cómo puedes comunicar un proceso matemático de forma clara a otras personas?
+\end{itemize}
+
+\subsection*{Actividades guía}  
+\begin{enumerate}[leftmargin=*, label={{\arabic*.}}]
+\item Investigar el concepto de factorización $LU$ y su procedimiento.
+\item Realizar un guion breve para grabar un tutorial claro y didáctico.
+\item Utilizar una herramienta computacional para la factorización $LU$ sobre sistemas concretos.
+\item Formular tres problemas reales que involucren sistemas lineales:
+    \begin{itemize}[leftmargin=*]
+    \item Uno de ingeniería estructural (equilibrio de fuerzas).
+    \item Uno de economía (modelo de insumo-producto o similar).
+    \item Uno de ciencias ambientales (movimiento o dispersión de contaminantes).
+    \end{itemize}
+\item Resolver los sistemas aplicando $LU$ y explicar cada paso, incluyendo interpretación del resultado.
+\item Redactar un documento que contenga: contexto de cada problema, desarrollo del sistema, solución con código, y reflexión sobre la utilidad del método.
+\end{enumerate}
+
+\subsection*{Recursos}  
+\begin{itemize}[leftmargin=*]
+\item Libro \href{https://puce.odilo.us/info/algebra-lineal-con-aplicaciones-y-python-03105595}{Álgebra lineal con aplicaciones y Python} de Aranda, pág. 107.
+\item Libro \href{https://catalogobiblioteca.puce.edu.ec/cgi-bin/koha/opac-detail.pl?biblionumber=86081&query_desc=kw%2Cwrdl%3A%20larson}{Fundamentos de álgebra lineal} de Larson, pág. 74.
+\item Página \href{https://espanol.libretexts.org/Matematicas/Algebra_lineal/Un_Primer_Curso_de_%C3%81lgebra_Lineal_(Kuttler)/02\%3A_Matrices/2.10\%3A_Factorizaci\%C3\%B3n_LU}{LibreTexts: Factorización LU}.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\section*{Producto}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+
+\subsection{videotutorial explicativo}  
+Un video de máximo 5 minutos (formato libre) donde se explique de forma clara y didáctica:
+\begin{itemize}[leftmargin=*]
+\item Qué es la factorización $LU$.
+\item Qué representan las matrices $L$ y $U$.
+\item Cómo se factoriza una matriz paso a paso.
+\item Un ejemplo sencillo explicado con voz e imágenes (puedes usar grabación de pantalla, pizarra digital, celular, etc.).
+\end{itemize}
+
+\subsection{Informe de aplicación práctica}  
+Un documento en formato PDF que contenga:
+
+\begin{enumerate}[leftmargin=*, label={\textbf{\arabic*.}}]
+\item \textbf{Introducción:} ¿Qué es la factorización $LU$ y por qué puede ser útil? Se debe incluir en esta sección el enlace al videotutorial.
+\item \textbf{Tres problemas reales:} Ingeniería, economía y medioambiente. Contexto, sistema y formulación.
+\item \textbf{Resolución con $LU$:} Capturas de la herramienta computacional usada, explicación de cada paso, resultado obtenido.
+\item \textbf{Reflexión final:} ¿Qué aprendiste?, ¿en qué contextos te parece más útil este método?
+\item \textbf{Bibliografía:} Fuentes utilizadas en formato APA.
 \end{enumerate}
 
 
-\subsection{Parte 2: Aplicación Práctica}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
+\section{Rúbrica de evaluación}  
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  
 
-Vas a aplicar la factorización $LU$ para resolver sistemas de ecuaciones lineales en contextos reales, demostrando comprensión y habilidad en el uso de este método.
+\subsection*{1. Video Tutorial (15 puntos)}  
+\begin{itemize}[leftmargin=*]
+    \item {Explicación clara del concepto de factorización $LU$} (5 pts):  
+    Define con precisión el método y sus componentes ($L$, $U$) con un ejemplo claro.
 
-Debes consultar tres sistemas de ecuaciones, cada uno modelando situaciones en distintos contextos:
-\begin{itemize}
-\item 
-    Ingeniería: Un sistema que modela el equilibrio de fuerzas en una estructura.
-\item 
-    Economía: Un sistema que representa un modelo económico sencillo con variables interdependientes.
-\item 
-    Ciencias Ambientales: Un sistema que describe la distribución de contaminantes en diferentes zonas de un ecosistema.
+    \item {Calidad didáctica y técnica del video} (5 pts):  
+    Presentación clara, uso adecuado de voz, imágenes o pantalla, estructura coherente.
+
+    \item {Creatividad y presentación visual} (5 pts):  
+    Diseño cuidado, elementos gráficos o narrativos originales que faciliten el aprendizaje.
 \end{itemize}
 
-Una vez planteados los sistemas, debes generar la factorización $LU$ de su matriz ampliada (para esto puedes usar directamente los comandos de Python). Con esto, realiza la solución del sistema.
+\subsection*{2. Informe de Aplicación Práctica (30 puntos)}  
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Producto}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+{Cada uno de los tres casos (Ingeniería, Economía y Ambiente) se evaluará sobre 10 puntos:}  
 
-El producto final de este reto será un documento, redactado en \LaTeX, que constará de dos secciones principales. A continuación, se detallan las instrucciones específicas para cada sección del documento.
+\begin{itemize}[leftmargin=*]
+    \item {Planteamiento del problema contextualizado} (3 pts):  
+    Presenta un sistema coherente con el área temática, con contexto comprensible.
 
-\subsection{Parte 1: Investigación y Minitutorial}
+    \item {Resolución técnica con factorización $LU$} (5 pts):  
+    Aplicación correcta del método, uso de código claro y explicación adecuada.
 
-\begin{enumerate}
-\item 
-    Título de la Sección: Inicia esta sección con un título claro, por ejemplo, «Introducción a la Factorización $LU$».
-\item 
-    Definición y explicación: Empieza con una breve introducción a qué es la factorización LU y su importancia en el ámbito del Álgebra Lineal. Explica los componentes de la factorización $LU$, las matrices $L$ y $U$, con ejemplos claros. 
-\item 
-    Minitutorial (video): Bajo un nuevo subtítulo «Minitutorial sobre la Factorización $LU$», añade un enlace a un videotutorial que hayas creado como apoyo al contenido escrito. Puedes hacerlo mediante \verb+\href{url}{texto enlace}+. Asegúrate de que el enlace sea accesible para tus revisores.
-\item 
-    Resolución de sistemas con $LU$: Con el subtítulo «Resolución de Sistemas de Ecuaciones», describe cómo se utiliza la factorización $LU$ para resolver sistemas de ecuaciones lineales. Incluye un ejemplo general de aplicación.
-\end{enumerate}
-
-\subsection{Parte 2: Planteamiento y Solución de Problemas}
-
-\begin{enumerate}
-\item 
-    Título de la Sección: Usa el título «Aplicación de la Factorización LU» para marcar el inicio de esta sección.
-\item 
-    Contexto y Problemas: Introduce cada contexto y su respectivo sistema de ecuaciones bajo subsecciones separadas. Describe brevemente el contexto y presenta el sistema de ecuaciones relacionado.
-\item 
-    Soluciones: Para cada problema, desarrolla la solución paso a paso, demostrando cómo aplicaste la factorización $LU$.
-\end{enumerate}
-
-\subsection{Parte de Conclusión}
-   
-   Cierra con una breve conclusión sobre lo aprendido a través del reto, las aplicaciones de la factorización $LU$, y la importancia de este método en el Álgebra Lineal. No olvidar agregar Bibliografía en formato APA.
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Rúbrica de evaluación}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{itemize}
-\item
-    Definición y explicación (7 puntos): Se evaluará la claridad y precisión en la definición de la factorización $LU$ y la explicación de sus componentes.
-\item 
-    Minitutorial (7 puntos): Se valorará la calidad del tutorial para explicar el proceso de factorización LU, incluyendo ejemplos y la utilidad del contenido.
-\item 
-    Resolución de sistemas con $LU$ (7 puntos): Se evaluará la claridad de la explicación de cómo se resuelve un sistema ocupando la factorización $LU$.
-\item 
-    Ejemplos prácticos (8 puntos cada uno): Se evaluará cada ejemplo práctico, descripción de su contexto, su resolución y la interpretación de la solución.
-\item
-    Excelencia (5 puntos), este puntaje es dado únicamente si se tiene el puntaje completo en los otros puntos. Se premiará la creatividad en la presentación del contenido, la originalidad en la elección de ejemplos.    
+    \item {Interpretación y reflexión final} (2 pts):  
+    Se extraen conclusiones relevantes del resultado, conectadas con el contexto.
 \end{itemize}
+
+\subsection*{3. Calidad global del trabajo (5 puntos)}  
+
+Si ambos productos tienen claridad sobresaliente, creatividad en presentación, y se presentan problemas originales, se otorgará un bonus de excelencia.
+
 
 
 \end{document}
