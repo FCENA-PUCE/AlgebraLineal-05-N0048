@@ -1,0 +1,330 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+\usepackage{systeme}
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Ejercicios 04: Determinantes}
+\autor[A. Merino]{Andrés Merino}
+\fecha{Periodo 2026-1}
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado
+
+\section{Determinantes}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Sea la matriz:
+    \[
+        A= \begin{pmatrix}
+            \alpha & -1 & 0 \\
+            -2 & \alpha & -2 \\
+            0 & -1 & \alpha
+        \end{pmatrix},
+    \]
+    donde $\alpha \in \mathbb{R}$.
+    \begin{enumerate}
+    \item 
+        ¿Para qu\'{e} valores de $\alpha$ la matriz $A$ es invertible? 
+    \item 
+        Calcule la inversa de $A$ cuando sea posible.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+    \item 
+    Para saber si A es invertible, se debe calcular el determinante: 
+    \[
+    det(A)=\begin{vmatrix}
+                \alpha & -1 & 0 \\
+                -2 & \alpha & -2 \\
+                0 & -1 & \alpha
+                \end{vmatrix}=\alpha \begin{vmatrix}
+                \alpha & -2 \\
+                -1 & \alpha
+                \end{vmatrix}-\begin{vmatrix}
+                -2 & -2 \\
+                0 & \alpha
+                \end{vmatrix}=\alpha^3-4\alpha.\\
+    \]
+    Por lo tanto, $A$ es invertible si y solo si $\alpha \neq-2$, $\alpha\neq0$ y $\alpha\neq2$.
+    
+    \item Supongamos que $\alpha \in \mathbb{R}\setminus\{-2, 0, 2\}$. Entonces, $A^{-1}$ existe y tenemos:
+    \[
+    A^{-1}=\frac{1}{det(A)}Adj(A)=\frac{1}{\alpha^3-4\alpha}   \begin{pmatrix}
+                \alpha^2-2 & \alpha & 2 \\
+                2\alpha & \alpha^2 & 2\alpha \\
+                2 & \alpha & \alpha^2-2
+            \end{pmatrix}.\qedhere
+    \]
+    \end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Sea
+    \[
+        B=
+        \begin{pmatrix}
+            1 & 2 & -1 \\
+            2 & 4 & -2 \\
+            0 & 3 & 5
+        \end{pmatrix}.
+    \]
+    
+    \begin{enumerate}
+    \item 
+        Calcule $\det(B)$.
+    \item
+        Determine si $B$ es invertible.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+    \item
+        Observamos que la segunda fila es el doble de la primera:
+        \[
+            F_2 = 2F_1.
+        \]
+        Por la propiedad de determinantes, si dos filas son proporcionales, el determinante es cero. Por tanto,
+        \[
+            \det(B)=0.
+        \]
+    \item
+        Una matriz cuadrada es invertible si y solo si su determinante es distinto de cero. Como
+        \[
+            \det(B)=0,
+        \]
+        concluimos que $B$ no es invertible.\qedhere
+    \end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Sea
+    \[
+        C=
+        \begin{pmatrix}
+            2 & 1 & 0 \\
+            -1 & 3 & 2 \\
+            4 & 0 & 1
+        \end{pmatrix}.
+    \]
+    
+    \begin{enumerate}
+    \item
+        Calcule $\det(C)$ usando expansión por cofactores en la primera fila.
+    \item
+        Halle el cofactor $C_{23}$.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+    \item
+        Expansión por la primera fila:
+        \[
+            \det(C)=2\begin{vmatrix}3 & 2 \\ 0 & 1\end{vmatrix}-1\begin{vmatrix}-1 & 2 \\ 4 & 1\end{vmatrix}+0\begin{vmatrix}-1 & 3 \\ 4 & 0\end{vmatrix}.
+        \]
+        Entonces,
+        \[
+            \det(C)=2(3)-1((-1)(1)-2(4))=6-(-9)=15.
+        \]
+    \item
+        El menor $23$ se obtiene eliminando la fila 2 y la columna 3:
+        \[
+            M_{23}=\begin{vmatrix}2 & 1 \\ 4 & 0\end{vmatrix}=2(0)-1(4)=-4.
+        \]
+        Por definición de cofactor,
+        \[
+            C_{23}=(-1)^{2+3}M_{23}=(-1)^5(-4)=4.\qedhere
+        \]
+    \end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Sean
+    \[
+        A=
+        \begin{pmatrix}
+            1 & 2 \\
+            3 & 1
+        \end{pmatrix},
+        \quad
+        D=
+        \begin{pmatrix}
+            2 & -1 \\
+            0 & 4
+        \end{pmatrix}.
+    \]
+    
+    \begin{enumerate}
+    \item
+        Calcule $\det(A)$ y $\det(D)$.
+    \item
+        Verifique que $\det(AD)=\det(A)\det(D)$.
+    \item
+        Calcule $\det(3A)$ y compare con $3^2\det(A)$.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+    \item
+        \[
+            \det(A)=1\cdot1-2\cdot3=-5,
+            \qquad
+            \det(D)=2\cdot4-(-1)\cdot0=8.
+        \]
+    \item
+        Primero,
+        \[
+            AD=
+            \begin{pmatrix}
+                1 & 2 \\
+                3 & 1
+            \end{pmatrix}
+            \begin{pmatrix}
+                2 & -1 \\
+                0 & 4
+            \end{pmatrix}
+            =
+            \begin{pmatrix}
+                2 & 7 \\
+                6 & 1
+            \end{pmatrix}.
+        \]
+        Luego,
+        \[
+            \det(AD)=2\cdot1-7\cdot6=-40.
+        \]
+        Además,
+        \[
+            \det(A)\det(D)=(-5)(8)=-40.
+        \]
+        Por tanto, se verifica que
+        \[
+            \det(AD)=\det(A)\det(D).
+        \]
+    \item Calculemos:
+        \[
+            3A=
+            \begin{pmatrix}
+                3 & 6 \\
+                9 & 3
+            \end{pmatrix},
+            \qquad
+            \det(3A)=3\cdot3-6\cdot9=-45.
+        \]
+        Por otro lado,
+        \[
+            3^2\det(A)=9(-5)=-45.
+        \]
+        Se cumple la propiedad $\det(\alpha A)=\alpha^n\det(A)$ con $n=2$.\qedhere
+    \end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Sea
+    \[
+        E=
+        \begin{pmatrix}
+            2 & 1 & 1 \\
+            1 & 1 & 0 \\
+            1 & 0 & 2
+        \end{pmatrix}.
+    \]
+    
+    \begin{enumerate}
+    \item
+        Calcule $\det(E)$.
+    \item
+        Obtenga $E^{-1}$ usando la matriz adjunta.
+    \item
+        Resuelva el sistema $Ex=b$, con $b=(1,2,3)^\intercal$.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+    \item
+        Expansión por la primera fila:
+        \[
+            \det(E)=2\begin{vmatrix}1 & 0 \\ 0 & 2\end{vmatrix}-1\begin{vmatrix}1 & 0 \\ 1 & 2\end{vmatrix}+1\begin{vmatrix}1 & 1 \\ 1 & 0\end{vmatrix}=2(2)-1(2)+1(-1)=1.
+        \]
+        Así, $\det(E)=1$.
+    \item
+        Calculamos cofactores:
+        \[
+            \cof(E)=
+            \begin{pmatrix}
+                2 & -2 & -1 \\
+                -2 & 3 & 1 \\
+                -1 & 1 & 1
+            \end{pmatrix}.
+        \]
+        Luego,
+        \[
+            \adj(E)=\cof(E)^\intercal=
+            \begin{pmatrix}
+                2 & -2 & -1 \\
+                -2 & 3 & 1 \\
+                -1 & 1 & 1
+            \end{pmatrix}.
+        \]
+        Como $\det(E)=1$,
+        \[
+            E^{-1}=\frac{1}{\det(E)}\adj(E)=
+            \begin{pmatrix}
+                2 & -2 & -1 \\
+                -2 & 3 & 1 \\
+                -1 & 1 & 1
+            \end{pmatrix}.
+        \]
+    \item
+        La solución es $x=E^{-1}b$:
+        \[
+            x=
+            \begin{pmatrix}
+                2 & -2 & -1 \\
+                -2 & 3 & 1 \\
+                -1 & 1 & 1
+            \end{pmatrix}
+            \begin{pmatrix}
+                1 \\
+                2 \\
+                3
+            \end{pmatrix}
+            =
+            \begin{pmatrix}
+                -5 \\
+                7 \\
+                4
+            \end{pmatrix}.
+        \]
+        Por tanto, la solución del sistema es
+        \[
+            x_1=-5,\quad x_2=7,\quad x_3=4.\qedhere
+        \]
+    \end{enumerate}
+\end{proof}
+
+
+
+\end{document}

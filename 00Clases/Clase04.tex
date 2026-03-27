@@ -1,0 +1,109 @@
+\documentclass[a4,11pt]{aleph-notas}
+% Se puede ver la documentación aquí:
+% https://github.com/alephsub0/LaTeX_aleph-notas
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{url}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\hypersetup{
+    urlcolor=blue,
+    linkcolor=blue,
+}
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Clase 04: Determinantes}
+\autor{Andrés Merino}
+\fecha{Periodo 2026-01}
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Resultado de Aprendizaje}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{RdA de la asignatura:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{RdA 1:} Comprender los conceptos fundamentales del Álgebra Lineal, incluyendo el estudio de matrices, determinantes, sistemas de ecuaciones lineales y espacios vectoriales, destacando su importancia en el análisis y resolución de problemas matemáticos.
+    \item \textbf{RdA 2:} Resolver problemas prácticos y teóricos relacionados con el Álgebra Lineal, utilizando técnicas de cálculo con matrices, determinantes y sistemas de ecuaciones, así como en el análisis de espacios vectoriales.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{RdA de la actividad:}
+\begin{itemize}[leftmargin=*]
+    \item Comprender el significado algebraico y geométrico del determinante.
+    \item Aplicar propiedades del determinante para simplificar cálculos en matrices cuadradas.
+    \item Identificar condiciones de singularidad y su relación con la invertibilidad.
+    \item Verificar resultados analíticos con apoyo de herramientas computacionales.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Introducción}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Control de avance y clase invertida:}
+Antes de iniciar la clase, se aplicará el control de avance, tomando un ejercicio de multiplicación de matrices y otro de cálculo de determinantes.
+
+\paragraph{Pregunta inicial:}
+¿Qué información guarda el determinante de una matriz? ¿Cómo se relaciona con la geometría y la invertibilidad?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Desarrollo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Actividad 1: Determinantes y sus propiedades}
+
+La clase inicia con una visión conjunta del significado del determinante en distintos tamaños de matrices. Luego, mediante clase magistral y práctica guiada, se formalizan propiedades algebraicas y su interpretación para analizar invertibilidad y resolver problemas.
+
+\paragraph{¿Cómo lo haremos?}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Clase invertida -- Visión conjunta:} se repasa el cálculo de determinantes para matrices de orden 1, 2 y 3.
+    \item \textbf{Clase magistral:} se explican las propiedades del determinante. Se usa el resumen \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/01Resumen/Resumen04.pdf}{Resumen04.pdf}.
+    \item \textbf{Resolución de ejercicios:} se guiará a los estudiantes en la solución de ejercicios del documento \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/04Ejercicios/Ejercicios04.pdf}{Ejercicios04.pdf}, aplicando las propiedades vistas.
+    \item \textbf{Visualización de video:} se recomendará el estudio con el video: \href{https://youtu.be/Ip3X9LOh2dk?si=Z8KpgrPdLpy8l48A}{El determinante | Capítulo 6, Esencia del álgebra lineal.}.
+\end{itemize}
+
+\paragraph{Verificación de aprendizaje:}
+\begin{enumerate}[leftmargin=*]
+    \item ¿Qué propiedades tiene el determinante?
+    \item ¿Cuándo el determinante de una matriz es cero? ¿Qué implica eso?
+    \item ¿Cómo cambia el determinante si permutamos dos filas?
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Cierre}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Tarea:}
+Resolver del libro \href{https://catalogobiblioteca.puce.edu.ec/cgi-bin/koha/opac-detail.pl?biblionumber=86081}{Fundamentos de álgebra lineal de Larson}, sección 3.1, los ejercicios: 1, 5, 9, 11, 27, 49, 51; sección 3.2, los ejercicios: 1, 3, 5, 7, 12, 13; sección 3.3, los ejercicios: 53, 56.
+
+\paragraph{Pregunta de investigación:}
+\begin{enumerate}[leftmargin=*]
+    \item ¿Qué es la regla de Cramer y cómo se relaciona con el determinante?
+    \item ¿Cómo se puede usar el determinante para encontrar el área de un paralelogramo definido por dos vectores en $\R^2$?
+    \item ¿Cómo se puede usar el determinante para encontrar el volumen de un paralelepípedo definido por tres vectores en $\R^3$?
+\end{enumerate}
+
+\paragraph{Para la próxima clase:}  
+Leer la sección 4.1 del libro \href{https://catalogobiblioteca.puce.edu.ec/cgi-bin/koha/opac-detail.pl?biblionumber=86081}{Fundamentos de álgebra lineal de Larson}.
+
+
+
+
+\end{document}

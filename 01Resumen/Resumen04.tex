@@ -1,0 +1,326 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Resumen 04: Determinantes}
+\autor[A. Merino]{Andrés Merino}
+\fecha{Periodo 2026-1}
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Determinantes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+En esta sección tomaremos $n\in \N$, con $n>0$, e $I = \{ 1, 2, \ldots, n\}$.
+
+\begin{defi}[Menor]
+    Sean $A\in \Mat[\K]{n}{n}$ e $i,j\in I$. A la matriz de $\Mat[\K]{(n-1)}{(n-1)}$ que se obtiene al eliminar la fila $i$ y la columna $j$ de $A$ se la llama el menor $ij$ de $A$, denotado por $A_{ij}$.
+\end{defi}
+
+\begin{advertencia}
+    En la literatura se puede encontrar la notación de $M_{ij}$ para el menor de $ij$ de $A$.
+\end{advertencia}
+
+\begin{defi}[Menor principal]
+    Sean $A\in \Mat[\K]{n}{n}$ y $k\in I$. A la matriz de $\Mat[\K]{k}{k}$ que se obtiene al eliminar las $n-k$ últimas filas y columnas de $A$, se la llama el menor principal $k$ de $A$, denotado por $M_{k}$.
+\end{defi}
+
+\begin{advertencia}
+    En la literatura se puede encontrar la notación de $A_{k}$ para el menor principal $k$ de $A$.
+\end{advertencia}
+
+
+\begin{defi}[Determinantes] 
+    Sea $A\in \Mat[\K]{n}{n}$. Se define el determinante de $A$, denotado por $\det(A)$ (o por $|A|$), de manera inductiva, como sigue:
+    \begin{itemize}
+    \item 
+        Si $n=1$ y $A=(a_{11})$, entonces $\det(A) = a_{11}$.
+    \item
+        Si $n>1$, entonces
+        \begin{align*}
+            \det(A) 
+            & = \sum_{k=1}^n a_{1k}(-1)^{1+k}\det(A_{1k})\\
+            & = a_{11}\det(A_{11}) - a_{12}\det(A_{12}) 
+            + \ldots +  (-1)^{1+n} a_{1n}\det(A_{1n}).
+        \end{align*}
+    \end{itemize}
+\end{defi}
+
+Ejemplos:
+\begin{itemize}
+\item 
+    Sea $A$ una matriz de orden $2 \times 2$ de la forma
+    \[ 
+        A=
+        \begin{pmatrix}
+         a_{11} & a_{12}\\
+         a_{21} & a_{22}
+        \end{pmatrix},
+    \]
+    se tiene que
+    \[
+        A_{11} = (a_{22})
+        \texty
+        A_{12} = (a_{21}),
+    \]
+    por lo tanto
+    \[
+        \det(A_{11}) = a_{22}
+        \texty
+        \det(A_{12}) = a_{21},
+    \]
+    de esta forma,
+    \[
+        \det(A) = a_{11}\det(A_{11}) - a_{12}\det(A_{12})
+            = a_{11}a_{22} - a_{12}a_{21},
+    \]
+    es decir,
+    \[
+        \det(A) = \begin{vmatrix}
+        a_{11} & a_{12} \\
+        a_{21} & a_{22}
+        \end{vmatrix}
+        = a_{11}a_{22} - a_{12}a_{21}.
+    \]
+\item Sea $A$ una matriz de orden $3 \times 3$ de la forma
+         \[ A=
+        \begin{pmatrix}
+         a_{11} & a_{12} & a_{13}\\
+         a_{21} & a_{22} & a_{23}\\
+         a_{31} & a_{32} & a_{33}\\
+        \end{pmatrix}
+        \]
+        \noindent el determinante de la matriz $A$ está dado por:
+        \[
+        \det(A) = a_{11}
+        \begin{vmatrix}
+        a_{22} & a_{23} \\
+        a_{32} & a_{33}
+        \end{vmatrix} - a_{12}
+        \begin{vmatrix}
+        a_{21} & a_{23} \\
+        a_{31} & a_{33} \\
+        \end{vmatrix}+ a_{13}
+        \begin{vmatrix}
+        a_{21} & a_{22} \\
+        a_{31} & a_{32}
+        \end{vmatrix}.
+        \]
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Propiedades de los determinantes}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$. Si una fila o columna de $A$ contiene solo ceros, entonces $\det (A) =0$.
+\end{teo}
+
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$ una matriz triangular superior o triangular inferior, entonces
+    \[
+        \det(A) = a_{11}a_{22} \cdots a_{nn},
+    \]
+    es decir, el determinante de una matriz triangular es el producto de los elementos de su diagonal principal.
+\end{teo}
+
+
+\begin{teo}
+    Sea $E\in\Mat[\K]{n}{n}$ una matriz elemental, $i,j\in I$ y $\alpha\in\K$, con $\alpha\neq 0$. Se tiene que
+    \begin{itemize}
+    \item   
+        si la operación es $F_i \leftrightarrow F_j$, entonces $\det(E) = - 1$;
+    \item 
+        si la operación es $\alpha F_i \rightarrow F_i$, entonces $\det(E) = \alpha$; y
+    \item 
+        si la operación es $\alpha F_i + F_j\rightarrow F_j$, entonces $\det(E) = 1$.
+    \end{itemize}
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$. El determinante de una matriz $A$ y de su transpuesta son iguales, es decir, 
+    \[
+        \det(A^\intercal) = \det(A).
+    \]
+\end{teo}
+
+\begin{teo}
+    Sean $A, B\in \Mat[\K]{n}{n}$, se tiene que:
+    \[
+        \det(AB) = \det(A)\det(B).
+    \]
+\end{teo}
+
+
+\begin{teo}
+    Sean $A, B \in \Mat[\K]{n}{n}$. Si la matriz $B$ se obtiene intercambiando dos filas o columnas de $A$ entonces
+    \[  
+        \det(B) = - \det(A).
+    \]
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$. Si dos filas o columnas de $A$ son iguales, entonces 
+    \[
+        \det(A) = 0
+    \]
+\end{teo}
+
+\begin{teo}
+    Sean $A, B \in \Mat[\K]{n}{n}$. Si $B$ se obtiene al multiplicar una fila o columna de $A$ por un escalar $\alpha \in \K$, entonces
+    \[
+        \det(B) = \alpha \det(A).
+    \]
+\end{teo}
+
+
+\begin{teo}
+    Sean $A\in \Mat[\K]{n}{n}$ y $\alpha \in\K$. Se tiene que
+    \[
+        \det(\alpha A) = \alpha^n \det(A).
+    \]
+\end{teo}
+
+\begin{teo}
+    Sean $A, B \in \Mat[\K]{n}{n}$, $\alpha\in\K$ e $i,j\in I$, con $i\neq j$. Si $B$ se obtiene al aplicar una operación de fila $\alpha F_i + F_j \to F_j$, entonces 
+    \[
+        \det(B) = \det(A).
+    \]
+\end{teo}
+ 
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$. Si $A$ es no singular, entonces $\det(A) \neq 0$ y 
+    \[
+        \det(A^{-1}) = \dfrac{1}{\det(A)}.
+    \]
+\end{teo}
+
+\begin{teo}
+    Sean $A, B, C \in \Mat[\K]{n}{n}$ y $j\in I$ tales que $A$, $B$ y $C$ difieran únicamente en la columna $j$. Si la columna $j$ de $C$ es el resultado de sumar las columnas $j$ de $A$ y $B$, entonces 
+    \[
+        \det(C) = \det(A) + \det(B).
+    \]
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Cofactores}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Cofactores]
+    Sean $A\in \Mat[\K]{n}{n}$ e $i,j\in I$. El cofactor $ij$ de $A$, denotado $C_{ij}$, está dado por
+    \[
+        C_{ij} = (-1)^{i+j} \det (A_{ij})
+    \]
+     donde $A_{ij}$ es el menor $ij$ de $A$.
+\end{defi}
+
+\begin{advertencia}
+    En la literatura, también se suele llamar menor al determinante de $A_{ij}$ en lugar de a la matriz, como lo haremos en este texto. Además, al cofactor, se lo suele denotar por $A_{ij}$.
+\end{advertencia}
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$. Se tiene que para todo $i\in I$,
+    \[
+        \det(A) 
+        = \sum_{k=1}^n a_{ik}C_{ik} 
+        = a_{i1}C_{i1} + a_{i2}C_{i2} + \ldots + a_{in}C_{in}
+    \]
+    y
+    \[
+        \det(A) 
+        = \sum_{k=1}^n a_{ki}C_{ki} 
+        = a_{1i}C_{1i} + a_{2i}C_{2i} + \ldots + a_{ni}C_{ni}.
+    \]
+    El lado derecho de las igualdades toma el nombre de expansión por cofactores del determinante de $A$.
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Más sobre la inversa de una matriz}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Matriz de cofactores]
+    Sea $A \in \Mat[\K]{n}{n}$. La matriz de cofactores de $A$, que se denota por $\cof(A)$, es la matriz de $\Mat[\K]{n}{n}$ que está formada por los cofactores de $A$, es decir, 
+    \[
+        \cof(A) = (C_{ij}) = 
+        \begin{pmatrix}
+          C_{11} & C_{12} & \cdots & C_{1n} \\
+          C_{21} & C_{22} & \cdots & C_{2n} \\
+          \vdots & \vdots & \ddots &\vdots  \\
+          C_{n1} & C_{n2} & \cdots & C_{nn}
+        \end{pmatrix}.
+    \]
+\end{defi}
+
+
+\begin{defi}
+    Sea $A \in \Mat[\K]{n}{n}$. La matriz adjunta de $A$, que se denota por $\adj(A)$, es la matriz de $\Mat[\K]{n}{n}$ que está formada por la transpuesta de la matriz de los cofactores de $A$, es decir, 
+    \[
+        \adj(A) = \cof(A)^\intercal.
+    \]
+\end{defi}
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$, entonces
+    \[
+        A (\adj(A)) = (\adj(A))A = \det(A)I_n.
+    \]
+\end{teo}
+
+\begin{cor}
+    Sea $A \in \Mat[\K]{n}{n}$. Si $\det(A) \neq 0$, entonces $A$ es invertible y
+    \[
+        A^{-1} = \dfrac{1}{\det(A)} \adj(A).
+    \]
+\end{cor}
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$. Una matriz $A$ es no singular si y sólo si $\det(A) \neq 0$.
+\end{teo}
+
+\begin{teo}
+    Sea $A \in \Mat[\K]{n}{n}$. El sistema homogéneo $Ax = 0$ tiene una solución no trivial si y sólo si $\det(A) = 0$.
+\end{teo}
+
+\begin{teo}
+    Sean $A \in \Mat[\K]{n}{n}$ y $b\in\K^n$. El sistema $Ax = b$ tiene una solución única si y sólo si $\det(A) \neq 0$ y su solución es
+    \[
+        A^{-1}b.
+    \]
+\end{teo}
+
+\begin{teo}[Equivalencias no singulares]
+    
+    Sea $A \in \Mat[\K]{n}{n}$, se tienen que las siguientes son equivalentes:
+    \begin{enumerate}
+    \item 
+        $A$ es no singular;
+    \item 
+        el sistema $Ax=0$ tiene solamente la solución trivial;
+    \item 
+        $A$ es equivalente por filas a $I_n$;
+    \item 
+        $\rang(A)=n$; 
+    \item 
+        el sistema lineal $Ax=b$ tiene una solución única para cada vector $b \in \K^{n}$; y
+    \item 
+        $\det(A) \neq 0$.
+    \end{enumerate}
+\end{teo}
+
+\end{document}
