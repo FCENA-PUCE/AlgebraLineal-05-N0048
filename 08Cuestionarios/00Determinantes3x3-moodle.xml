@@ -1,31 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- This file was generated on 2026-03-15 by XeLaTeX -->
+<!-- This file was generated on 2026-03-27 by XeLaTeX -->
 <!-- running on *NIX with the package moodle v0.9 -->
 
 <quiz>
- 
-<question type="category">
-  <category>
-    <text>$course$/top/Pregunta base</text>
-  </category>
-</question>
- 
-<question type="numerical">
-  <name format="html">
-    <text><![CDATA[Det Mat 3x3 - [[id]]]]></text>
-  </name>
-  <questiontext format="html">
-    <text><![CDATA[<p>El determinante de la matriz \[ A = \begin {pmatrix} [[a11]] & [[a12]] & [[a13]] \\ [[a21]] & [[a22]] & [[a23]] \\ [[a31]] & [[a32]] & [[a33]] \end {pmatrix} \] es: </p>]]></text>
-  </questiontext>
-  <defaultgrade>1.0</defaultgrade>
-  <generalfeedback format="html"><text/></generalfeedback>
-  <penalty>0.10</penalty>
-  <hidden>0</hidden>
-  <answer fraction="100" format="plain_text">
-    <text>[[det(Matrix([ [a11, a12, a13], [a21, a22, a23], [a31, a32, a33] ]))]]</text>
-    <tolerance>0</tolerance>
-  </answer>
-</question>
  
 <question type="category">
   <category>
