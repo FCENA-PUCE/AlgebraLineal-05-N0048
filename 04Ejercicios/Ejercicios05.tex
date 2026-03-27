@@ -1,0 +1,298 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+\usepackage{systeme}
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Ejercicios 05: El espacio $\R^n$}
+\autor[A. Merino]{Andrés Merino}
+\fecha{Periodo 2026-1} 
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado
+
+
+\section{El espacio $\mathbb{R}^n$}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Se define la distancia entre dos vectores de $\R^n$ por
+    \[
+        \funcion{d}{\R^n \times \R^n}{\R}{(x,y)}{\|x - y\|.}
+    \]
+    Dados $x,y,z\in\R^n$, demuestre que
+    \begin{enumerate}
+        \item 
+        $\text{d}(x,y)\geq 0$.
+        \item
+        $\text{d}(x,y) = 0$ si y sólo si $x=y$.
+        \item
+        $\text{d}(x,y) = \text{d}(y,x)$.
+        \item
+        $\text{d}(x,y) \leq \text{d}(x,z) + \text{d}(z,y)$.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+        \item 
+        Por la propiedades de norma tenemos que $\|w\|\geq0$ para todo $w\in\R^n$.
+        
+        Dado que $x-y\in\R^n$, junto con la definición de distancia entre dos vectores aplicada a $(x,y)$, obtenemos
+        \[
+            \text{d}(x,y) = \|x - y\| \geq 0.
+        \]
+        \item
+        Por la propiedades de norma tenemos que $\|w\| = 0$ si y sólo si $w=0$.
+        
+        Supongamos que $\text{d}(x,y)=0$, por la definición de distancia entre dos vectores aplicada a $(x,y)$, obtenemos que 
+        \[
+            \text{d}(x,y) = \|x - y\| = 0,
+        \]
+        si y sólo si $x - y = 0$, es decir, $x=y$.
+        
+        Por lo tanto, se ha mostrado que $\text{d}(x,y) = 0$ si y sólo si $x=y$.
+        \item
+        Por la definición de distancia entre dos vectores y por propiedades de norma, obtenemos el siguiente desarrollo
+        \begin{align*}
+            \text{d}(x,y) &= \|x-y\|\\
+                          &= \|(-1)(y-x)\|\\
+                          &= |-1|\|y-x\|\\
+                          &= \|y-x\|\\
+                          &= \text{d}(y,x).
+        \end{align*}
+        Luego, se ha mostrado que $\text{d}(x,y) =\text{d}(y,x)$.
+        \item 
+        Por la definición de la distancia entre dos vectores aplicada a $(x,y)$, junto con la desigualdad triangular de la norma, obtenemos
+        \begin{align*}
+            \text{d}(x, y) &= \|x-y\|\\
+                           &\leq \|x-z\| + \|z-y\|\\
+                           &= \text{d}(x, z) + \text{d}(z,y).
+        \end{align*}
+        Luego, se ha mostrado que $\text{d}(x, y) \leq \text{d}(x, z) + \text{d}(z,y)$.
+    \end{enumerate}
+\end{proof}
+    
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Sean $C_1 \in \R \setminus \{ 0 \}$ y $C_2 \in \R \setminus \{ 0 \}$, determinar $C_1$ y $C_2$ tales que
+    \[
+    C_1 \begin{pmatrix} 1 \\ 2 \end{pmatrix} + C_2 \begin{pmatrix} 3 \\ -1 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}
+    \]
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Multiplicamos por los escalares a los vectores
+    \[
+    \begin{pmatrix} C_1 \\ 2C_1 \end{pmatrix} + \begin{pmatrix} 3C_2 \\ -C_2 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix},
+    \]
+    ahora, sumamos
+    \[
+    \begin{pmatrix} C_1 + 3C_2 \\ 2C_1 - C_2 \end{pmatrix}  = \begin{pmatrix} 0 \\ 0 \end{pmatrix},
+    \]
+    dos vectores son iguales si sus coordenadas son iguales, es decir,
+    \begin{align*}
+        C_1+3C_2&=0,\\
+        2C_1- C_2&=0.
+    \end{align*}
+    Ahora, resolvemos el sistema escribiendo la matriz ampliada asociada y utilizando eliminación Gauss, de donde tenemos que
+    \[
+    \begin{pmatrix}
+    1 & 3 & | & 0 \\ 2 & -1 & | & 0 \\
+    \end{pmatrix}
+    \sim
+    \begin{pmatrix}
+    1 & 3 & | & 0 \\ 0 & -7 & | & 0 \\
+    \end{pmatrix},
+    \]
+    luego, $rang(A)= rang(A|b)= 2$ y es igual al número de incógnitas. Por lo tanto, el sistema tiene una solución trivial, es decir, no es posible encontrar $C_1$ y $C_2$ no nulos, tales que
+    \[
+C_1 \begin{pmatrix} 1 \\ 2 \end{pmatrix} + C_2 \begin{pmatrix} 3 \\ -1 \end{pmatrix} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}.\qedhere
+\]
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Sea $x=(2,-1,3,0)\in\R^4$.
+    \begin{enumerate}
+        \item Escriba $x$ como combinación lineal de la base canónica de $\R^4$.
+        \item Verifique que dicha representación es única.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Si $\{e^1,e^2,e^3,e^4\}$ es la base canónica de $\R^4$, entonces
+    \[
+        x=(2,-1,3,0)=2e^1-e^2+3e^3+0e^4.
+    \]
+    Por lo tanto, $x$ se escribe como combinación lineal de la base canónica con coeficientes
+    \[
+        \alpha_1=2,\quad \alpha_2=-1,\quad \alpha_3=3,\quad \alpha_4=0.
+    \]
+    Además, por el teorema de representación en la base canónica de $\R^n$, estos coeficientes son únicos. En consecuencia, la representación obtenida es única.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Sean $x=(1,2,-1)$ e $y=(2,-1,2)$ en $\R^3$.
+    \begin{enumerate}
+        \item Calcule $x\cdot y$.
+        \item Calcule $\|x\|$ y $\|y\|$.
+        \item Determine si $x$ e $y$ son ortogonales o paralelos.
+        \item Calcule el ángulo entre $x$ e $y$.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+        \item Tenemos que
+        \[
+            x\cdot y=(1)(2)+(2)(-1)+(-1)(2)=2-2-2=-2.
+        \]
+        \item Tenemos que
+        \[
+            \|x\|=\sqrt{1^2+2^2+(-1)^2}=\sqrt{6},
+            \quad
+            \|y\|=\sqrt{2^2+(-1)^2+2^2}=\sqrt{9}=3.
+        \]
+        \item
+        Como $x\cdot y=-2\neq 0$, no son ortogonales.
+
+        Además,
+        \[
+            |x\cdot y|=2
+            \quad\text{y}\quad
+            \|x\|\,\|y\|=3\sqrt{6},
+        \]
+        por lo que $|x\cdot y|\neq \|x\|\,\|y\|$. Entonces no son paralelos.
+        \item
+        El ángulo $\theta$ entre $x$ e $y$ está dado por
+        \[
+            \theta=\arccos\left(\frac{x\cdot y}{\|x\|\,\|y\|}\right)
+            =\arccos\left(\frac{-2}{3\sqrt{6}}\right).\qedhere
+        \]
+    \end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Sean $x=(3,1,2)$ e $y=(1,2,2)$ en $\R^3$.
+    \begin{enumerate}
+        \item Calcule la proyección ortogonal de $x$ sobre $y$.
+        \item Calcule la componente normal de $x$ respecto a $y$.
+        \item Verifique que la componente normal es ortogonal a $y$.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Primero, calculamos
+    \[
+        x\cdot y=(3)(1)+(1)(2)+(2)(2)=9,
+        \quad
+        \|y\|^2=1^2+2^2+2^2=9.
+    \]
+    Por definición de proyección ortogonal,
+    \[
+        \proy_y(x)=\frac{x\cdot y}{\|y\|^2}y=\frac{9}{9}y=y=(1,2,2).
+    \]
+    La componente normal es
+    \[
+        \norm_y(x)=x-\proy_y(x)=(3,1,2)-(1,2,2)=(2,-1,0).
+    \]
+    Finalmente, verificamos ortogonalidad:
+    \[
+        \norm_y(x)\cdot y=(2,-1,0)\cdot(1,2,2)=2-2+0=0.
+    \]
+    Por lo tanto, la componente normal es ortogonal a $y$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En $\R^2$, halle la ecuación paramétrica y la ecuación cartesiana de la recta que pasa por los puntos $A=(2,-1)$ y $B=(-1,5)$.
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Un vector dirección de la recta es
+    \[
+        b=B-A=(-1-2,5-(-1))=(-3,6)=(-1,2).
+    \]
+    Entonces, una ecuación paramétrica es
+    \[
+        (x,y)=(2,-1)+t(-1,2),\quad t\in\R,
+    \]
+    es decir,
+    \[
+        x=2-t,\quad y=-1+2t,\quad t\in\R.
+    \]
+    Eliminamos el parámetro: de $x=2-t$ se obtiene $t=2-x$.
+    Sustituyendo en $y=-1+2t$,
+    \[
+        y=-1+2(2-x)=3-2x.
+    \]
+    Por lo tanto, la ecuación cartesiana es
+    \[
+        2x+y-3=0.\qedhere
+    \]
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En $\R^3$, considere el plano que pasa por $A=(1,0,2)$ y tiene como direcciones a $b=(1,-1,0)$ y $c=(2,1,1)$.
+    \begin{enumerate}
+        \item Escriba una ecuación paramétrica del plano.
+        \item Halle una ecuación cartesiana del plano.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+        \item
+        Por definición,
+        \[
+            P=\{A+s b+t c:s,t\in\R\}.
+        \]
+        Entonces,
+        \[
+            (x,y,z)=(1,0,2)+s(1,-1,0)+t(2,1,1),\quad s,t\in\R.
+        \]
+        En coordenadas,
+        \[
+            x=1+s+2t,\quad y=-s+t,\quad z=2+t.
+        \]
+        \item
+        Un vector normal del plano es $n=b\times c$:
+        \[
+            n=(1,-1,0)\times(2,1,1)=(-1,-1,3).
+        \]
+        Por tanto,
+        \[
+            n\cdot\big((x,y,z)-A\big)=0,
+        \]
+        es decir,
+        \[
+            (-1,-1,3)\cdot(x-1,y,z-2)=0.
+        \]
+        Simplificando,
+        \[
+            -x+1-y+3z-6=0
+            \iff x+y-3z+5=0.
+        \]
+        Una ecuación cartesiana del plano es
+        \[
+            x+y-3z+5=0.\qedhere
+        \]
+    \end{enumerate}
+\end{proof}
+
+\end{document}

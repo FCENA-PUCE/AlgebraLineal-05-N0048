@@ -1,0 +1,336 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos} 
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Resumen 05: El espacio $\R^n$}
+\autor[A. Merino]{Andrés Merino}
+\fecha{Periodo 2026-1} 
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{El espacio $\R^n$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+En esta sección, consideramos $n\in\N$ con $n\geq 1$.
+
+\begin{defi}[El conjunto $\R^n$]
+    El conjunto $\R^n$ es
+    \[
+        \R^n=\underbrace{\R\times\R\times\cdots\times\R}_{n\text{ veces}},
+    \]
+    es decir
+    \[
+        \R^n=\{(x_1,x_2,\ldots,x_n):x_i\in\R\text{ para todo }i=1,2,\ldots,n\}.
+    \]
+\end{defi}
+
+\begin{advertencia}
+    Recordemos que, por notación, si $y\in\R^n$, se asumirá $y=(y_1,y_2,\ldots,y_n)$.
+\end{advertencia}
+
+\begin{advertencia}
+    Recordemos que podemos identificar cada elemento de $\R^n$ con una matriz de $\Mat{n}{1}$ de la siguiente manera: si
+    \[
+        a = (a_1,a_2,\ldots,a_n) \in \R^n,
+    \]
+    entonces, visto como matriz es
+    \[
+        a = 
+        \begin{pmatrix}
+            a_1\\a_2\\
+            \vdots\\a_n
+        \end{pmatrix}
+        \in \Mat{n}{1}.
+    \]
+\end{advertencia}
+
+\begin{teo}
+    En $\R^n$ se cumplen las siguientes propiedades:
+    \begin{enumerate}
+    \item \textbf{asociativa de la suma:}
+        para todo $x,y,z\in \R^n$ se tiene que
+        \[
+            (x + y) + z = x + (y + z);
+        \]
+    \item \textbf{conmutativa de la suma:}
+        para todo $x,y\in \R^n$ se tiene que
+        \[
+            x + y = y + x;
+        \]
+    \item \textbf{elemento neutro de la suma:}
+        existe un elemento de $\R^n$, denotado por $0$, tal que para todo $x\in \R^n$ se tiene que 
+        \[
+            x + 0 = 0 + x = x;
+        \]
+    \item \textbf{inverso de la suma:}
+        para todo $x\in\R^n$, existe un elemento de $\R^n$, denotado por $-x$, tal que
+        \[
+            x + (-x)= 0;
+        \]
+    \item \textbf{distributiva del producto I:}
+        para todo $x,y\in\R^n$ y todo $\alpha\in \R$ se tiene que
+        \[
+            \alpha (x + y)=\alpha x + \alpha y
+        \]
+    \item \textbf{distributiva del producto II:}
+        para todo $x\in\R^n$ y todo $\alpha,\beta\in \R$ se tiene que
+        \[
+            (\alpha+\beta) x=\alpha x + \beta x;
+        \]
+    \item \textbf{asociativa del producto:}
+        para todo $x\in\R^n$ y todo $\alpha,\beta\in \R$ se tiene que
+        \[
+            (\alpha\beta) x=\alpha(\beta x);
+        \]
+    \item \textbf{elemento neutro del producto:}
+        para todo $x\in\R^n$ se tiene que
+        \[
+            1 x=x.
+        \]
+    \end{enumerate}
+\end{teo}
+
+\begin{defi}[Base canónica]
+    En $\R^n$, el conjunto $\{e^1,e^2,\ldots,e^n\}\subset\R^n$, definidos por 
+    \[
+        e^i_j=
+        \begin{cases}
+            0& \text{si }i\neq j,\\
+            1& \text{si }i= j,
+        \end{cases}
+    \]
+    para todo $i,j\in\{1,2,\ldots,n\}$, se lo denomina \emph{base canónica} de $\R^n$.
+\end{defi}
+
+\begin{teo}
+    Sea $x\in\R^n$, se tiene que existen únicos
+    \[
+        \alpha_1,\alpha_2,\ldots,\alpha_n\in\R
+    \]
+    tales que
+    \[
+        x = \alpha_1e^1 + \alpha_2 e^2 + \cdots + \alpha_n e^n.
+    \]
+\end{teo}
+
+\begin{defi}[Producto punto]
+    La función 
+    \[
+        \funcion{\cdot}{\R^n\times \R^n}{\R}
+        {(x,y)}{\sum_{i=1}^n x_iy_i}
+    \]
+    se denomina producto punto de $\R^n$ o producto interno de $\R^n$.
+\end{defi}
+
+\begin{teo}[Propiedades del producto punto]
+    Sean $x,y,z\in \R^n$ y $\alpha\in\R$, se tiene que
+    \begin{itemize}
+    \item
+        $x\cdot x \geq 0$;
+    \item
+        $x\cdot x = 0$ si y solo si $x=0$;
+    \item
+        $x \cdot y = y \cdot x$;
+    \item 
+        $(x + y)\cdot z = (x\cdot z) + (y\cdot z)$; y
+    \item
+        $(\alpha x)\cdot y = x\cdot(\alpha y) = \alpha(x\cdot y)$.
+    \end{itemize}
+\end{teo}
+
+\begin{defi}[Norma]
+    La función
+    \[
+        \funcion{\|\cdot\|}{\R^n}{\R}
+        {x}{\sqrt{x\cdot x}}
+    \]
+   se la llama la norma de $\R^n$. Para $x\in\R^n$ a $\|x\|$ se le llama norma, módulo o longitud de $x$.
+\end{defi}
+
+
+
+
+
+\begin{teo}[Desigualdad de Cauchy-Schwarz]
+    Para todo $x,y\in\R^n$,
+    \[
+        |x\cdot y|\leq \|x\|\,\|y\|.
+    \]
+\end{teo}
+
+\begin{teo}[Propiedades de la norma]
+    Sean $x,y\in \R^n$ y $\alpha\in\R$, se tiene que
+    \begin{itemize}
+    \item
+        $\|x\| \geq 0$;
+    \item
+        $\|x\| = 0$ si y solo si $x=0$;
+    \item 
+        $\|\alpha x\| = |\alpha|\|x\|$; y
+    \item
+        $\|x + y\| \leq \|x\|+\|y\|$
+    \end{itemize}
+\end{teo}
+
+\begin{advertencia}
+    Dados $x,y\in\R^n$, se define la distancia entre $x$ y $y$ por $\|x-y\|$.
+\end{advertencia}
+
+\begin{defi}[Vector unitario]
+    Dado $x\in\R^n$, se dice que $x$ es un vector unitario si $\|x\|=1$.
+\end{defi}
+
+    
+
+\begin{defi}[Ángulo entre vectores]
+    Sean $x,y\in\R^n$, ambos diferentes de 0, se define el ángulo entre estos vectores por
+    \[
+       \theta =  \arccos\left( \frac{x\cdot y}{\|x\|\,\|y\|} \right).
+    \]
+\end{defi}
+
+\begin{defi}
+    Sean $x,y\in\R^n$, se dice que 
+    \begin{itemize}
+    \item 
+        son ortogonales si $x\cdot y =0$;
+    \item
+        son paralelos si $|x\cdot y| = \|x\|\,\|y\|$; y
+    \item
+        tienen la misma dirección si $x\cdot y = \|x\|\,\|y\|$.
+    \end{itemize}
+\end{defi}
+
+\begin{teo}
+    Sean $x,y\in\R^n$ tal que $y\neq 0$. Si $x$ y $y$ son paralelos, entonces existe $\alpha\in\R$ tal que $x=\alpha y$.
+\end{teo}
+
+\begin{defi}[Proyección ortogonal]
+    Sean $x,y\in\R^n$, con $y\neq 0$, la proyección ortogonal de $x$ sobre $y$ es
+    \[
+        \proy_y(x) = \frac{x\cdot y}{\|y\|^2} y
+    \]
+    y la componente normal de $x$ respecto a $y$ es
+    \[
+        \norm_y(x) = x - \proy_y(x).
+    \]
+\end{defi}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Geometría de $\R^n$}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+En esta sección, a menos que se indique lo contrario, asumiremos $n\in\N$ con $n\geq 2$.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Puntos de $\R^n$]
+    Se llama punto de $\R^n$ a cualquier elemento de $\R^n$. 
+\end{defi}
+
+
+\begin{defi}[Recta de $\R^n$]
+    Dados $a,b\in\R^n$, con $b\neq0$, la recta que pasa por $a$ con dirección $b$ es el conjunto
+    \[
+        L(a;b)=\{a+t b:t\in\R\}.
+    \]
+\end{defi}
+
+\begin{proof}[Ejemplo]
+    En $\R^2$, tenemos la recta que pasa por $(1,-2)$ con dirección $(3,2)$ es
+    \begin{align*}
+        L((1,-2);(3,2)) 
+            & = \{(1,-2)+t(3,2):t \in\R\} \\
+            & = \{(1+3t ,-2+2t ): t \in\R\} \\
+            & = \{(x,y)\in\R^2: x = 1+3t ,\ y=-2+2t ,\ t \in\R\} \\
+            & = \{(x,y)\in\R^2: 2x-3y=8\}
+    \end{align*}
+    Con esto, tenemos que la recta está definida por
+    \begin{align*}
+        x& = 1+3t ,\\
+        y& = -2+2t ,
+    \end{align*}
+    con $t \in \R$; a esta se la llama la ecuación paramétrica de la recta. Por otro lado, también tenemos que la recta está definida por 
+    \[
+        2x-3y=8
+    \]
+    con $(x,y)\in\R^2$; a esta se la llama la ecuación cartesiana de la recta.
+\end{proof}
+
+\begin{defi}[Plano de $\R^n$]
+    Dados $a,b,c\in\R^n$, con $b$ y $c$ no paralelos y diferentes de $0$, el plano que pasa por $a$ con dirección $b$ y $c$ es el conjunto
+    \[
+        P(a;b,c)=\{a+s  b+t c:s ,t \in\R\}.
+    \]
+\end{defi}
+
+\begin{proof}[Ejemplo]
+    En $\R^3$, tenemos el plano que pasa por $(1,-2,-1)$ con direcciones $(3,2,1)$ y $(1,0,2)$ es
+    \begin{align*}
+        P&((1,-2,-1);(3,2,1),(1,0,2)) \\
+            & = \{(1,-2,-1)+s (3,2,1) + t (1,0,2) :s ,t \in\R\} \\
+            & = \{(1+3s +t ,-2+2s ,-1+s +2t ): s ,t \in\R\} \\
+            & = \{(x,y,z)\in\R^3: x = 1+3s +t ,\ y=-2+2s ,\ z=-1+s +2t ,\ s ,t \in\R\} \\
+            & = \{(x,y,z)\in\R^3: 4x-5y-2z=16\}
+    \end{align*}
+    Con esto, tenemos que el plano está definido por
+    \begin{align*}
+        x& = 1+3s +t ,\\
+        y& = -2+2s ,\\
+        z& = -1+s +2t 
+    \end{align*}
+    con $s ,t \in \R$; a esta se la llama la ecuación paramétrica del plano. Por otro lado, también tenemos que el plano está definido por 
+    \[
+        4x-5y-2z=16
+    \]
+    con $(x,y,z)\in\R^3$; a esta se la llama la ecuación cartesiana del plano.
+\end{proof}
+
+\begin{advertencia}
+    Podemos pasar de la ecuación paramétrica a la ecuación cartesiana si, al verlas como un sistema de ecuaciones en sus parámetros, analizamos cuándo el sistema es consistente.
+    
+    Además, podemos pasar de la ecuación cartesiana a la ecuación paramétrica si, al verla como un sistema de ecuaciones, resolvemos el sistema.
+\end{advertencia}
+
+\begin{advertencia}
+    En $\R^2$, dados dos puntos $(x_1,y_1),(x_2,y_2)\in\R^2$, la ecuación cartesiana de la recta que pasa por estos dos puntos es
+    \[
+        \begin{vmatrix}
+            x & y & 1\\
+            x_1 & y_1 & 1\\
+            x_2 & y_2 & 1
+        \end{vmatrix}
+        = 0,
+    \]
+    para $(x,y)\in\R^2$.x
+\end{advertencia}
+
+\begin{advertencia}
+    En $\R^3$, dados tres puntos $(x_1,y_1,z_1),(x_2,y_2,z_2),(x_3,y_3,z_3)\in\R^3$, la ecuación cartesiana del plano que pasa por estos tres puntos es
+    \[
+        \begin{vmatrix}
+            x & y & z & 1\\
+            x_1 & y_1 & z_1 & 1\\
+            x_2 & y_2 & z_2 & 1\\
+            x_3 & y_3 & z_3 & 1
+        \end{vmatrix}
+        = 0,
+    \]
+    para $(x,y,z)\in\R^3$.
+\end{advertencia}
+
+\end{document}
