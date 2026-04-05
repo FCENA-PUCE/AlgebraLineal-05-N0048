@@ -1,0 +1,260 @@
+\documentclass[11pt,respuestas,a4]{aleph-examen}
+% \documentclass[11pt,a5]{aleph-examen}
+
+% -- Paquetes extra
+\usepackage{aleph-comandos}
+\usepackage{systeme}
+\input{formato_ipynb}
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catalogo STEM}
+\asignatura{Algebra lineal}
+\tema{Examen no. 1-1: Matrices}
+\autor{Andres Merino}
+\fecha{Periodo 2026-1}
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+
+\begin{document}
+
+\encabezado
+
+\section*{Indicaciones}
+\begin{itemize}[leftmargin=*]
+\item
+    En esta actividad se evalua si el estudiante (Criterio 2.1) resuelve operaciones con matrices, incluyendo productos y cálculo de inversas; además del cálculo determinantes de matrices y su significado en el contexto del Álgebra Lineal.
+\item
+    Los ejercicios deben ser resueltos a mano, sin ayuda de resúmenes o asistentes computacionales.
+\item
+    Las resoluciones de los ejercicios deben ser entregadas en hojas de forma física al docente. No importa el orden de resolucion de los ejercicios.
+\item
+    Se encuentra prohibido el uso de cualquier otra fuente de información durante todo el examen.
+\item
+    En caso de considerar que existe un error en la pregunta o que esta se encuentra mal planteada, se debe indicar cual es el error y justificarlo.
+\item
+    Todas las soluciones deben estar correctamente redactadas y explicadas.
+\item
+    Se asignarán 4 puntos de excelencia si, además de tener las soluciones correctas, el examen se destaca por su orden y escritura.
+\end{itemize}
+
+\section*{Ejercicios}
+
+\begin{preguntas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+    Dada la siguiente matriz
+    \[
+        A=\begin{pmatrix}
+                2 & 0 & 4 \\
+                1 & 1 & 0 \\
+                -1 & 2 & 3 \\
+        \end{pmatrix},
+    \]
+    realice las siguientes operaciones elementales por filas de forma consecutiva:
+    \begin{itemize}
+        \item $\frac{1}{2}F_1\rightarrow F_1$ \puntaje{1.5}
+        \item $-2F_1+F_2\rightarrow F_2$ \puntaje{1.5}
+        \item $-2F_1+F_3\rightarrow F_3$ \puntaje{1.5}
+        \item $3F_2+F_1\rightarrow F_2$ \puntaje{1.5}
+    \end{itemize}
+
+\begin{respuesta}
+    \begin{itemize}
+    \item
+        $\frac{1}{2}F_1\rightarrow F_1$:
+        \[
+            \begin{pmatrix}
+                1 & 0 & 2 \\
+                1 & 1 & 0 \\
+                -1 & 2 & 3
+            \end{pmatrix}
+        \]
+    \item
+        $-2F_1+F_2\rightarrow F_2$:
+        \[
+            \begin{pmatrix}
+                1 & 0 & 2 \\
+                -1 & 1 & -4 \\
+                -1 & 2 & 3
+            \end{pmatrix}
+        \]
+    \item
+        $-2F_1+F_3\rightarrow F_3$:
+        \[
+            \begin{pmatrix}
+                1 & 0 & 2 \\
+                -1 & 1 & -4 \\
+                -3 & 2 & -1
+            \end{pmatrix}
+        \]
+    \item
+        $3F_2+F_1\rightarrow F_2$: esta no es una operacion elemental por filas valida.\qedhere
+    \end{itemize}
+\end{respuesta}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+    Considere $k\in \R$ y las siguientes matrices:
+    \[
+        M=\begin{pmatrix}
+            k & 1 & 0\\
+            0 & 1 & 1
+        \end{pmatrix}
+        \qquad\text{y}\qquad
+        N=\begin{pmatrix}
+            1 & 0\\
+            0 & 1\\
+            1 & 1
+        \end{pmatrix},
+    \]
+    determine para que valores de $k$ el producto $MN$ tiene inversa.\puntaje{11}
+
+\begin{respuesta}
+    Primero, calculemos el producto:
+    \[
+        MN=\begin{pmatrix}
+            k & 1\\
+            1 & 2
+        \end{pmatrix}.
+    \]
+    La matriz $MN$ tiene inversa si y solo si su determinante es distinto de cero:
+    \[
+        \det(MN)=\begin{vmatrix}
+            k & 1\\
+            1 & 2
+        \end{vmatrix}
+        =2k-1.
+    \]
+    Por lo tanto, $MN$ es invertible cuando
+    \[
+        2k-1\neq 0 \iff k\neq \frac{1}{2}.
+    \]
+    En consecuencia, $MN$ tiene inversa para todo $k\in\R\setminus\left\{\frac{1}{2}\right\}$.\qedhere
+\end{respuesta}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+    Considere $\alpha\in \R$ y la siguiente matriz:
+    \[
+        A=\begin{pmatrix}
+            1 & \alpha & 0 \\
+            0 & 2 & 1 \\
+            2 & 1 & 1
+        \end{pmatrix},
+    \]
+    calcula el determinante de $A$ realizando expansion por cofactores a la primera columna.\puntaje{12}
+
+\begin{respuesta}
+    Aplicando expansion por cofactores en la primera columna, tenemos:
+    \[
+        \det(A)=
+        1\begin{vmatrix}
+            2 & 1 \\
+            1 & 1
+        \end{vmatrix}
+        -0\begin{vmatrix}
+            \alpha & 0 \\
+            1 & 1
+        \end{vmatrix}
+        +2\begin{vmatrix}
+            \alpha & 0 \\
+            2 & 1
+        \end{vmatrix}.
+    \]
+    Entonces:
+    \[
+        \det(A)=1(2\cdot 1-1\cdot 1)+2(\alpha\cdot 1-0\cdot 2)
+        =1+2\alpha.
+    \]
+    Por lo tanto,
+    \[
+        \det(A)=1+2\alpha.\qedhere
+    \]
+\end{respuesta}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+    Suponga que la siguiente matriz es no singular, calcule, usando reduccion por filas, la inversa:\puntaje{12}
+    \[
+        A=\begin{pmatrix}
+            1 & 1 & 0 \\
+            0 & 2 & 2 \\
+            0 & 1 & 3
+        \end{pmatrix}.
+    \]
+
+\begin{respuesta}
+    Partimos de
+    \[
+        \begin{pmatrix}
+            1 & 1 & 0 & | & 1 & 0 & 0 \\
+            0 & 2 & 2 & | & 0 & 1 & 0 \\
+            0 & 1 & 3 & | & 0 & 0 & 1
+        \end{pmatrix},
+    \]
+    y aplicamos operaciones elementales:
+    \begin{align*}
+        \begin{pmatrix}
+            1 & 1 & 0 & | & 1 & 0 & 0 \\
+            0 & 2 & 2 & | & 0 & 1 & 0 \\
+            0 & 1 & 3 & | & 0 & 0 & 1
+        \end{pmatrix}
+        &\sim
+        \begin{pmatrix}
+            1 & 1 & 0 & | & 1 & 0 & 0 \\
+            0 & 1 & 3 & | & 0 & 0 & 1 \\
+            0 & 2 & 2 & | & 0 & 1 & 0
+        \end{pmatrix} && F_2\leftrightarrow F_3 \\
+        &\sim
+        \begin{pmatrix}
+            1 & 1 & 0 & | & 1 & 0 & 0 \\
+            0 & 1 & 3 & | & 0 & 0 & 1 \\
+            0 & 0 & -4 & | & 0 & 1 & -2
+        \end{pmatrix} && -2F_2+F_3\rightarrow F_3 \\
+        &\sim
+        \begin{pmatrix}
+            1 & 1 & 0 & | & 1 & 0 & 0 \\
+            0 & 1 & 3 & | & 0 & 0 & 1 \\
+            0 & 0 & 1 & | & 0 & -\frac{1}{4} & \frac{1}{2}
+        \end{pmatrix} && -\frac{1}{4}F_3\rightarrow F_3 \\
+        &\sim
+        \begin{pmatrix}
+            1 & 1 & 0 & | & 1 & 0 & 0 \\
+            0 & 1 & 0 & | & 0 & \frac{3}{4} & -\frac{1}{2} \\
+            0 & 0 & 1 & | & 0 & -\frac{1}{4} & \frac{1}{2}
+        \end{pmatrix} && -3F_3+F_2\rightarrow F_2 \\
+        &\sim
+        \begin{pmatrix}
+            1 & 0 & 0 & | & 1 & -\frac{3}{4} & \frac{1}{2} \\
+            0 & 1 & 0 & | & 0 & \frac{3}{4} & -\frac{1}{2} \\
+            0 & 0 & 1 & | & 0 & -\frac{1}{4} & \frac{1}{2}
+        \end{pmatrix}
+        && -F_2+F_1\rightarrow F_1.
+    \end{align*}
+    Por lo tanto,
+    \[
+        A^{-1}=\begin{pmatrix}
+            1 & -\frac{3}{4} & \frac{1}{2} \\
+            0 & \frac{3}{4} & -\frac{1}{2} \\
+            0 & -\frac{1}{4} & \frac{1}{2}
+        \end{pmatrix}.\qedhere
+    \]
+\end{respuesta}
+
+\end{preguntas}
+
+\end{document}
