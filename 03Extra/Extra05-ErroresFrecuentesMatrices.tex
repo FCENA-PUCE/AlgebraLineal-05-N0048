@@ -1,0 +1,159 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+\usepackage{systeme}
+
+% -- Datos  
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Ciencia de datos}
+\asignatura{Álgebra lineal}
+\tema{Material extra no. 5: Errores frecuentes - Matrices}
+\autor{Andrés Merino}
+\fecha{Periodo 2026-1}
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+% -- Comandos adicionales
+\setlist[enumerate]{label=\roman*.}
+
+\begin{document}
+
+\encabezado
+
+\section{Resolución de ejercicios sin procedimiento}
+
+\subsection*{Incorrecto:}
+No escribir nada en la resolución:
+\[
+    \begin{pmatrix}
+    x \\ y \\ z
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    -1 & 1 & 1\\
+    6 & -5 & -3\\
+    -2 & 2 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+    2 \\ 4 \\ 1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    3 \\ -11 \\ 5
+    \end{pmatrix}
+\]
+
+\subsection*{Correcto:}
+Dado que la matriz de coeficientes es invertible, la solución está dada por $A^{-1}b$. Entonces:
+\[
+    \begin{pmatrix}
+    x \\ y \\ z
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    -1 & 1 & 1\\
+    6 & -5 & -3\\
+    -2 & 2 & 1
+    \end{pmatrix}
+    \begin{pmatrix}
+    2 \\ 4 \\ 1
+    \end{pmatrix}
+    =
+    \begin{pmatrix}
+    3 \\ -11 \\ 5
+    \end{pmatrix}.
+\]
+Por lo tanto,
+\[
+    x = 3,\quad y = -11,\quad z = 5.
+\]
+
+\section{Operaciones por filas no válidas}
+
+\subsection*{Incorrecto:}
+
+Estas operaciones no corresponden a transformaciones elementales válidas:
+\begin{itemize}
+    \item \(3F_1 + F_2 \to F_3\)
+    \item \(F_1 - 3F_2 \to F_2\)
+    \item \(F_2 - F_2 \to F_2\)
+    \item \(3F_2 \to F_1\)
+\end{itemize}
+
+
+\subsection*{Correcto:}
+
+Las únicas operaciones elementales por filas son:
+\begin{enumerate}
+    \item Intercambio de filas: \(F_i \leftrightarrow F_j\)
+    \item Multiplicación por escalar no nulo: \(cF_i \to F_i\), \(c \neq 0\)
+    \item Suma de múltiplos de filas: \(cF_j + F_i\to F_i\)
+\end{enumerate}
+
+\section{Uso incorrecto de los símbolos}
+
+\subsection*{Incorrecto:}
+Las siguientes matrices no son iguales:
+\[
+\begin{pmatrix}
+1 & 2\\
+3 & 4
+\end{pmatrix}
+=
+\begin{pmatrix}
+1 & 2\\
+0 & -2
+\end{pmatrix}
+\qquad -3F_1 + F_2 \to F_2.
+\]
+
+\subsection*{Correcto:}
+
+Cuando se aplican operaciones por filas, se debe usar $\sim$:
+\[
+\begin{pmatrix}
+1 & 2\\
+3 & 4
+\end{pmatrix}
+\sim
+\begin{pmatrix}
+1 & 2\\
+0 & -2
+\end{pmatrix}
+\qquad -3F_1 + F_2 \to F_2.
+\]
+
+El símbolo \(=\) se usa para igualdad estricta (misma matriz). El símbolo \(\sim\) se usa cuando se tiene equivalencia por filas
+
+\section{Uso incorrecto del símbolo igual}
+
+\subsection*{Incorrecto:}
+
+Colocar igual donde no corresponde, esto es incorrecto porque una matriz no es igual a un escalar.
+\[
+A =
+\begin{pmatrix}
+1 & 2\\
+3 & 4
+\end{pmatrix} = 1\cdot 4 - 2\cdot 3 = -2
+\]
+
+\subsection*{Correcto:}
+Se debe usar la notación correcta:
+\[
+\det(A) =
+\begin{vmatrix}
+1 & 2\\
+3 & 4
+\end{vmatrix}
+= -2
+\]
+
+
+
+\end{document}
