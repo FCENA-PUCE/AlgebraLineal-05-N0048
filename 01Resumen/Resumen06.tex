@@ -1,0 +1,162 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos} 
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Resumen 06: Espacios vectoriales y subespacios vectoriales}
+\autor[A. Merino]{Andrés Merino}
+\fecha{Periodo 2026-1} 
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Espacios vectoriales}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Espacio Vectorial]
+    Dado un campo $\K$, un conjunto no vacío $E$ y dos operaciones
+    \[
+        \funcion{\oplus}{E\times E}{E}{(x,y)}{x\oplus y,}
+        \texty
+        \funcion{\odot}{\K\times E}{E}{(\alpha,x)}{\alpha\odot x}
+    \]
+    llamadas suma y producto, respectivamente; se dice que $(E,\oplus,\odot,\K)$ es un espacio vectorial si cumplen las siguientes propiedades
+    \begin{enumerate}
+    \item \textbf{asociativa de la suma:}
+        para todo $x,y,z\in E$ se tiene que
+        \[
+            (x \oplus y) \oplus z = x \oplus (y \oplus z);
+        \]
+    \item \textbf{conmutativa de la suma:}
+        para todo $x,y\in E$ se tiene que
+        \[
+            x \oplus y = y \oplus x;
+        \]
+    \item \textbf{elemento neutro de la suma:}
+        existe un elemento de $E$, denotado por $0_E$ o simplemente $0$, tal que para todo $x\in E$ se tiene que 
+        \[
+            x \oplus 0 = 0 \oplus x = x;
+        \]
+    \item \textbf{inverso de la suma:}
+        para todo $x\in E$, existe un elemento de $E$, denotado por $-x$, tal que
+        \[
+            x \oplus (-x)= 0;
+        \]
+    \item \textbf{distributiva del producto I:}
+        para todo $x,y\in E$ y todo $\alpha\in \K$ se tiene que
+        \[
+            \alpha\odot (x \oplus y)=\alpha\odot x \oplus \alpha\odot y
+        \]
+    \item \textbf{distributiva del producto II:}
+        para todo $x\in E$ y todo $\alpha,\beta\in \K$ se tiene que
+        \[
+            (\alpha+\beta)\odot x=\alpha\odot x \oplus \beta\odot x;
+        \]
+    \item \textbf{asociativa del producto:}
+        para todo $x\in E$ y todo $\alpha,\beta\in \K$ se tiene que
+        \[
+            (\alpha\beta)\odot x=\alpha\odot(\beta\odot x);
+        \]
+    \item \textbf{elemento neutro del producto:}
+        para todo $x\in E$ se tiene que
+        \[
+            1\odot x=x,
+        \]
+        donde $1\in\K$ es el elemento neutro multiplicativo de $\K$
+    \end{enumerate}
+\end{defi}
+
+\begin{advertencia}
+    Utilizamos los símbolos $\oplus$ y $\odot$ para enfatizar el hecho de que, en general, las operaciones definidas no son la suma y el producto estándar que utilizamos. Si no existe riesgo de confusión, utilizaremos la notación
+    \[
+        x\oplus y = x+y
+        \texty
+        \alpha \odot x = \alpha x
+    \]
+    y diremos que el espacio vectorial es $(E,+,\cdot,\K)$, es más, en caso de que no exista ambigüedad en las operaciones utilizadas se dirá simplemente que $E$ es un espacio vectorial.
+\end{advertencia}
+
+\begin{teo}
+    Los siguientes conjuntos son espacios vectoriales en el campo $\R$:
+    \begin{itemize}
+    \item
+        $\R^n$, con $n\in \N^*$;
+    \item
+        $\Mat[\R]{m}{n}$, con $m,n\in \N^*$;
+    \item
+        $\mathcal{F}(I)=\{\func{f}{I}{\R}: f\text{ es una función}\}$, con $I\subseteq \R$.
+    % \item
+    %     $\mathcal{C}(I)=\{\func{f}{I}{\R}: f\text{ es continua en }I\}$, con $I\subseteq \R$.
+    % \item
+    %     $\mathcal{C}^k(I)=\{\func{f}{I}{\R}: f\text{ es $k$ veces derivable en }I\text{ y }f^{k}\in\mathcal{C}^k(I)\}$, con $I\subseteq \R$.
+    \item
+        $\R_n[x]$ el conjunto de todos los polinomios de grado menor o igual que $n$ en la variable $x$, con $n\in \N$;
+    \end{itemize}
+\end{teo}
+
+\begin{teo}
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial, se tiene que para todo $u \in E$ y todo $\alpha \in \K$, se tiene que
+    \begin{enumerate}
+        \item $0u = 0$;
+        \item $\alpha 0 = 0$;
+        \item si $\alpha u=0$ entonces $\alpha  = 0$ o $u = 0$;
+        \item $(-1) u = -u$.
+    \end{enumerate}
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Subespacios}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}[Subespacio Vectorial]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial y $W \subset E$ un conjunto no vacío de $E$. Si $W$ es un espacio vectorial con respecto a las operaciones de $E$, entonces se dice que $W$ es un subespacio de $E$.
+\end{defi}
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $W$ un subconjunto no vacío de $E$. Entonces $W$ es un subespacio de $E$ si y sólo si se cumplen las siguientes condiciones:
+    \begin{itemize}
+    \item 
+        si $u,v \in W$, entonces $u + v \in W$;
+    \item 
+        si $\alpha \in \K$ y $u \in W$, entonces $\alpha u \in W$.
+    \end{itemize}
+\end{teo}
+
+\begin{defi}[Combinación lineal]
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial, $k\in\N^*$ y $v_1, v_2, \ldots, v_k \in E$. Se dice que un vector $v \in E$ es una combinación lineal de 
+    $v_1, v_2, \ldots, v_k$ si 
+    \[
+        v = \alpha_1 v_1 + \alpha_2 v_2 + \cdots + \alpha_k v_k
+    \]
+    para algunos $\alpha_1, \alpha_2, \ldots, \alpha_k \in \K$.
+\end{defi}
+
+\begin{defi}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S = \{v_1, v_2, \ldots, v_k\} \subset E$. Al conjunto de todos los vectores en $E$ que son combinaciones lineales de los vectores de $S$ se lo llama cápsula de $S$ y se denota por $\spn(S)$, es decir
+    \[
+        \spn(S) = \{\alpha_1 v_1 + \alpha_2 v_2 + \cdots + \alpha_k v_k:\alpha_1, \alpha_2, \ldots, \alpha_k \in \K\}.
+    \]
+\end{defi}
+
+\begin{advertencia}
+    A este conjunto también se lo conoce como \emph{clausura lineal} y su notación viene de su nombre en inglés, \emph{linear span}. También se utiliza la notación $\langle S\rangle$.
+\end{advertencia}
+
+\begin{teo}
+   Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S\subset E$. Se tiene que $\spn(S)$ es un subespacio vectorial de $E$.
+\end{teo}
+
+\end{document}
