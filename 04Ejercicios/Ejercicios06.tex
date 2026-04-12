@@ -1,0 +1,402 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+\usepackage{systeme}
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Ejercicios 06: Espacios vectoriales y subespacios vectoriales}
+\autor[A. Merino]{Andrés Merino}
+\fecha{Periodo 2026-1} 
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado
+
+
+\section{Espacios vectoriales}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Si en $\R^2$ se definen las operaciones
+\[
+(x_1,x_2) + (y_1,y_2) = (x_1+y_1,x_2+y_2) \texty \alpha(x_1,x_2) = (\alpha x_1,x_2)
+\]
+para todo $x,y\in\R^2$ y todo $\alpha\in\R$, ¿es $(\R^2,+,\cdot,\R)$ un espacio vectorial? Indique cuáles son las propiedades de espacio vectorial que se verifican y cuáles no.
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Notemos que la operación «suma» definida en el ejercicio es la suma usual de vectores. Por lo tanto, esta satisface todas las propiedades de la suma. De esta manera, resta verificar las propiedades del producto:
+    \begin{enumerate}
+    \item \textbf{distributiva del producto I:}
+        sean $x,y\in \R^2$ y sea $\alpha\in \R$ se tiene que
+        \begin{align*}
+            \alpha\cdot (x + y) & = \alpha (x_1+y_1 , x_2 + y_2) \\
+                & = (\alpha x_1 + \alpha y_1 , x_2 + y_2 ) \\
+                & = (\alpha x_1,x_2) + (\alpha y_1,y_2) \\
+                & = \alpha x + \alpha y.
+        \end{align*}
+        Por lo tanto, se satisface la propiedad.
+    \item \textbf{distributiva del producto II:}
+        si la propiedad fuera cierta, entonces para todo $x\in \R^2$ y todo $\alpha,\beta\in \R$ se tendría que
+        \[
+            (\alpha+\beta)\cdot x=\alpha\cdot x + \beta\cdot x.
+        \]
+        Así, para $x=(0,1)\in\R^2$ y $\alpha=\beta=1$, se tiene que 
+        \[
+            (1 + 1)(0,1) = 2(0,1) = (0,1);
+        \]
+        pero, por otro lado 
+        \[
+            1 (0,1) + 1(0,1) = (0,1)+(0,1) = (0,2).
+        \]
+        De esta manera, por la propiedad distributiva del producto II, se tendría que 
+        \[
+            (0,1) = (0,2).
+        \]
+        Pero esto no es cierto, por lo tanto la propiedad no se cumple. 
+        
+    \item \textbf{asociativa del producto:}
+        sea $x\in \R^2$ y sean $\alpha,\beta\in \R$ se tiene que
+        \begin{align*}
+            (\alpha\beta)\cdot x & = (\alpha\beta)\cdot (x_1,x_2) \\
+                & = ((\alpha\beta) x_1,x_2)\\
+                & = (\alpha \beta x_1, x_2) \\
+                & = \alpha ( \beta x_1,x_2 ).
+        \end{align*}
+        Por lo tanto, se satisface la propiedad.
+    \item \textbf{elemento neutro del producto:}
+        sea $x\in \R^2$ se tiene que
+        \begin{align*}
+            1\cdot x & =1 \cdot (x_1,x_2) \\
+                & = (x_1,x_2) \\
+                & = x.
+        \end{align*}
+        Por lo tanto, se satisface la propiedad.
+    \end{enumerate}
+    De esta manera, como $(\R^2,+,\cdot,\R)$ no cumple la propiedad \emph{distributiva del producto II}, entonces no es un espacio vectorial.
+    % \comentario{Resolver}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Si en $\R^2$ se definen las operaciones
+\[
+(x_1,x_2) + (y_1,y_2) = (x_1+y_1,0) \texty \alpha(x_1,x_2) = (\alpha x_1,0)
+\]
+para todo $x,y\in\R^2$ y todo $\alpha\in\R$, ¿es $(\R^2,+,\cdot,\R)$ un espacio vectorial? Indique cuáles son las propiedades de espacio vectorial que se verifican y cuáles no.
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Para determinar si $(\R^2,+,\cdot,\R)$ es un espacio vectorial con las operaciones definidas, verifiquemos cada una de las propiedades:
+    \begin{enumerate}
+    \item \textbf{asociativa de la suma:}
+        sean $x,y,z\in \R^2$ se tiene que
+        \begin{align*}
+             (x + y) + z & = ( (x_1,x_2)+(y_1,y_2)) + (z_1,z_2) \\
+             & = (x_1+y_1,0) + (z_1,z_2) \\
+             & = (x_1+y_1+z_1,0) \\
+             & = ((x_1+y_1)+z_1,0) && \mbox{La suma en el campo es asociativa} \\
+             & = (x_1+y_1,0) + (z_1,z_2) \\
+             & = (x_1,x_2) + (y_1,y_2) + (z_1,z_2) \\
+             & = x+y+z.
+        \end{align*}
+        Por lo tanto, se cumple la propiedad. 
+    \item \textbf{conmutativa de la suma:}
+        sean $x,y\in \R^2$ se tiene que
+        \begin{align*}
+            x + y & = (x_1,x_2) + (y_1,y_2) \\
+                & = (x_1 + y_1, 0 ) \\
+                & = (y_1 + x_1, 0)  && \mbox{La suma en el campo es conmutativa}\\
+                & = (y_1,y_2) + (x_1,x_2) \\
+                & = y + x.
+        \end{align*}
+        Por lo tanto, se cumple la propiedad.
+    \item \textbf{elemento neutro de la suma:}
+    supongamos que existe un elemento notado $e\in\R^2$ tal que para todo $x\in E$ se tiene que 
+    \[
+        x + e = e + x = x.
+    \]
+    Así, para $x=(0,1)$, se tiene que 
+    \[
+        x + e = (0,1) + (e_1,e_2) = (e_1,0) = (0,1) = x,
+    \]
+    de donde se sigue que 
+    \[
+        0 = 1.
+    \]
+    Pero esto no es posible, por lo tanto no existe un elemento neutro para la suma.
+    \item \textbf{inverso de la suma:}
+        Puesto que no existe un elemento neutro para la suma, por la propiedad anterior, entonces no es posible encontrar un inverso para la suma. 
+    \item \textbf{distributiva del producto I:}
+        sean $x,y\in \R^2$ y sea $\alpha\in \R$ se tiene que
+        \begin{align*}
+            \alpha (x+y) & = \alpha ((x_1,x_2)+(y_1,y_2)) \\
+            & = \alpha (x_1+y_1,0)\\
+            & = (\alpha(x_1+y_1),0) \\
+            & = (\alpha x_1 + \alpha y_1,0)\\
+            & = (\alpha x_1,0) + (\alpha y_1,0)\\
+            & = \alpha(x_1,x_2) + \alpha (y_1,y_2)\\
+            & = \alpha x + \alpha y.
+        \end{align*}
+        Por lo tanto, se cumple la propiedad
+    \item \textbf{distributiva del producto II:}
+        sea $x\in \R^2$ y sean $\alpha,\beta\in \R$ se tiene que
+        \begin{align*}
+            (\alpha + \beta) x & = (\alpha + \beta) (x_1,x_2)\\
+            & = ((\alpha + \beta) x_1,0)\\
+            & = (\alpha x_1 + \beta x_1,0)\\
+            & = (\alpha x_1,0) + (\beta x_1,0)\\
+            & = \alpha(x_1,x_2) + \beta (x_1,x_2)\\
+            & = \alpha x + \beta x.
+        \end{align*}
+        Por lo tanto, se cumple la propiedad.
+    \item \textbf{asociativa del producto:}
+        sea $x\in \R^2$ y sean $\alpha,\beta\in \R$ se tiene que
+        \begin{align*}
+            \alpha (\beta x) & = \alpha (\beta (x_1,x_2)) \\
+                & = \alpha (\beta x_1,0)\\
+                & = (\alpha \beta x_1,0)\\
+                & = ((\alpha \beta) x_1,0)\\
+                & = (\alpha \beta)(x_1,x_2)\\
+                & = (\alpha \beta) x.
+        \end{align*}
+        Por lo tanto, se cumple la propiedad. 
+    \item \textbf{elemento neutro del producto:} supongamos que la propiedad se cumple, así para $x=(0,1)$ notemos que 
+    \[
+        (0,1) = 1(0,1) = (0,0).
+    \]
+    Lo cual no es posible, por lo tanto no se cumple la propiedad del \emph{elemento neutro del producto}.
+    \end{enumerate}
+    De esta manera, como $(\R^2,+,\cdot,\R)$ no satisface todas las propiedades requeridas, entonces no es un espacio vectorial. \qedhere
+    
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}\label{ejer:12}
+    ¿Es $W$ subespacio vectorial del espacio vectorial $(\mathbb{R}^2, + , \cdot, \mathbb{R})$? Siendo:
+\begin{enumerate}
+    \item $W = \{(x_1, x_2) \in \mathbb{R}^2 \,:\, \, 2x_1 + x_2 = 0\}$
+    
+    \item $W = \{(x_1, x_2) \in \mathbb{R}^2 \,:\, \, x_1x_2 = 1\}$
+\end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Para demostrar que $W$ es un subespacio vectorial basta probar que $0\in W$ y que, si $u,v\in W$ y $\alpha,\beta\in\R$, entonces $\alpha u+\beta v\in W$.
+
+    Utilicemos esto en cada caso:
+    \begin{enumerate}
+        \item 
+        Para el primer literal:
+        % Para demostrar que es un subespacio vectorial, basta probar que:
+        \begin{enumerate}
+            \item Notemos que $0 = (0,0)$, entonces
+                \[
+                    2 (0) + (0) = 0.
+                \]
+                Por lo tanto, $0\in W$.
+                \item Sean $u,v\in W$ y sean $\alpha,\beta \in \R$. Mostremos que $\alpha u + \beta v \in W$. En efecto, por hipótesis se tiene que
+                \begin{equation}\label{ej:12.1}
+                    2 u_1 + u_2 = 0, \qquad 2 v_1 + v_2 = 0
+                \end{equation}
+                luego,
+                \[
+                    \alpha u + \beta v  = \alpha (u_1,u_2) + \beta (v_1,v_2) \\
+                     = (\alpha u_1 + \beta v_1, \alpha u_2 + \beta v_2).
+                \]
+                de donde, usando \eqref{ej:12.1} se sigue que 
+                \begin{align*}
+                    2(\alpha u_1 + \beta v_1) + (\alpha u_2 + \beta v_2) 
+                    &= \alpha( 2 u_1 + u_2) + \beta( 2 v_1 + v_2) \\
+                    &= \alpha( 0 ) + \beta( 0 ) \\
+                    &= 0.
+                \end{align*}
+                Es decir, $\alpha u + \beta v\in W$, como se quería.
+        \end{enumerate}
+        Por lo tanto, $W$ es subespacio vectorial de $\R^2$. 
+    \item 
+        Para el segundo literal, notemos que 
+        $0 \notin W$,  puesto que como $0 = (0,0)$, entonces
+        \[
+            0\cdot 0 = 0 \neq 1.
+        \]
+        Por lo tanto, $W$ no es un subespacio vectorial de $\R^2$. \qedhere
+    \end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    ¿Es $W$ subespacio vectorial del espacio vectorial $(\mathbb{R}^3, + , \cdot, \mathbb{R})$? Siendo:
+\begin{enumerate}
+\item $W = \{(x_1, x_2, x_3) \in \mathbb{R}^3 \,:\, \, |x_1| + |x_2| = x_3\}$
+\item $W = \{(x_1, x_2, x_3) \in \mathbb{R}^3 \,:\, \, x_1 + x_2 \geq x_3\}$
+\item $W = \{(x_1, x_2, x_3) \in \mathbb{R}^3 \,:\, \, x_1^2 = x_2 \}$
+\end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Para la solución del ejercicio, aplicamos el mismo esquema utilizado para el Ejercicio~\ref{ejer:12}.
+
+    \begin{enumerate}
+        \item Tomemos $x=(1,1,2)$ y $\alpha=-1$, notemos que $x\in W$ pues 
+        \[
+            |1|+|1| = 2.
+        \]
+        No obstante, se tiene que 
+        \[
+            \alpha x = -1(1,1,2) = (-1,-1,-2)
+        \]
+        de donde
+        \[
+            |-1|+|-1| = 2 \neq -2.
+        \]
+        Es decir, $\alpha x\notin W$ y por lo tanto $W$ no es un subespacio vectorial.
+        
+        \item Tomemos $x=(1,0,0)$ y $\alpha = -1$, notemos que $x\in W$ pues 
+        \[
+            1 + 0 \geq 0.
+        \]
+        No obstante, se tiene que 
+        \[
+            \alpha x = -1 (1,0,0) = (-1,0,0)
+        \]
+        de donde
+        \[
+            -1 + 0 \not\geq 0.
+        \]
+        Es decir, $\alpha x\notin W$ y por lo tanto $W$ no es un subespacio vectorial.
+    \item 
+        Tomemos $x=(1,1,0)$ y $\alpha=2$, notemos que $x\in W$ pues   
+        \[
+            1^2 = 1.
+        \]
+        No obstante, se tiene que 
+        \[
+            \alpha x = 2(1,1,0) = (2,2,0),
+        \]
+        de donde como 
+        \[
+            2^2 \neq 2,
+        \]
+        entonces $\alpha x\notin W$ y, por lo tanto $W$ no es un subespacio vectorial. \qedhere
+    \end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    ¿Es $W$ subespacio vectorial del espacio vectorial $(\R_2[x], + , \cdot, \mathbb{R})$? Siendo: 
+    \[W = \{ a + bx + cx^2 \in \R_2[x]\,:\, \, b + c = a - 2 \}.\]
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Para que $W$ sea un subespacio vectorial de $\R_2[x]$, se necesita que $0\in W$, donde el $0$ corresponde al polinomio nulo, es decir, el polinomio cuyos coeficientes son cero. Así, se tendría que $a=b=c=0$ y por lo tanto como
+    \[
+         0 \neq -2,
+    \]
+    entonces $0\notin W$ y así $W$ no es un subespacio vectorial. 
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    ¿Es $W$ subespacio vectorial del espacio vectorial $(\R^3, + , \cdot, \R)$? Siendo:
+    \[
+    W = \{(x_1,x_2,x_3)\in\R^3 : x_1+x_2+x_3=0\}.
+    \]
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Para demostrar que $W$ es un subespacio vectorial basta probar que $0\in W$ y que, si $u,v\in W$ y $\alpha,\beta\in\R$, entonces $\alpha u+\beta v\in W$.
+
+    En efecto, como $0=(0,0,0)$, se tiene que
+    \[
+        0+0+0=0,
+    \]
+    luego $0\in W$.
+
+    Ahora, sean $u=(u_1,u_2,u_3)$ y $v=(v_1,v_2,v_3)$ elementos de $W$. Entonces
+    \[
+        u_1+u_2+u_3=0
+        \texty
+        v_1+v_2+v_3=0.
+    \]
+    Si $\alpha,\beta\in\R$, se tiene que
+    \[
+        \alpha u+\beta v=(\alpha u_1+\beta v_1,\,\alpha u_2+\beta v_2,\,\alpha u_3+\beta v_3),
+    \]
+    y por tanto
+    \[
+        (\alpha u_1+\beta v_1)+(\alpha u_2+\beta v_2)+(\alpha u_3+\beta v_3)
+        =\alpha(u_1+u_2+u_3)+\beta(v_1+v_2+v_3)=0.
+    \]
+    Así, $\alpha u+\beta v\in W$ y, por lo tanto, $W$ es un subespacio vectorial de $\R^3$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    ¿Es $W$ subespacio vectorial del espacio vectorial $(\R^3, + , \cdot, \R)$? Siendo:
+    \[
+    W = \{(x_1,x_2,x_3)\in\R^3 : x_1^2+x_2^2=x_3^2\}.
+    \]
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Tomemos $u=(1,0,1)$ y $v=(0,1,1)$. Se verifica que $u\in W$ porque $1^2+0^2=1^2$, y también $v\in W$ porque $0^2+1^2=1^2$.
+
+    Sin embargo,
+    \[
+        u+v=(1,1,2),
+    \]
+    y se tiene que
+    \[
+        1^2+1^2=2\neq 4=2^2.
+    \]
+    Por lo tanto, $u+v\notin W$ y así $W$ no es un subespacio vectorial de $\R^3$.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    ¿Es $W$ subespacio vectorial del espacio vectorial $(\R_2[x], + , \cdot, \mathbb{R})$? Siendo:
+    \[
+    W = \{a+bx+cx^2\in\R_2[x]: a+b+c=0\}.
+    \]
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Para demostrar que $W$ es un subespacio vectorial de $\R_2[x]$, basta probar que $0\in W$ y que es cerrado bajo combinaciones lineales.
+
+    El polinomio nulo corresponde a $a=b=c=0$, y entonces
+    \[
+        a+b+c=0,
+    \]
+    así que $0\in W$.
+
+    Ahora, si $p=a+bx+cx^2$ y $q=d+ex+fx^2$ pertenecen a $W$, entonces
+    \[
+        a+b+c=0
+        \texty
+        d+e+f=0.
+    \]
+    Para $\alpha,\beta\in\R$, se tiene que
+    \[
+        \alpha p+\beta q=(\alpha a+\beta d)+(\alpha b+\beta e)x+(\alpha c+\beta f)x^2,
+    \]
+    y la suma de sus coeficientes es
+    \[
+        (\alpha a+\beta d)+(\alpha b+\beta e)+(\alpha c+\beta f)
+        =\alpha(a+b+c)+\beta(d+e+f)=0.
+    \]
+    Por lo tanto, $\alpha p+\beta q\in W$ y, en consecuencia, $W$ es un subespacio vectorial de $\R_2[x]$.
+\end{proof}
+
+
+\end{document}
