@@ -16,12 +16,6 @@
     <a href="https://github.com/ECFM-PUCE/AlgebraLineal-05-N0048/issues">Reportar un Problema</a>
     ·
     <a href="https://github.com/ECFM-PUCE/AlgebraLineal-05-N0048/issues">Solicitar cambio</a>
-    <br />
-    Abrir en 
-    <br />
-    <a href="https://www.overleaf.com/read/fqdzbzkfkjsq#a066bd">
-    <img src="https://img.shields.io/badge/Overleaf-47A141?logo=overleaf&logoColor=fff&style=for-the-badge" alt="Overleaf Badge">
-    </a>
   </p>
 </div>
 
