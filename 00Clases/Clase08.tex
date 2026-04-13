@@ -1,0 +1,114 @@
+\documentclass[a4,11pt]{aleph-notas}
+% Se puede ver la documentación aquí:
+% https://github.com/alephsub0/LaTeX_aleph-notas
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{url}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\hypersetup{
+    urlcolor=blue,
+    linkcolor=blue,
+}
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Clase 08: Coordenadas y cambio de base}
+\autor{Andrés Merino}
+\fecha{Periodo 2026-01}
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Resultado de Aprendizaje}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{RdA de la asignatura:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{RdA 1:} Comprender los conceptos fundamentales del Álgebra Lineal, incluyendo el estudio de matrices, determinantes, sistemas de ecuaciones lineales y espacios vectoriales, destacando su importancia en el análisis y resolución de problemas matemáticos.
+    \item \textbf{RdA 2:} Resolver problemas prácticos y teóricos relacionados con el Álgebra Lineal, utilizando técnicas de cálculo con matrices, determinantes y sistemas de ecuaciones, así como en el análisis de espacios vectoriales.    
+    % \item \textbf{RdA 3:} Aplicar los principios y métodos del Álgebra Lineal en una variedad de contextos demostrando comprensión de su relevancia y utilidad en situaciones prácticas y teóricas.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{RdA de la actividad:}
+\begin{itemize}[leftmargin=*]
+    \item Calcular el vector de componentes de un vector respecto de una base ordenada.
+    \item Construir y utilizar matrices de cambio de base entre dos bases ordenadas.
+    \item Relacionar la matriz de cambio de base con su inversa para convertir coordenadas en ambos sentidos.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Introducción}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Control de lectura:}
+Antes de iniciar la clase, se aplicará el control de lectura del siguiente enlace:
+\href{https://gemini.google.com/share/1a9869cf847a}{Control de lectura - Clase 08}.
+
+\paragraph{Pregunta inicial:}
+¿Cómo podemos hacer «traducciones» entre diferentes formas de representar un mismo vector en un espacio vectorial? 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Desarrollo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Actividad 1: Coordenadas y cambio de base}
+
+La clase inicia con una recuperación breve de base y dimensión. Luego, mediante clase magistral y práctica guiada, se introduce la noción de base ordenada, vector de componentes y matriz de cambio de base. Finalmente, se trabaja la conversión de coordenadas entre bases y la relación
+\[
+    (P_{S\gets T})^{-1}=P_{T\gets S}.
+\]
+
+\paragraph{¿Cómo lo haremos?}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Clase magistral:} se presentan las definiciones de base ordenada, vector de componentes y matriz de cambio de base. Se usan ejemplos en $\mathbb{R}^2$, $\mathbb{R}^3$ y espacios de polinomios. Se usa el resumen \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/01Resumen/Resumen08.pdf}{Resumen08.pdf}.
+    \item \textbf{Resolución de ejercicios:} se guiará a los estudiantes en problemas de cálculo de coordenadas y de construcción de matrices de cambio de base para transformar $[v]_T$ en $[v]_S$ y viceversa. Se puede usar el documento \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/03Extras/Extra04-CambioBase.pdf}{Extra04-CambioBase.pdf}.
+    \item \textbf{Recomendaciones de lectura:} 
+    \begin{itemize}
+        \item \href{https://blog.nekomath.com/algebra-lineal-i-matrices-de-cambio-de-base/}{Matrices de cambio de base}
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Verificación de aprendizaje:}
+\begin{enumerate}[leftmargin=*]
+    \item ¿Cómo se calcula $[u]_B$ cuando se conoce una base ordenada $B$?
+    \item ¿Qué información codifica la matriz $P_{S\gets T}$?
+    \item ¿Por qué $(P_{S\gets T})^{-1}=P_{T\gets S}$?
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Cierre}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Tarea:}
+Resolver del libro \href{https://catalogobiblioteca.puce.edu.ec/cgi-bin/koha/opac-detail.pl?biblionumber=86081}{Fundamentos de álgebra lineal de Larson}: sección 4.7, ejercicios: 5, 7, 9, 17, 22, 24, 39, 41.
+
+\paragraph{Pregunta de investigación:}
+\begin{enumerate}[leftmargin=*]
+    \item ¿Qué criterios permiten elegir una base que simplifique el cálculo en un problema aplicado?
+    \item ¿Cómo se interpreta geométricamente un cambio de base en $\mathbb{R}^2$ y $\mathbb{R}^3$?
+    \item ¿En qué contextos de ingeniería y ciencia de datos se usan cambios de base de manera natural?
+\end{enumerate}
+
+\paragraph{Para la próxima clase:}  
+Visualizar el video \href{https://youtu.be/YJfS4_m_0Z8?si=kFS74G3kXhWGWq4L}{Transformaciones lineales}.
+Realizar la actividad de clase invertida: \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/07Act-ClaseInvertida/03ClsInv-AplicacionLineal.pdf}{03ClsInv-AplicacionLineal.pdf}.
+
+
+\end{document}

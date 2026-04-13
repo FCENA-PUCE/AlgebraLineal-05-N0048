@@ -1,0 +1,79 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos} 
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Resumen 08: Coordenadas y cambio de base}
+\autor[A. Merino]{Andrés Merino}
+\fecha{Periodo 2026-1} 
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Componentes y Cambio de base}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+En esta sección, asumiremos $n\in\N^*$.
+
+\begin{defi}[Base ordenada]
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial tal que $\dim(E)=n$ y $B\subseteq E$ una base de $E$. Si fijamos un orden en los vectores de $B$, obteniendo
+    \[
+        B=(v_1,v_2,\ldots,v_n),
+    \]
+    se dice que $B$ es una base ordenada.
+\end{defi}
+
+\begin{defi}[Vector de componentes]
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y 
+    \[
+        B=(v_1,v_2,\ldots,v_n)
+    \]
+    una base ordenada. Para $u\in E$, se define el vector de componentes de $u$ por
+    \[
+        [u]_B = \begin{pmatrix}
+            \alpha_1\\\alpha_2\\\vdots\\\alpha_n
+        \end{pmatrix}
+    \]
+    donde $\alpha_1,\alpha_2,\ldots,\alpha_n\in\K$ son tales que
+    \[
+        u = \alpha_1 v_1+\alpha_2 v_2+\cdots+\alpha_n v_n.
+    \]
+\end{defi}
+
+\begin{advertencia}
+    En la literatura, también se puede encontrar la definición anterior bajo el nombre de vector de coordenadas.
+\end{advertencia}
+
+\begin{defi}[Matriz de cambio de base]
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial tal que $\dim(E)=n$ y $S,T$ bases ordenadas de $E$. Se llama matriz de cambio de base de $T$ a $S$ a la única matriz de $\Mat[\K]{n}{n}$, denotada por $P_{S\gets T}$, que cumple que
+    \[
+        [v]_S = P_{S\gets T} [v]_T
+    \]
+    para todo $v\in E$.
+\end{defi}
+
+\begin{advertencia}
+    En la literatura, también se puede encontrar la definición anterior bajo el nombre de matriz de transición.
+\end{advertencia}
+
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial tal que $\dim(E)=n$, $S,T$ bases ordenadas de $E$ y $P_{S\gets T}$ la matriz de cambio de base de $T$ a $S$. Se tiene que $P_{S\gets T}$ es no singular y
+    \[
+        (P_{S\gets T})^{-1} = P_{T\gets S}.
+    \]
+\end{teo}
+
+\end{document}
