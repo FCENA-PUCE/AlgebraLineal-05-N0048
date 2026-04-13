@@ -1,0 +1,305 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+\usepackage{systeme}
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Ejercicios 09: Espacios con producto interno}
+\autor[A. Merino]{Andrés Merino}
+\fecha{Periodo 2026-1} 
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Espacios con producto interno}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En cada espacio vectorial $V$ utilice el proceso de Gram-Schmidt para transformar la base $B$ de $V$ en (a) una base ortogonal; (b) una base ortonormal.
+    \begin{enumerate}
+        \item En $V=\R^{2}$ con $B=\{(1, 2), (-3, 4)\}$.
+        \item En $V=\R^{3}$ con $B=\{(1, 1, 1), (0, 1, 1), (1, 2, 3)\}$.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+    \item Sean $u_{1} = (1, 2)$ y $u_{2} = (-3, 4)$, vamos a determinar la base ortogonal $B_{1}=\{v_{1}, v_{2}\}$, para hacerlo utilizamos el proceso de Gram-Schmidt.
+    \begin{itemize}
+        \item Para determinar $v_{1}$: 
+        \[
+            v_{1} = u_{1} = (1, 2).
+        \]
+        \item Para determinar $v_{2}$:
+        \begin{align*}
+            v_{2} &= u_{2} - \dfrac{u_{2} \cdot v_{1}}{v_{1} \cdot v_{1}}v_{1}\\
+                  &= (-3, 4) - \dfrac{(-3, 4) \cdot (1, 2)}{(1, 2) \cdot (1, 2)}(1, 2)\\
+                  &= (-3, 4) - (1, 2)\\
+                  &= (-4, 2).
+        \end{align*}
+    \end{itemize}
+    Vamos a determinar ahora la correspondiente base ortonormal $B_{2}=\{w_{1}, w_{2}\}$. Para esto, notemos que
+    \begin{align*}
+        w_{1} &= \dfrac{1}{\|v_{1}\|}v_{1} = \dfrac{1}{\sqrt{5}}(1, 2).\\
+        w_{2} &= \dfrac{1}{\|v_{2}\|}v_{2} = \dfrac{1}{2\sqrt{5}}(-4, 2).
+    \end{align*}
+    Por lo tanto, $B_{2}=\left\{\left(\dfrac{\sqrt{5}}{5}, \dfrac{2\sqrt{5}}{5}\right), \left(-\dfrac{2\sqrt{5}}{5}, \dfrac{\sqrt{5}}{5}\right)\right\}$.
+    \item Verifique que la base ortogonal es
+    \[
+        B_{1} = \{(1, 1, 1), (-2, 1, 1), (0, -1, 1)\}
+    \]
+    y que la base ortonormal es
+    \[
+        B_{2} = \left\{\left(\dfrac{\sqrt{3}}{3}, \dfrac{\sqrt{3}}{3}, \dfrac{\sqrt{3}}{3}\right), \left(-\dfrac{\sqrt{6}}{3}, \dfrac{\sqrt{6}}{6}, \dfrac{\sqrt{6}}{6}\right), \left(0, -\dfrac{\sqrt{2}}{2}, \dfrac{\sqrt{2}}{2}\right)\right\}. \qedhere
+    \]
+\end{enumerate}
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En cada caso, calcule el producto interno indicado.
+    \begin{enumerate}
+        \item En $\R^4$ con el producto interno usual:
+        \[
+            x=(1,-2,0,3),\quad y=(4,1,-5,2).
+        \]
+        \item En $\Mat[\R]{2}{2}$ con
+        \[
+            \langle A,B\rangle = \tr(AB^\intercal),
+        \]
+        para
+        \[
+            A=\begin{pmatrix}1&2\\-1&0\end{pmatrix},\quad
+            B=\begin{pmatrix}3&-1\\4&2\end{pmatrix}.
+        \]
+        \item En $\R_2[x]$ con
+        \[
+            \langle p,q\rangle = a_0b_0+a_1b_1+a_2b_2,
+        \]
+        donde
+        \[
+            p(x)=2-x+3x^2,\quad q(x)=1+4x-x^2.
+        \]
+        \item En $\mathcal{C}([0,1])$ con
+        \[
+            \langle f,g\rangle = \int_0^1 f(x)g(x)\,dx,
+        \]
+        para $f(x)=x$ y $g(x)=1-x^2$.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+        \item Usando el producto usual
+        \[
+            \langle x,y\rangle = (1)(4)+(-2)(1)+(0)(-5)+(3)(2)=8.
+        \]
+        \item Usando $\langle A,B\rangle=\tr(AB^\intercal)$:
+        \[
+            B^\intercal=\begin{pmatrix}3&4\\-1&2\end{pmatrix},
+            \qquad
+            AB^\intercal=
+            \begin{pmatrix}1&2\\-1&0\end{pmatrix}
+            \begin{pmatrix}3&4\\-1&2\end{pmatrix}
+            =\begin{pmatrix}1&8\\-3&-4\end{pmatrix}.
+        \]
+        Por tanto,
+        \[
+            \langle A,B\rangle=\tr(AB^\intercal)=1+(-4)=-3.
+        \]
+        \item Tenemos
+        \[
+            \langle p,q\rangle = 2\cdot 1 + (-1)\cdot 4 + 3\cdot(-1) = -5.
+        \]
+        \item Calculando la integral:
+        \[
+            \langle f,g\rangle=\int_0^1 x(1-x^2)\,dx
+            =\int_0^1(x-x^3)\,dx
+            =\left.\left(\frac{x^2}{2}-\frac{x^4}{4}\right)\right|_0^1
+            =\frac14.
+        \]
+    \end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Determine si los pares de vectores son ortogonales en el espacio con producto interno dado.
+    \begin{enumerate}
+        \item En $\R^3$ (producto interno usual):
+        \[
+            u=(1,-1,2),\quad v=(2,1,0).
+        \]
+        \item En $\R_3[x]$ con
+        \[
+            \langle p,q\rangle = a_0b_0+a_1b_1+a_2b_2+a_3b_3,
+        \]
+        para
+        \[
+            p(x)=1+2x-x^2,\quad q(x)=2-x+2x^2.
+        \]
+        \item En $\mathcal{C}([-1,1])$ con
+        \[
+            \langle f,g\rangle = \int_{-1}^1 f(x)g(x)\,dx,
+        \]
+        para $f(x)=x$ y $g(x)=1+x^2$.
+        \item En $\mathcal{C}([0,\pi])$ con
+        \[
+            \langle f,g\rangle = \int_0^{\pi} f(x)g(x)\,dx,
+        \]
+        para $f(x)=\sen x$ y $g(x)=\cos x$.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+        \item Usando el producto usual
+        \[
+            \langle u,v\rangle=(1)(2)+(-1)(1)+(2)(0)=1\neq 0.
+        \]
+        No son ortogonales.
+        \item Calculando el producto interno:
+        \[
+            \langle p,q\rangle = 1\cdot2 + 2\cdot(-1) + (-1)\cdot2 + 0\cdot0 = -2\neq 0.
+        \]
+        No son ortogonales.
+        \item Calculando el producto interno:
+        \[
+            \langle f,g\rangle=\int_{-1}^1 x(1+x^2)\,dx=\int_{-1}^1(x+x^3)\,dx=0,
+        \]
+        porque el integrando es impar en un intervalo simétrico. Son ortogonales.
+        \item Calculando el producto interno:
+        \[
+            \langle f,g\rangle=\int_0^{\pi}\sen x\cos x\,dx
+            =\frac12\int_0^{\pi}\sen(2x)\,dx
+            =0.
+        \]
+        Son ortogonales.
+    \end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Sea $W=\gen\{(1,1,0),(1,0,1)\}\subseteq \R^3$ con producto interno usual.
+    \begin{enumerate}
+        \item Determine una base de $W^\perp$.
+        \item Para $v=(2,-1,3)$, calcule $\proy_W(v)$ y $\proy_{W^\perp}(v)$.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Sea $a=(1,1,0)$ y $b=(1,0,1)$.
+    \begin{enumerate}
+        \item Si $x=(x_1,x_2,x_3)\in W^\perp$, entonces
+        \[
+            x\cdot a=x_1+x_2=0,
+            \qquad
+            x\cdot b=x_1+x_3=0.
+        \]
+        De aquí, $x_2=-x_1$ y $x_3=-x_1$, luego
+        \[
+            x=t(1,-1,-1),\quad t\in\R.
+        \]
+        Por tanto,
+        \[
+            W^\perp=\gen\{(1,-1,-1)\}.
+        \]
+        \item Sea $n=(1,-1,-1)$, base de $W^\perp$. Para $v=(2,-1,3)$:
+        \[
+            \proy_{W^\perp}(v)=\frac{v\cdot n}{n\cdot n}\,n
+            =\frac{2+1-3}{3}n=(0,0,0).
+        \]
+        Luego,
+        \[
+            \proy_W(v)=v-\proy_{W^\perp}(v)=(2,-1,3).
+        \]
+    \end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Sea $W=\gen\{(1,2,2)\}\subseteq \R^3$ con producto interno usual y sea $v=(3,0,1)$.
+    \begin{enumerate}
+        \item Encuentre el vector de $W$ más cercano a $v$.
+        \item Calcule la distancia de $v$ a $W$.
+        \item Verifique el resultado usando el teorema de la proyección.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Sea $u=(1,2,2)$, de modo que $W=\gen\{u\}$.
+    \begin{enumerate}
+        \item El vector de $W$ más cercano a $v$ es $\proy_W(v)$:
+        \[
+            \proy_W(v)=\frac{v\cdot u}{u\cdot u}\,u
+            =\frac{5}{9}(1,2,2)
+            =\left(\frac59,\frac{10}9,\frac{10}9\right).
+        \]
+        \item La distancia es
+        \[
+            d(v,W)=\|v-\proy_W(v)\|
+            =\left\|\left(\frac{22}9,-\frac{10}9,-\frac19\right)\right\|.
+        \]
+        Entonces
+        \[
+            d(v,W)=\sqrt{\frac{484+100+1}{81}}=\sqrt{\frac{65}{9}}=\frac{\sqrt{65}}{3}.
+        \]
+        \item Si $r=v-\proy_W(v)$, se cumple
+        \[
+            r\cdot u=\frac{22}9-2\cdot\frac{10}9-2\cdot\frac19=0,
+        \]
+        así que $r\in W^\perp$. Por el teorema de la proyección,
+        \[
+            v=\proy_W(v)+r,
+        \]
+        y por tanto $\proy_W(v)$ es el punto de $W$ más cercano a $v$.
+    \end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En un espacio con producto interno, suponga que $u,v\in E$ son ortogonales.
+    \begin{enumerate}
+        \item Demuestre que $\|u+v\|^2=\|u\|^2+\|v\|^2$.
+        \item Aplique el resultado para $u=(2,-1,0)$ y $v=(1,2,0)$ en $\R^3$.
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+        \item Si $\langle u,v\rangle=0$, entonces
+        \[
+            \|u+v\|^2=\langle u+v,u+v\rangle
+            =\langle u,u\rangle+\langle u,v\rangle+\langle v,u\rangle+\langle v,v\rangle
+            =\|u\|^2+\|v\|^2.
+        \]
+        \item Para $u=(2,-1,0)$ y $v=(1,2,0)$:
+        \[
+            u\cdot v=2-2+0=0,
+        \]
+        luego son ortogonales. Además,
+        \[
+            \|u+v\|^2=\|(3,1,0)\|^2=10,
+            \qquad
+            \|u\|^2+\|v\|^2=5+5=10.
+        \]
+        Se verifica Pitágoras.
+    \end{enumerate}
+\end{proof}
+
+
+\end{document}
