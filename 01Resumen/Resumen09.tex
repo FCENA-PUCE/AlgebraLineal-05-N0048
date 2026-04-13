@@ -1,0 +1,368 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos} 
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Resumen 09: Espacios con producto interno}
+\autor[A. Merino]{Andrés Merino}
+\fecha{Periodo 2026-1} 
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado
+
+\section{Espacios con producto interno}
+
+\begin{defi}[Producto interno]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial. Un producto interno sobre $E$ es una función
+    \[
+        \funcion{\langle \cdot, \cdot \rangle}{E\times E}{\K}{(u,v)}{\langle u, v \rangle}
+    \]
+    tal que cumple:
+    \begin{enumerate}
+        \item 
+            $\langle v, v \rangle \geq 0$ para todo $ v \in E$;
+        \item 
+            $\langle v,v \rangle = 0$ si y solo si $ v = 0$;
+        \item 
+            $\langle u + v, w \rangle = \langle u,w \rangle + \langle v,w\rangle $ para todo $u,v,w \in E$;
+        \item
+            $\langle \alpha v,w \rangle = \alpha \langle v,w \rangle$ para todo $v,w \in E$ y $\alpha\in\K$.
+        \item
+            $\langle v,w \rangle = \overline{\langle w, v \rangle}$ para todo $v,w \in E$.
+    \end{enumerate}
+\end{defi}
+
+
+\begin{advertencia}
+    Otra notación para el producto interno es
+    \[
+        \langle u , v \rangle
+        = (u|v).
+    \]
+\end{advertencia}
+
+\begin{advertencia}
+    En caso de tratarse de un espacio vectorial sobre el campo de los números reales, la propiedad 5 se transforma en
+    \begin{enumerate}[start=5]
+        \item
+            $\langle v,w \rangle = \langle w, v \rangle$ para todo $v,w \in E$.
+    \end{enumerate}
+\end{advertencia}
+
+
+\begin{advertencia}
+    Se puede demostrar utilizando la propiedad 4 que
+    \begin{itemize}
+        \item
+            si $v = 0$, entonces $\langle v,v \rangle = 0$;
+    \end{itemize}
+    por lo cual, podríamos cambiar la propiedad 2 por
+    \begin{enumerate}[start=2]
+        \item
+            si $\langle v,v \rangle = 0$, entonces $ v = 0$
+    \end{enumerate}
+\end{advertencia}
+
+
+Si se define un producto interno sobre un espacio vectorial $E$, a este se lo denomina espacio con producto interno o pre-Hilbertiano. 
+
+\begin{teo}
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial provisto de producto interno $\langle \cdot, \cdot \rangle$, entonces:
+    \begin{enumerate}
+        \item 
+            Para todo $u,v,w \in E$ 
+            \[\langle u, v+w\rangle = \langle u,v\rangle + \langle u, w \rangle.\]
+        \item 
+            Para todo $u,v \in E$ y $\alpha \in \K$
+            \[\langle u, \alpha v\rangle =  \overline{\alpha}\langle u,v\rangle.\]
+        \item
+            Para todo $u\in E$ 
+            \[\langle u, 0 \rangle =  \langle 0, u \rangle  = 0.\]
+    \end{enumerate}
+\end{teo}
+
+\begin{advertencia}
+    En caso de tratarse de un espacio vectorial sobre el campo de los números reales, la propiedad 2 se transforma en
+    \begin{enumerate}[start=2]
+        \item
+            Para todo $u,v \in E$ y $\alpha \in \K$
+            \[\langle u, \alpha v\rangle =  \alpha\langle u,v\rangle\]
+    \end{enumerate}
+\end{advertencia}
+
+\subsection{Productos internos usuales}
+
+\begin{enumerate}
+    \item En $(\R^n,+, \cdot, \R)$, para $x,y\in \R^n$:
+    \[
+        \langle x, y \rangle = \sum_{k=1}^n x_k y_k.
+    \]
+    
+    \item En $(\C^n,+, \cdot, \C)$, para $x,y\in \C^n$:
+    \[
+        \langle x, y \rangle = \sum_{k=1}^n x_k \overline{y_k}.
+    \]
+    
+    \item En $(\R_n[x],+, \cdot, \R)$, para $p(x),q(x)\in \R_n[x]$, si 
+    \[  
+        p(x) = a_0 + a_1x + \cdots + a_nx^n
+        \texty
+        q(x) = b_0 + b_1x + \cdots + b_nx^n
+    \]
+    entonces
+    \[
+        \langle p(x), q(x) \rangle = \sum_{k=0}^n a_k b_k.
+    \]
+    
+    \item En $(\Mat[\R]{m}{n},+, \cdot, \R)$, para $A,B\in \Mat[\R]{m}{n}$:
+    \[
+        \langle A, B \rangle = \tr(AB^\intercal).
+    \]
+    
+    \item En $(\mathcal{C}([a,b]),+, \cdot, \R)$, para $f,g\in \mathcal{C}([a,b])$:
+    \[
+        \langle f, g \rangle = \int_a^b f(x) g(x) dx.
+    \]
+    \end{enumerate}
+
+\begin{defi}
+Sea $(E,+,\cdot,\K)$ un espacio vectorial provisto de producto interno y suponga que $u, v \in E$.
+Entonces:
+\begin{enumerate}
+    \item $u$ y $v$ son ortogonales si $\langle u, v \rangle = 0$.
+    \item La norma de $u$, denotada por $\|u \|$, está dada por
+    \[
+        \| u\| = \sqrt{\langle u, u \rangle}
+    \]
+\end{enumerate}
+\end{defi}
+
+\begin{defi}
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial provisto de producto interno. La distancia en el espacio se define por
+    \[
+        \funcion{d}{E\times E}{\R}{(u,v)}{\| u - v\|.}
+    \]
+\end{defi}
+
+
+\begin{teo}[Vectores ortogonales]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial provisto de producto interno. Para  $u,v\in E$, se dice que son ortogonales si
+    \[
+        \langle u , v \rangle = 0.
+    \]
+\end{teo}
+
+
+\begin{teo}[Teorema de Pitágoras]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial provisto de producto interno.
+    Si $u,v$ son vectores ortogonales de $E$, entonces
+    \[
+        \| u + v \|^2 = \|u\|^2 + \|v\|^2.
+    \]
+\end{teo}
+
+\begin{teo}[Desigualdad de Cauchy-Schwarz]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial provisto de producto interno.
+    Para todo $u,v\in E$ se cumple que
+    \[
+        | \langle u , v \rangle | \leq \|u\|  \|v\|.
+    \]
+\end{teo}
+
+\begin{teo}[Desigualdad triangular]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial provisto de producto interno.
+    Para todo $u,v\in E$ se cumple que
+    \[
+        \| u + v \| \leq \|u\| + \|v\|.
+    \]
+\end{teo}
+
+
+\begin{defi}[Conjunto ortogonal]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial provisto de producto interno y
+    \[C=\{v_1, v_2, \ldots, v_n\}\subseteq E.\] Se dice que $C$ es un conjunto ortogonal en $E$ si
+    \[
+        \langle v_i, v_j \rangle = 0
+    \]
+    para todo $i \neq j$.
+\end{defi}
+
+\begin{defi}[Conjunto ortonormal]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial provisto de producto interno y
+    \[C = \{v_1, v_2, \ldots, v_n\} \subseteq E.\] Se dice que $C$ es un conjunto ortonormal en $E$ si es ortogonal y 
+    \[
+        \| v_k\| =  1
+    \]
+    para todo $k \in \{1, \ldots, n\}$.
+\end{defi}
+
+
+\begin{teo}
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial provisto de producto interno. Si $C \subseteq E$ es un conjunto ortogonal de vectores no nulos, entonces es linealmente independiente.
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Bases ortogonales
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+A partir de aquí, siempre consideraremos espacios vectoriales provistos con un producto interno.
+
+
+\subsection{Bases ortogonales}
+
+\begin{defi}[Base ortogonal (ortonormal)]
+    En un espacio vectorial, una base ortogonal (ortonormal) es una base cuyos vectores forman un conjunto ortogonal (ortonormal). 
+\end{defi}
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $\{u_1, u_2, \ldots, u_n\}$ una base ortogonal para $E$. Se tiene que, para $v \in E$,
+    \[
+        v = \alpha_1 u_1 + \alpha_2 u_2 +\cdots + \alpha_n u_n
+    \]
+    donde
+    \[
+        \alpha_k = \dfrac{\langle v, u_k \rangle}{\langle u_k, u_k \rangle}
+    \]
+    para todo $k \in \{1, 2, \ldots, n\}$.
+\end{teo}
+
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $\{u_1, u_2, \ldots, u_n\}$ una base ortonormal para $E$. Se tiene que, para $v \in E$,
+    \[
+        v = \alpha_1 u_1 + \alpha_2 u_2 +\cdots + \alpha_n u_n
+    \]
+    donde
+    \[
+        \alpha_k = \langle v, u_k \rangle 
+    \]
+    para todo $k \in \{1, 2, \ldots, n\}$.
+\end{teo}
+
+
+\begin{teo}[Proceso de Gram-Schmidt]
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $\{u_1, u_2, \ldots, u_n\}$ un conjunto linealmente independiente de $E$. Definamos
+    \begin{enumerate}
+    \item 
+        $v_1 = u_1$ y
+    \item
+        $\displaystyle v_k = 
+            u_k 
+            - \sum_{i=1}^{k-1} \dfrac{\langle u_k, v_i\rangle}{\langle v_i,v_i\rangle} v_i$, para $k=2,\ldots,n$.
+    \end{enumerate}
+    Se tiene que el conjunto
+    \[
+        \{v_1, v_2, \ldots, v_n\}
+    \]
+    es un conjunto ortogonal. Además, si definimos
+    \[
+        w_k = \dfrac{v_k}{\|v_k\|}
+    \]
+    para $k=1,\ldots,n$, se tiene que el conjunto
+    \[
+        \{w_1, w_2, \ldots, w_n\}
+    \]
+    es un conjunto ortonormal.
+\end{teo}
+
+
+\begin{teo}
+    Todo espacio vectorial de dimensión finita tiene una base ortogonal y una base ortonormal.
+\end{teo}
+
+
+\begin{ejem}
+    Considere la base $S = \{u_1, u_2, u_3\}$ de $\R^3$, donde 
+    \[
+        u_1 = (1,1,0), \qquad u_2 = (0, 1,1), \qquad u_3 = (1,0,1)
+    \]
+    mediante el proceso de Gram-Schmidt, se obtiene la base ortonormal $T=\{w_1, w_2, w_3\}$ para $\R^3$ donde
+    \[
+        w_1 = \left(\dfrac{1}{\sqrt{2}},\dfrac{1}{\sqrt{2}},0\right), \qquad
+        w_2 = \left(-\dfrac{1}{\sqrt{6}},\dfrac{1}{\sqrt{6}},
+        \dfrac{2}{\sqrt{6}}\right), \qquad
+        w_3 = \left(\dfrac{1}{\sqrt{3}},-\dfrac{1}{\sqrt{3}},
+        \dfrac{1}{\sqrt{3}}\right)
+    \]
+\end{ejem}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 13
+%% Complemento ortogonal
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Complemento ortogonal}
+
+A partir de aquí, siempre consideraremos espacios vectoriales provistos con un producto interno.
+
+\begin{defi}[Complemento ortogonal]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial y
+    $H \subset E$. El complemento ortogonal de $H$, denotado por $H^\perp$, se define por:
+    \[
+        H^\perp = \{ x \in E: \langle x, h \rangle = 0, \text{ para todo } h \in H\}.
+    \]
+\end{defi}
+
+\begin{teo}
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial y
+    $H$ subespacio vectorial de $E$, entonces:
+    \begin{enumerate}
+        \item $H^\perp$ es un subespacio vectorial de $E$.
+        \item $H \cap H^\perp = \{0\}$.
+        \item Si $\dim(E) = n$, entonces $\dim(H^\perp) = n - \dim(H)$
+    \end{enumerate}
+\end{teo}
+
+
+\begin{teo}
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial de dimensión finita, $W$ un subespacio vectorial de $E$, entonces 
+    \[
+    E = W \oplus W^\perp.
+    \]
+\end{teo}
+
+\begin{teo}
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial de dimensión finita, $W$ un subespacio vectorial de $E$, entonces 
+    \[
+    \left(W^\perp\right)^\perp =  W.
+    \]
+\end{teo}
+
+\begin{defi}[Proyección ortogonal]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial y
+    $H$ un subespacio vectorial de $E$, con base ortogonal $\{u_1, u_2, \ldots, u_n \}$. Para $v \in E$, la proyección ortogonal de $v$ sobre $H$, denotada por $\proy_H v$, se define por:
+    \[
+       \proy_H( v) = 
+       \dfrac{\langle v,u_1 \rangle}{\langle u_1, u_1 \rangle}u_1 +
+       \dfrac{\langle v,u_2 \rangle}{\langle u_2, u_2 \rangle}u_2 +
+       \cdots +
+       \dfrac{\langle v,u_n \rangle}{\langle u_n, u_n \rangle}u_n,
+    \]
+    donde $\proy_H (v) \in H$.
+\end{defi}
+
+
+\begin{teo}[Teorema de la proyección]
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial de dimensión finita, $H$ un subespacio vectorial de $E$ y $v \in E$. Se tiene que
+    \[
+        v = \proy_H( v) + \proy_{H^\perp}( v).
+    \]
+\end{teo}
+
+\begin{teo}
+    Sea $(E,+,\cdot,\K)$ un espacio vectorial de dimensión finita, $H$ un subespacio vectorial de $E$ y $v \in E$. Se tiene que el vector en $H$ más cercano a $v$ es $\proy_H(v)$, es decir,
+    \[
+    \|v-w\| \quad \text{ es mínima cuando } \quad w = \proy_H(v).
+    \]
+\end{teo}
+
+\end{document}
