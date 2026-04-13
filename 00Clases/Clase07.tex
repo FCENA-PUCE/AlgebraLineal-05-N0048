@@ -1,0 +1,106 @@
+\documentclass[a4,11pt]{aleph-notas}
+% Se puede ver la documentación aquí:
+% https://github.com/alephsub0/LaTeX_aleph-notas
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{url}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\hypersetup{
+    urlcolor=blue,
+    linkcolor=blue,
+}
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Clase 07: Independencia lineal, bases y dimensión}
+\autor{Andrés Merino}
+\fecha{Periodo 2026-01}
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Resultado de Aprendizaje}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{RdA de la asignatura:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{RdA 1:} Comprender los conceptos fundamentales del Álgebra Lineal, incluyendo el estudio de matrices, determinantes, sistemas de ecuaciones lineales y espacios vectoriales, destacando su importancia en el análisis y resolución de problemas matemáticos.
+    \item \textbf{RdA 2:} Resolver problemas prácticos y teóricos relacionados con el Álgebra Lineal, utilizando técnicas de cálculo con matrices, determinantes y sistemas de ecuaciones, así como en el análisis de espacios vectoriales.    
+    % \item \textbf{RdA 3:} Aplicar los principios y métodos del Álgebra Lineal en una variedad de contextos demostrando comprensión de su relevancia y utilidad en situaciones prácticas y teóricas.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{RdA de la actividad:}
+\begin{itemize}[leftmargin=*]
+    \item Reconocer cuándo un conjunto de vectores es linealmente dependiente o independiente.
+    \item Determinar si un conjunto de vectores genera un espacio vectorial.
+    \item Interpretar la noción de base y dimensión de un espacio vectorial.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Introducción}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Control de avance:}
+Antes de iniciar la clase, se aplicará el control de avance con un ejercicio breve sobre combinación lineal y otro sobre identificación de dependencia lineal.
+
+\paragraph{Pregunta inicial:}
+¿Cómo distinguimos entre un conjunto que genera un espacio y una base de ese mismo espacio?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Desarrollo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Actividad 1: Espacio generado e independencia lineal}
+
+La clase inicia con una recuperación breve de combinaciones lineales y del papel del campo de escalares. Luego, mediante clase magistral y práctica guiada, se introduce el espacio generado por un conjunto de vectores, se estudian criterios de independencia lineal y se discute cómo reconocer cuándo un conjunto genera un espacio vectorial.
+
+\paragraph{¿Cómo lo haremos?}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Clase magistral:} se presentan las definiciones de conjunto generador, independencia lineal, base y dimensión. Se usan ejemplos en $\mathbb{R}^n$, matrices, funciones y polinomios. Se usa el resumen \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/01Resumen/Resumen07.pdf}{Resumen07.pdf}.
+    \item \textbf{Resolución de ejercicios:} se guiará a los estudiantes en la solución de ejercicios del documento \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/04Ejercicios/Ejercicios07.pdf}{Ejercicios07.pdf}, decidiendo si un conjunto es independiente, si genera el espacio y si puede extraerse una base.
+    \item \textbf{Revisión de la página:} se revisará la entrada \href{https://alephsub0.org/material-nuevo/acaicedo/determinar-espacio-generado/}{Determinar espacio generado}, para observar cómo expresar un subespacio mediante restricciones lineales sobre sus coordenadas.
+\end{itemize}
+
+\paragraph{Verificación de aprendizaje:}
+\begin{enumerate}[leftmargin=*]
+    \item ¿Qué significa que un conjunto de vectores sea linealmente dependiente?
+    \item ¿Cuál es la relación entre base, conjunto generador e independencia?
+    \item ¿Cómo se determina la dimensión de un espacio vectorial?
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Cierre}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Tarea:}
+Resolver del libro \href{https://catalogobiblioteca.puce.edu.ec/cgi-bin/koha/opac-detail.pl?biblionumber=86081}{Fundamentos de álgebra lineal de Larson}: sección 4.4, ejercicios 2, 5, 7, 11, 15, 21, 22, 29, 30, 31, 32, 54; sección 4.5, ejercicios 7, 8, 9, 10, 11, 12, 13, 21, 23, 25, 27, 33, 35, 41, 43.
+
+\paragraph{Pregunta de investigación:}
+\begin{enumerate}[leftmargin=*]
+    \item ¿Cómo se puede decidir de forma rápida si un conjunto finito genera un espacio vectorial?
+    \item ¿Qué estrategias permiten construir una base a partir de un conjunto generador?
+    \item ¿Cómo cambia la noción de independencia lineal cuando se trabaja con conjuntos infinitos?
+\end{enumerate}
+
+\paragraph{Para la próxima clase:}  
+Visualizar el video \href{https://youtu.be/kYB8IZa5AuE?si=gbqAeTULCuLFypRi}{Transformaciones lineales y matrices} y realizar la lectura de la sección 4.7 del libro de Larson.
+
+
+\end{document}

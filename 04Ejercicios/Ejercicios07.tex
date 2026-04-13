@@ -1,0 +1,307 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+\usepackage{systeme}
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Ejercicios 07: Independencia lineal, bases y dimensión}
+\autor[A. Merino]{Andrés Merino}
+\fecha{Periodo 2026-1} 
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En el espacio vectorial $\R^{2}$, sean:
+    \[
+        \begin{array}{cccc}
+            v_1 = \begin{pmatrix} 1\\ 3 \end{pmatrix}, &
+            v_2 = \begin{pmatrix} 2\\ -3 \end{pmatrix} &
+            \text{ y } &
+            v_3 = \begin{pmatrix} 0\\ 2 \end{pmatrix}.
+        \end{array}
+    \]
+    ¿Son los vectores $v_1$, $v_2$ y $v_3$ linealmente independientes?
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Tomemos $\alpha_1, \alpha_2$ y $\alpha_3\in\R$ y planteamos el siguiente sistema lineal homogéneo
+    \[
+        \alpha_1 v_1 + \alpha_2 v_2 + \alpha_3 v_3 = 0_V,
+    \]
+    o equivalentemente
+    \[
+        \begin{array}{ccccccc}
+            \alpha_1 & + & 2\alpha_2 & & & = & 0;\\
+            3\alpha_1 & - & 3\alpha_2 & + & 2\alpha_3& = & 0;
+        \end{array}
+    \]
+    cuya matriz aumentada en forma escalonada por filas es
+    \[
+        \begin{pmatrix}
+            1 & 2 & 0 & | & 0\\
+            0 & -9 & 2 & | & 0
+        \end{pmatrix}.
+    \]
+    Entonces, $\alpha_1 = -2\alpha_2$ y $\alpha_3 = \dfrac{9}{2}\alpha_2$, donde $\alpha_2\in\R$. Escogiendo $\alpha_{2} = 2$, encontramos la solución no trivial $\alpha_{1}=-4$, $\alpha_2=2$ y $\alpha_3 = 9$. Por lo tanto, $v_1$, $v_2$ y $v_3$ son linealmente dependientes.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En el espacio vectorial $\R^{3}$, sean:
+    \[
+        \begin{array}{cccc}
+            v_1 = \begin{pmatrix} 2\\ 2\\ 3 \end{pmatrix}, &
+        v_2 = \begin{pmatrix} -1\\ -2\\ 1 \end{pmatrix} &
+        \text{ y } &
+        v_3 = \begin{pmatrix} 0\\ 1\\ 0 \end{pmatrix}.
+        \end{array}
+    \]
+    ¿Son los vectores $v_1$, $v_2$ y $v_3$ linealmente independientes?
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Tomemos $\alpha_1, \alpha_2$ y $\alpha_3\in\R$ y planteamos el siguiente sistema lineal homogéneo
+    \[
+        \alpha_1 v_1 + \alpha_2 v_2 + \alpha_3 v_3 = 0_V,
+    \]
+    o equivalentemente
+    \[
+        \begin{array}{ccccccc}
+            2\alpha_1 & - & \alpha_2 &  & & = & 0;\\
+            2\alpha_1 & - & 2\alpha_2 & + & \alpha_3& = & 0;\\
+            3\alpha_1 & + & \alpha_2 &  & & = & 0;
+        \end{array}
+    \]
+    cuya matriz aumentada en forma escalonada reducida por filas es
+    \[
+        \begin{pmatrix}
+            1 & 0 & 0 & | & 0\\
+            0 & 1 & 0 & | & 0\\
+            0 & 0 & 1 & | & 0
+        \end{pmatrix}.
+    \]
+    Entonces, el sistema posee solución única, es decir, $\alpha_1 = \alpha_2 = \alpha_3 = 0$. Por lo tanto, $v_1$, $v_2$ y $v_3$ son linealmente independientes.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En el espacio vectorial $\R_2[t]$, sean:
+    \[
+        \begin{array}{cccc}
+            p_1(t) = t^2 + 1, & 
+            p_2(t) = t - 2 &
+            \text{ y } &
+            p_3(t) = t + 3.
+        \end{array}
+    \]
+    ¿Son los vectores $p_1(t)$, $p_2(t)$ y $p_3(t)$ linealmente independientes?
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Tomemos $\alpha_1, \alpha_2$ y $\alpha_3\in\R$ y planteamos la combinación lineal nula
+    \[
+        \alpha_1 p_1(t) + \alpha_2 p_2(t) + \alpha_3 p_3(t) = 0t^2 + 0t + 0,
+    \]
+    a partir de lo cual se tiene que
+    \[
+        \alpha_1(t^2 + 1) + \alpha_2(t - 2) + \alpha_3(t + 3) = 0t^2 + 0t + 0,
+    \]
+    agrupando términos, se obtiene
+    \[
+        \alpha_1t^2 + (\alpha_2 + \alpha_3)t + (\alpha_1 - 2\alpha_2 + 3\alpha_3) = 0t^2 + 0t + 0,
+    \]
+    es decir, se obtiene el sistema lineal homogéneo
+    \[
+        \begin{array}{ccccccc}
+            \alpha_1 &  &  &  & & = & 0;\\
+             &  & \alpha_2 & + & \alpha_3& = & 0;\\
+            \alpha_1 & - & 2\alpha_2 & + & 3\alpha_3& = & 0;
+        \end{array}
+    \]
+    cuya matriz aumentada en forma escalonada reducida por filas es
+    \[
+        \begin{pmatrix}
+            1 & 0 & 0 & | & 0\\
+            0 & 1 & 0 & | & 0\\
+            0 & 0 & 1 & | & 0
+        \end{pmatrix}.
+    \]
+    Entonces, el sistema posee solución única, es decir, $\alpha_1 = \alpha_2 = \alpha_3 = 0$. Por lo tanto, $p_1(t)$, $p_2(t)$ y $p_3(t)$ son linealmente independientes.
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    ¿Cuáles de los siguientes conjuntos de vectores generan a $\R^3$?
+\begin{enumerate}
+        \item $S=\{(1, 1, 0), (3, 4, 2)\}$
+        \item $S=\{(1, 1, 0), (0, 1, 0), (2, 2, 2)\}$
+\end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+        \item Sea $(a, b, c) \in \R^3$, queremos examinar si existen $\alpha_1$, $\alpha_2$ $\in \R$ tales que  
+        \[
+        \alpha_{1} (1, 1, 0) + \alpha_{2} (3, 4, 2) =(a, b, c).
+        \]
+        La ecuación anterior conduce al sistema lineal
+        \[
+        \begin{array}{rrrrrrr}
+         \alpha _{1} & + & 3\alpha_{2} & = & a; \\
+         \alpha _{1} & + & 4\alpha_{2} & = & b;\\
+         & & 2\alpha_{2} & = & c;
+         \end{array}
+         \]
+         de donde, resolviendo obtenemos
+         \begin{align*}
+        \begin{pmatrix}
+            1&3&|&a\\
+            1&4&|&b\\
+            0&2&|&c\\
+        \end{pmatrix}
+        & \sim 
+        \begin{pmatrix}
+            1&3&|&a\\
+            0&1&|&-a+b\\
+            0&0&|&2a - 2b +c\\
+        \end{pmatrix},
+        \end{align*}
+        con lo cual, notamos que, si $2a - 2b + c \neq 0$, el sistema no tiene solución. En particular, si tomamos $(a,b,c)=(0,0,1)$, obtenemos una contradicción. Por lo tanto, $(0,0,1)\notin \spn(S)$ y $S$ no genera a $\R^3$.
+        
+        \item Sea $(a, b, c) \in \R^3$, queremos examinar si existen $\alpha_1$, $\alpha_2$, $\alpha_3$  $\in \R$ tales que  
+        \[
+        \alpha_{1} (1, 1, 0) + \alpha_{2} (0, 1, 0) + \alpha_{3} (2, 2, 2) =(a, b, c).
+        \]
+        La ecuación anterior conduce al sistema lineal
+        \[
+        \begin{array}{rrrrrrr}
+         \alpha _{1} & + & & + & 2\alpha_{3} = & a, \\
+         \alpha _{1} & + &\alpha_{2}& + &2\alpha_{3}= & b,\\
+         & & & &2\alpha_{3}= & c,
+         \end{array}
+         \]
+         de donde, resolviendo obtenemos
+        \begin{align*}
+        \begin{pmatrix}
+            1&0&2&|&a\\
+            1&1&2&|&b\\
+            0&0&2&|&c\\
+        \end{pmatrix}
+        & \sim 
+        \begin{pmatrix}
+            1&0&0&|&a-c\\
+            0&1&0&|&-a+b\\
+            0&0&1&|&\frac{c}{2}\\
+        \end{pmatrix},
+        \end{align*}
+        con lo cual, notamos que existe solución para cualquier elección de $a, b, c$. Por lo tanto, $S$ genera a $\R^3$; equivalentemente, $\spn(S)=\R^3$. \qedhere
+    \end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En el espacio vectorial $\R^4$, determine el espacio generado por
+    \[
+        S=\{(1,0,1,0),\,(0,1,1,0),\,(1,1,2,1)\}.
+    \]
+    Escriba el conjunto en función de sus restricciones.
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Sea $(x_1,x_2,x_3,x_4)\in\R^4$. Buscamos $\alpha,\beta,\gamma\in\R$ tales que
+    \[
+        \alpha(1,0,1,0)+\beta(0,1,1,0)+\gamma(1,1,2,1)=(x_1,x_2,x_3,x_4).
+    \]
+    Al sumar coordenadas, obtenemos el sistema
+    \[
+        \begin{array}{ccccccc}
+            \alpha & + & & + & \gamma & = & x_1,\\
+             & & \beta & + & \gamma & = & x_2,\\
+            \alpha & + & \beta & + & 2\gamma & = & x_3,\\
+             & & & & \gamma & = & x_4.
+        \end{array}
+    \]
+    De la última ecuación se tiene $\gamma=x_4$. Sustituyendo en las anteriores, resulta $\alpha=x_1-x_4$ y $\beta=x_2-x_4$. Al reemplazar en la tercera ecuación, se obtiene la condición
+    \[
+        x_3=x_1+x_2.
+    \]
+    Por tanto,
+    \[
+        \spn(S)=\{(x_1,x_2,x_3,x_4)\in\R^4: x_3=x_1+x_2\}.
+    \]
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En el espacio vectorial $\R_2[t]$, determine el espacio generado por
+    \[
+        S=\{1+t,\,2-t,\,1+2t\}.
+    \]
+    Escriba el conjunto en función de sus restricciones.
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Sea $p(t)\in\R_2[t]$. Buscamos $\alpha,\beta,\gamma\in\R$ tales que
+    \[
+        \alpha(1+t)+\beta(2-t)+\gamma(1+2t)=p(t).
+    \]
+    Si escribimos $p(t)=a+bt+ct^2$, entonces
+    \[
+        \alpha(1+t)+\beta(2-t)+\gamma(1+2t)=(\alpha+2\beta+\gamma)+(\alpha-\beta+2\gamma)t.
+    \]
+    Por lo tanto, toda combinación lineal de los elementos de $S$ tiene coeficiente de $t^2$ igual a cero. Recíprocamente, si $p(t)=a+bt$ es un polinomio de grado a lo sumo $1$, tomando $\gamma=0$, $\beta=\dfrac{a-b}{3}$ y $\alpha=\dfrac{a+2b}{3}$ se obtiene $p(t)$ como combinación lineal de los elementos de $S$.
+
+    En consecuencia,
+    \[
+        \spn(S)=\{a+bt: a,b\in\R\}=\{p(t)\in\R_2[t]: \text{el coeficiente de }t^2\text{ es }0\}.
+    \]
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En el espacio vectorial $\R^3$, sea
+    \[
+        S=\{(1,1,0),\,(2,2,0),\,(0,1,1)\}.
+    \]
+    Determine si $S$ genera a $\R^3$. En caso contrario, encuentre una base de $\spn(S)$.
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    Observamos que $(2,2,0)=2(1,1,0)$, así que este vector no aporta al espacio generado. Por tanto,
+    \[
+        \spn(S)=\spn\{(1,1,0),\,(0,1,1)\}.
+    \]
+    Sea $(x_1,x_2,x_3)\in\spn(S)$. Entonces existen $\alpha,\beta\in\R$ tales que
+    \[
+        \alpha(1,1,0)+\beta(0,1,1)=(x_1,x_2,x_3).
+    \]
+    Esto equivale a
+    \[
+        (\alpha,\alpha+\beta,\beta)=(x_1,x_2,x_3),
+    \]
+    de donde se sigue la condición $x_2=x_1+x_3$. Así,
+    \[
+        \spn(S)=\{(x_1,x_2,x_3)\in\R^3: x_2=x_1+x_3\}.
+    \]
+    En particular, $S$ no genera a $\R^3$. Una base de $\spn(S)$ es
+    \[
+        \{(1,1,0),\,(0,1,1)\}.
+    \]
+\end{proof}
+
+
+
+\end{document}

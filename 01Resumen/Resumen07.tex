@@ -1,0 +1,198 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos} 
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Resumen 07: Independencia lineal, bases y dimensión}
+\autor[A. Merino]{Andrés Merino}
+\fecha{Periodo 2026-1} 
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Conjunto generador}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S\subseteq E$. Al subespacio vectorial más pequeño que contiene a $S$ (es decir, la intersección de todos los subespacios que contienen a $S$) se lo denomina espacio generado por $S$ y se denota por $\gen(S)$.
+\end{defi}
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S\subseteq E$. Se tiene que
+    \[
+        \spn(S)=\gen(S).
+    \]
+\end{teo}
+
+
+\begin{defi}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S=\{v_1,v_2,\ldots,v_k\}\subseteq E$. Se dice que $S$ genera el espacio vectorial $E$ si cada vector en $E$ es una combinación lineal de los elementos de $S$, es decir, si para todo $v\in E$, existen $\alpha_1, \alpha_2, \ldots, \alpha_k\in K$ tales que
+    \[
+        v = \alpha_1v_1+ \alpha_2v_2+ \cdots+ \alpha_k v_k.
+    \]
+\end{defi}
+
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S=\{v_1,v_2,\ldots,v_k\}\subseteq E$. Se tiene que $S$ genera el espacio vectorial $E$ si y solo si
+    \[
+        E = \gen(S) = \spn(S).
+    \]
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Independencia lineal}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S=\{v_1,v_2,\ldots,v_k\}\subseteq E$. Se dice que $S$ es un conjunto linealmente dependiente si existen $\alpha_1, \alpha_2, \ldots, \alpha_k \in \K$, no todos nulos, tales que:
+    \[
+        \alpha_1 v_1 + \alpha_2 v_2 + \cdots + \alpha_k v_k = 0
+    \]
+    en caso contrario, se dice que $S$ es un conjunto linealmente independiente. 
+\end{defi}
+
+\begin{advertencia}
+    De esta definición, se tiene que $\{v_1,v_2,\ldots,v_k\}$ es linealmente independiente si y solo si
+    \[
+        \alpha_1 v_1 + \alpha_2 v_2 + \cdots + \alpha_k v_k = 0
+    \]
+    implica que
+    \[
+        \alpha_1 = \alpha_2 = \cdots = \alpha_k = 0.
+    \]
+\end{advertencia}
+
+\begin{advertencia}
+    Se puede extender esta definición para conjuntos infinitos diciendo que $S$ es linealmente independiente si todo subconjunto finito de $S$ es linealmente independiente.
+\end{advertencia}
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S\subseteq E$. Si $0\in S$, entonces $S$ es linealmente dependiente.
+\end{teo}
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S=\{v_1,v_2,\ldots,v_k\}\subseteq E$. Se tiene que $S$ es un conjunto linealmente dependiente si y sólo si alguno de los vectores $v_j\in S$ es una combinación lineal de otros elementos de $S$.
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Bases}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{defi}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $B\subseteq E$. Se dice que $B$ es una base de $E$ si 
+    \begin{itemize}
+        \item $B$ genera a $E$ y 
+        \item $B$ es linealmente independiente. 
+    \end{itemize}
+\end{defi}
+
+
+\begin{teo}[Base canónica de $\R^n$]
+    En $\R^n$, el conjunto $\{e^1,e^2,\ldots,e^n\}\subset\R^n$, definidos por 
+    \[
+        e^i_j=
+        \begin{cases}
+            0& \text{si }i\neq j,\\
+            1& \text{si }i= j,
+        \end{cases}
+    \]
+    para todo $i,j\in\{1,2,\ldots,n\}$, es una base de $\R^n$.
+\end{teo}
+
+\begin{teo}[Base canónica de {$\R_n[x]$}]
+    En $\R_n[x]$, el conjunto $\{1,x,\ldots,x^{n-1},x^n\}$ es una base de $\R_n[x]$. A esta base se la denomina base canónica de $\R_n[x]$.
+\end{teo}
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $B\subseteq E$ una base de $E$. Se tiene que todo elemento de $E$ se puede escribir, de manera única, como combinación lineal de elementos de $B$.
+\end{teo}
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $B\subseteq E$. Se tiene que si todo elemento de $E$ se puede escribir, de manera única, como combinación lineal de elementos de $B$, entonces $B$ es una base de $E$.
+\end{teo}
+
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S\subseteq E$ un conjunto que genera a $E$. Se tiene que algún subconjunto de $S$ es base de $E$.
+\end{teo}
+
+
+\begin{teo}
+    Todo espacio vectorial tiene una base.
+\end{teo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Dimensión}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $B\subseteq E$ una base de $E$. Si $S\subseteq E$ es un conjunto linealmente independiente, entonces 
+    \[
+        |S|\leq |B|.
+    \]
+\end{teo}
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $B\subseteq E$ una base de $E$. Si $S\subseteq E$ es un conjunto que genera a $E$, entonces 
+    \[
+        |B|\leq |S|.
+    \]
+\end{teo}
+
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $B,T\subseteq E$ bases de $E$. Se tiene que
+    \[
+        |B|=|T|.
+    \]
+\end{teo}
+
+\begin{defi}[Dimensión]
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $B\subseteq E$ una base de $E$. Se define la dimensión de $E$, denotado por $\dim(E)$, por la cantidad de elementos de $B$.
+\end{defi}
+
+\begin{teo}
+    Se tiene que
+    \begin{itemize}
+    \item
+        $\dim(\R^n)=n$, con $n\in \N^*$;
+    \item
+        $\dim(\Mat[\R]{m}{n})=mn$, con $m,n\in \N^*$;
+    \item
+        $\dim(\R_n[x])=n+1$, con $n\in \N$;
+    \item
+        $\dim(\{0\}) = 0$.
+    \end{itemize}
+\end{teo}
+
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial y $S\subseteq E$ un conjunto linealmente independiente. Se tiene que existe una base $B$ de $E$ que contiene a $S$.
+\end{teo}
+
+
+\begin{teo}
+    Sean $(E,+,\cdot,\K)$ un espacio vectorial, $B\subseteq E$ y $n\in\N^*$ tal que $\dim(E)=n$ y $|B|=n$. Se tiene que
+    \begin{itemize}
+    \item
+        si $B$ es linealmente independiente, entonces $B$ es una base de $E$.
+    \item
+        si $B$ genera a $E$, entonces $B$ es una base de $E$.
+    \end{itemize}
+\end{teo}
+
+\end{document}
