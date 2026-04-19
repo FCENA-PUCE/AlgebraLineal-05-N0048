@@ -8,6 +8,7 @@
 
 % -- Paquetes adicionales
 \usepackage[handout]{aleph-moodle}
+% \usepackage{aleph-moodle}
 \moodleregisternewcommands
 % Todos los comandos nuevos deben ir luego del comando anterior
 \usepackage{aleph-comandos}
@@ -322,9 +323,9 @@ Se plantean bancos de preguntas orientados a evaluar el \textbf{criterio}: «Ide
 \begin{multi}{Gauss-OpMult-07}
     Dada la matriz
     \[
-        A= \begin{pmatrix} 3 & 3 & 2 & -1 \cr 4 & 4 & 7 & 4  \cr -2 & -2 & 0 & -1 \cr 1 & 0 & 2 & 3\end{pmatrix} 
+        A= \begin{pmatrix} 1 & 3 & 2 & -1 \cr 4 & 4 & 7 & 4  \cr -2 & -2 & 0 & -1 \cr 3 & 0 & 2 & 3\end{pmatrix} 
     \] la operación elemental por filas que vuelve $0$ a la primera entrada de la cuarta fila es:
-    \item* $3F_4-F_1\to F_4$
+    \item* $-3F_1+F_4\to F_4$
     \item $3F_4+F_4\to F_4$
     \item $F_1-\frac{1}{3}F_4\to F_4$
     \item $0F_4\to F_4$
@@ -348,7 +349,7 @@ Se plantean bancos de preguntas orientados a evaluar el \textbf{criterio}: «Ide
     \[
         A= \begin{pmatrix} 2 & 3 & 2 & -1 \cr 1 & 4 & 7 & 4  \cr -2 & -2 & 0 & -1 \cr 1 & 0 & 2 & 3\end{pmatrix} 
     \] la operación elemental por filas que vuelve $0$ a la primera entrada de la segunda fila es:
-    \item* $F_3+2F_2\to F_2$
+    \item* $-F_4+F_2\to F_2$
     \item $3F_2+F_2\to F_2$
     \item $\frac{1}{2}F_1+\frac{1}{2}F_2\to F_2$
     \item $0F_2\to F_2$

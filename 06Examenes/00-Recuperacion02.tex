@@ -1,5 +1,5 @@
-\documentclass[11pt,respuestas,a4]{aleph-examen}
-% \documentclass[11pt,a5]{aleph-examen}
+% \documentclass[11pt,respuestas,a4]{aleph-examen}
+\documentclass[11pt,a5]{aleph-examen}
 
 % -- Paquetes extra
 \usepackage{aleph-comandos}
@@ -10,7 +10,7 @@
 \institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
 \carrera{Catalogo STEM}
 \asignatura{Algebra lineal}
-\tema{Recuperación 1}
+\tema{Recuperación 2}
 \autor{Andres Merino}
 \fecha{Periodo 2026-1}
 
@@ -18,7 +18,6 @@
 \definecolor{colortext}{HTML}{1957d1}
 \definecolor{colordef}{HTML}{1957d1}
 \fuente{montserrat}
-
 
 \begin{document}
 
@@ -32,79 +31,59 @@ Sea \( \alpha \in \mathbb{R} \) y considere la matriz
 \[
     A=\begin{pmatrix}
         1 & 2 & 0 \\
-        0 & 1 & 1 \\
-        2 & \alpha & 3
+        1 & 3 & 1 \\
+        0 & 0 & \alpha
     \end{pmatrix}.
 \]
 \begin{enumerate}
-    \item Utilizando expansión por cofactores en la primera columna, calcule \( \det(A) \).
+    \item Utilizando expansión por cofactores en la tercera columna, calcule \( \det(A) \).
     \item Determine los valores de \( \alpha \) para los cuales la matriz es no singular.
     \item Calcule \( A^{-1} \) mediante reducción por filas, para uno de los valores de $\alpha$ obtenidos en el ejercicio anterior.
 \end{enumerate}
 
 \begin{respuesta}
 \begin{enumerate}
-    \item Por expansión por cofactores en la primera columna,
+    \item Por expansión por cofactores en la tercera columna,
     \[
         \det(A)
-        =1\begin{vmatrix}1 & 1\\ \alpha & 3\end{vmatrix}
-        +2\begin{vmatrix}2 & 0\\ 1 & 1\end{vmatrix}
-        =(3-\alpha)+4=7-\alpha.
+        =0\cdot C_{13}-1\cdot C_{23}+\alpha\cdot C_{33}
+        =1\cdot 0+\alpha\begin{vmatrix}1 & 2\\ 1 & 3\end{vmatrix}
+        =\alpha.
     \]
 
     \item La matriz es no singular si y solo si \(\det(A)\neq 0\). Por tanto,
     \[
-        7-\alpha\neq 0 \quad \Longleftrightarrow \quad \alpha\neq 7.
+        \alpha\neq 0.
     \]
 
-    \item Tomemos, por ejemplo, \(\alpha=0\). Entonces
+    \item Tomemos, por ejemplo, \(\alpha=1\). Entonces
     \[
         A=\begin{pmatrix}
             1 & 2 & 0 \\
-            0 & 1 & 1 \\
-            2 & 0 & 3
+            1 & 3 & 1 \\
+            0 & 0 & 1
         \end{pmatrix}.
     \]
     Reducción por filas de \([A\,|\,I]\):
     \[
         \left[\begin{array}{ccc|ccc}
             1 & 2 & 0 & 1 & 0 & 0 \\
-            0 & 1 & 1 & 0 & 1 & 0 \\
-            2 & 0 & 3 & 0 & 0 & 1
+            1 & 3 & 1 & 0 & 1 & 0 \\
+            0 & 0 & 1 & 0 & 0 & 1
         \end{array}\right]
         \sim
         \left[\begin{array}{ccc|ccc}
-            1 & 2 & 0 & 1 & 0 & 0 \\
-            0 & 1 & 1 & 0 & 1 & 0 \\
-            0 & -4 & 3 & -2 & 0 & 1
-        \end{array}\right]
-        \sim
-        \left[\begin{array}{ccc|ccc}
-            1 & 0 & -2 & 1 & -2 & 0 \\
-            0 & 1 & 1 & 0 & 1 & 0 \\
-            0 & 0 & 7 & -2 & 4 & 1
-        \end{array}\right]
-    \]
-    \[
-        \sim
-        \left[\begin{array}{ccc|ccc}
-            1 & 0 & -2 & 1 & -2 & 0 \\
-            0 & 1 & 1 & 0 & 1 & 0 \\
-            0 & 0 & 1 & -\frac27 & \frac47 & \frac17
-        \end{array}\right]
-        \sim
-        \left[\begin{array}{ccc|ccc}
-            1 & 0 & 0 & \frac37 & -\frac67 & \frac27 \\
-            0 & 1 & 0 & \frac27 & \frac37 & -\frac17 \\
-            0 & 0 & 1 & -\frac27 & \frac47 & \frac17
+            1 & 0 & 0 & 3 & -2 & 2 \\
+            0 & 1 & 0 & -1 & 1 & -1 \\
+            0 & 0 & 1 & 0 & 0 & 1
         \end{array}\right].
     \]
     Por lo tanto,
     \[
         A^{-1}=\begin{pmatrix}
-            \frac37 & -\frac67 & \frac27 \\
-            \frac27 & \frac37 & -\frac17 \\
-            -\frac27 & \frac47 & \frac17
+            3 & -2 & 2 \\
+            -1 & 1 & -1 \\
+            0 & 0 & 1
         \end{pmatrix}.
     \]
 \end{enumerate}
@@ -115,19 +94,19 @@ Sea \( \alpha \in \mathbb{R} \) y considere la matriz
 Sean \( \alpha \in \mathbb{R} \) y las matrices
 \[
     A=\begin{pmatrix}
-        1 & \alpha \\
-        0 & 1
+        1 & 1 & 2 \\
+        0 & 3 & -2
     \end{pmatrix},
     \qquad
     B=\begin{pmatrix}
         1 & 1 \\
-        0 & 1
+        0 & 2
     \end{pmatrix}.
 \]
 
 \begin{enumerate}
-    \item Calcule \( AB \) y \( BA \).
-    \item Determine los valores de \( \alpha \) para los cuales \( A \) y \( B \) conmutan, es decir, \( AB=BA \).
+    \item Calcule \( AB \).
+    \item Calcule \( BA \).
 \end{enumerate}
 
 \begin{respuesta}
@@ -155,9 +134,9 @@ Como las dos matrices coinciden, se concluye que \(AB=BA\) para todo \(\alpha\in
 Sea \( \alpha \in \mathbb{R} \) y considere el sistema lineal
 \[
 \systeme[xyz]{
-x+y+z=2{,},
-2x+3y+\alpha z=5{,},
-x+2y+{(\alpha-1)} z=3{.}
+ x+y+z=2{.},
+ 2x+3y+ z=5{.},
+ x+y+{\alpha} z=2{.}
 }
 \]
 
@@ -173,37 +152,35 @@ La matriz ampliada es
 \[
     \left[\begin{array}{ccc|c}
         1 & 1 & 1 & 2 \\
-        2 & 3 & \alpha & 5 \\
-        1 & 2 & \alpha-1 & 3
+        2 & 3 & 1 & 5 \\
+        1 & 1 & \alpha & 2
     \end{array}\right].
 \]
 Aplicando Gauss-Jordan,
 \[
     \left[\begin{array}{ccc|c}
         1 & 1 & 1 & 2 \\
-        2 & 3 & \alpha & 5 \\
-        1 & 2 & \alpha-1 & 3
+        2 & 3 & 1 & 5 \\
+        1 & 1 & \alpha & 2
     \end{array}\right]
     \sim
     \left[\begin{array}{ccc|c}
         1 & 1 & 1 & 2 \\
-        0 & 1 & \alpha-2 & 1 \\
-        0 & 1 & \alpha-2 & 1
-    \end{array}\right]
-    \sim
-    \left[\begin{array}{ccc|c}
-        1 & 0 & 3-\alpha & 1 \\
-        0 & 1 & \alpha-2 & 1 \\
-        0 & 0 & 0 & 0
+        0 & 1 & -1 & 1 \\
+        0 & 0 & \alpha-1 & 0
     \end{array}\right].
 \]
-El sistema tiene infinitas soluciones para todo \(\alpha\in\mathbb{R}\), ya que siempre queda una variable libre. Si tomamos \(z=t\), entonces
+Si \(\alpha\neq 1\), el sistema tiene solución única y
 \[
-    x=1+(\alpha-3)t,\qquad y=1-(\alpha-2)t,\qquad z=t,\qquad t\in\mathbb{R}.
+    x=1,\qquad y=1,\qquad z=0.
 \]
-Por tanto,
+Si \(\alpha=1\), entonces queda una variable libre. Tomando \(z=t\), se obtiene
 \[
-    S=\{(1+(\alpha-3)t,\,1-(\alpha-2)t,\,t): t\in\mathbb{R}\}.
+    x=1-2t,\qquad y=1+t,\qquad z=t,\qquad t\in\mathbb{R}.
+\]
+Por tanto, para \(\alpha=1\) el conjunto solución es
+\[
+    S=\{(1-2t,\,1+t,\,t): t\in\mathbb{R}\}.
 \]
 \end{respuesta}
 
@@ -212,22 +189,22 @@ Por tanto,
 Considere el sistema lineal de ecuaciones
 \[
 \systeme{
-x+y+z=6,
-x+2y+3z=14,
-2x+y+z=9
+ x+y+z=6,
+ x+2y+3z=14,
+ 2x+y+z=9
 }
 \]
 
 \begin{enumerate}
-    \item Escriba la matriz de coeficientes y calcule su determinante.
+    \item Escriba la matriz de coeficientes $A$ y calcule su determinante.
     \item Verifique que la matriz es invertible.
     \item Sabiendo que
     \[
-        A^{-1}=
+        A^{-1}= 
         \begin{pmatrix}
-            1 & 0 & -1 \\
-            1 & -1 & 2 \\
-            -1 & 1 & 0
+            -1 & 0 & 1 \\
+            5 & -1 & -2 \\
+            -3 & 1 & 1
         \end{pmatrix},
     \]
     utilice la matriz inversa para resolver el sistema.
@@ -258,20 +235,19 @@ Luego, \(A\) es invertible. Usando la inversa dada,
     =A^{-1}\begin{pmatrix}6\\14\\9\end{pmatrix}
     =
     \begin{pmatrix}
-        1 & 0 & -1 \\
-        1 & -1 & 2 \\
-        -1 & 1 & 0
+        -1 & 0 & 1 \\
+        5 & -1 & -2 \\
+        -3 & 1 & 1
     \end{pmatrix}
     \begin{pmatrix}6\\14\\9\end{pmatrix}
     =
-    \begin{pmatrix}-3\\23\\8\end{pmatrix}.
+    \begin{pmatrix}3\\-2\\5\end{pmatrix}.
 \]
 Por tanto, la solución del sistema es
 \[
-    (x,y,z)=(-3,10,8).
+    (x,y,z)=(3,-2,5).
 \]
 \end{respuesta}
-
 
 \end{preguntas}
 
