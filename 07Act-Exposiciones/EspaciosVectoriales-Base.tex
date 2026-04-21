@@ -1,0 +1,140 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{aleph-comandos}
+\usepackage{booktabs}
+\usepackage{pdflscape}
+
+% -- Datos   
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Video exposición no. 2: Espacios vectoriales y bases}
+\autor{Andrés Merino}
+\fecha{Periodo 2026-1}
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+
+% -- Otros comandos
+
+
+
+
+\begin{document}
+
+\encabezado
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Resultado de aprendizaje}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+\item 
+    Esta actividad evalúa si el estudiante ({Criterio 1.3:})  Comprende los conceptos de espacios vectoriales y aplicaciones lineales, incluyendo la base y dimensión, transformaciones lineales y sus propiedades.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Indicaciones}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{itemize}
+\item 
+    El estudiante deberá elaborar diapositivas profesionales o un apoyo visual equivalente y grabar un video presentándolas, con el rostro visible durante toda la exposición.
+\item 
+    No se aceptará un video en el que el estudiante únicamente lea las diapositivas; se deberá evidenciar dominio del tema mediante una explicación clara y personal.
+\item 
+    No se aceptarán presentaciones ni libretos claramente generado por inteligencia artificial y descontextualizado de lo visto en clase.
+\item 
+    La duración máxima del video será de 7 minutos.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Descripción}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{enumerate}
+    \item {Elaboración de diapositivas o apoyo visual:}
+    \begin{itemize}
+        \item Crear una presentación clara y ordenada sobre espacios vectoriales, subespacios, base y dimensión, puede ser escrito a mano siempre que sea legible.
+        \item Incluir definiciones y propiedades clave: subespacio vectorial, base, dimensión.
+        \item Presentar de forma explícita los tres ejercicios solicitados y su resolución paso a paso.
+        \item El apoyo visual debe mostrar operaciones y justificaciones, no solo respuestas finales.
+    \end{itemize}
+
+    \item {Ejercicios a resolver en el video:}
+    \begin{itemize}
+        \item \textbf{Ejercicio 1:} En $\mathbb{R}^{2\times 2}$, sea
+        \[
+        W=\left\{\begin{pmatrix}a&b\\c&d\end{pmatrix}\in\mathbb{R}^{2\times2}:\ a+d-2c=1,\ \ a+2b-c=0\right\}.
+        \]
+        Determinar si $W$ es subespacio vectorial de $\mathbb{R}^{2\times2}$.
+
+        \item \textbf{Ejercicio 2:} En $\mathbb{R}^{2\times 2}$, sea
+        \[
+        F=\left\{\begin{pmatrix}a&b\\c&d\end{pmatrix}\in\mathbb{R}^{2\times2}:\ a+3b+d=0,\ \ a+2b-c=0\right\}.
+        \]
+            Verificar que $F$ es subespacio vectorial de $\mathbb{R}^{2\times2}$.
+        \item \textbf{Ejercicio 3:}  Determinar una base de $F$ e indicar su dimensión.
+    \end{itemize}
+
+    \item {Guía de explicación paso a paso:}
+    \begin{itemize}
+        \item En cada ejercicio, enunciar el conjunto y el objetivo antes de empezar a operar.
+        \item Mostrar cada paso algebraico relevante y explicar por qué ese paso permite concluir si es o no subespacio.
+        \item En el Ejercicio 3, indicar cómo se construyen los generadores, cómo se verifica independencia lineal y cómo se concluye la dimensión.
+    \end{itemize}
+
+    \item {Grabación del video:}
+    \begin{itemize}
+        \item El estudiante deberá presentarse en cámara durante toda la exposición.
+        \item El rostro debe ser visible en todo momento.
+        \item No se permite únicamente voz en off ni una grabación en la que solo se lean las diapositivas.
+    \end{itemize}
+
+    \item {Estructura mínima:}
+    \begin{itemize}
+        \item {Introducción:} explicación breve sobre espacios vectoriales, subespacios y la importancia de base y dimensión.
+        \item {Desarrollo:} resolución completa de los tres ejercicios con explicación paso a paso, usando el apoyo visual.
+        \item {Cierre:} síntesis final sobre los criterios para determinar subespacios y para hallar base y dimensión.
+    \end{itemize}
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Entrega}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+Se deberá entregar en el aula virtual el enlace de \textbf{OneDrive} del video con permisos de acceso habilitados. Si el enlace no permite visualizar el material, la actividad no podrá ser calificada y se asignará \textbf{0}.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Rúbrica de calificación}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+En caso de presentar un video con voz en off, rostro no visible o fuera del rango de tiempo establecido, se reducirá un nivel a cada punto de la rúbrica.
+
+\begin{landscape}
+\begin{center}\footnotesize
+\begin{tabular}{p{5cm}p{4cm}p{4cm}p{4cm}p{4cm}}
+\toprule
+\textbf{Indicador} & \textbf{Excelente} & \textbf{Bueno} & \textbf{Aceptable} & \textbf{Insuficiente} \\ \midrule
+\textbf{Ejercicio 1: $W$ no es subespacio (10 pts)} & Presenta correctamente $W$ y demuestra con contraejemplo de suma o cierre escalar que no es subespacio (10) & Resolución correcta con una omisión menor en la justificación (8) & Identifica que no es subespacio, pero la demostración es parcial (6) & No demuestra correctamente o concluye de forma errónea (0) \\ \midrule
+\textbf{Ejercicio 2: $F$ es subespacio (15 pts)} & Verifica correctamente que $F$ es subespacio a partir de las ecuaciones dadas, con justificación completa (15) & Desarrollo correcto con detalles menores faltantes en la justificación (12) & Verificación parcialmente correcta o con pasos incompletos (9) & Errores conceptuales importantes o sin justificación suficiente (0) \\ \midrule
+\textbf{Ejercicio 3: base y dimensión de $F$ (15 pts)} & Determina una base válida de $F$ e indica explícitamente su dimensión con justificación completa (15) & Desarrollo correcto con detalles menores faltantes en la justificación (12) & Base o dimensión parcialmente correctas (6) & Errores conceptuales importantes o sin justificación suficiente (0) \\ \midrule
+\textbf{Presentación en video (5 pts)}
+& Exposición clara y fluida; rostro visible durante toda la presentación (5)
+& Exposición clara con ligeras interrupciones; rostro visible (4)
+& Exposición poco fluida o lectura excesiva; rostro visible parcial (3)
+& Voz en off o rostro no visible / exposición ininteligible (0) \\ \midrule
+\textbf{Gestión del tiempo (5 pts)} & 7:00 $\pm$ 30 s (5) & 7:00 $\pm$ 60 s (4) & 7:00 $\pm$ 90 s (3) & Fuera de $\pm$ 90 s (0) \\ \bottomrule
+\end{tabular}
+\end{center}
+\end{landscape}
+
+
+
+\end{document}
