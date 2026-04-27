@@ -1,0 +1,368 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+\usepackage{systeme}
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Ejercicios 10: Aplicaciones lineales}
+\autor[A. Merino]{Andrés Merino}
+\fecha{Periodo 2026-1} 
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Aplicaciones lineales}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En cada caso, determine el núcleo y la imagen de la aplicación lineal dada:
+    \begin{enumerate}
+        \item $T:\R^3\to\R^2$ dada por $T(x) = (x_1-x_3,2x_2+x_3)$, para todo $x\in\R^3$.
+        \item $T:\R^{2\times 2} \to \R^2$ definida por $T(A)=Ae^{1} - 3Ae^2$, para todo $A\in\R^{2\times 2}$.
+        \item $T:\R_3[x]\to \R$ dada por $T(p(x))=p(0) + p'(0)$, para todo $p(x)\in\R_3[x]$.
+        \item $T:\R^{n\times n}\to \R^{n\times n}$ definida por $T(A)=A-A^\intercal$, para todo $A\in\R^{n\times n}$.
+        \item $T:\R_n[x]\to \R_{n+1}[x]$, dada por
+        \[
+            T(p(x)) = \int_0^x p(t)\; dt,
+        \]
+        para todo $p(x)\in \R_n[x]$.
+        \item $T:\mathcal{C}^1(\R)\to\mathcal{C}(\R)$ definida por $T(f)=f' + \alpha f$, para todo $f\in\mathcal{C}^1(\R)$, siendo $\alpha\in \R$ una constante. (\emph{Sugerencia:} Recuerde que $(e^{\alpha x}f(x))' = e^{\alpha x}(f'(x) + \alpha f(x))$, para todo $x\in\R$.)
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+\begin{enumerate}
+    \item Sea $x\in\R^3$, entonces $x\in\ker(T)$ si y sólo si $(x_1-x_3,2x_2+x_3) = 0$, lo que es equivalente a 
+    \[
+        x_1 - x_3 = 0 \texty 2x_2 + x_3 = 0.
+    \]
+    Al resolver este sistema, podemos concluir que
+    \[
+        \ker(T) = \gen\{(2,-1,2)\}.
+    \]
+    Esto además, implica que $\dim(\ker(T)) = 1$, de donde
+    \[
+        3 = \dim(\R^3) = \dim(\ker(T)) + \dim(\img(T)) = 1 + \dim(\img(T)),
+    \]
+    y así $\dim(\img(T)) = 2$, lo que significa que $\img(T)=\R^2$.
+    
+    \item Dada $A\in\R^{2\times 2}$, tenemos que $A\in\ker(T)$ si y sólo si 
+    \[
+        a_{11} - 3a_{12} = 0 \texty a_{21} - 3a_{22} = 0,
+    \]
+    de donde se tiene que
+    \[
+        \ker(T) = \{A=(a_{ij})\in\R^{2\times 2} :  a_{11}=3a_{12} \texty a_{21}=3a_{22}\}
+    \]
+    o, equivalentemente,
+    \[
+        \ker(T) = \gen\left\{ \begin{pmatrix}
+                    3 & 1 \\ 0 & 0
+        \end{pmatrix}, \begin{pmatrix}
+                    0 & 0 \\ 3 & 1
+        \end{pmatrix} \right\},
+    \]
+    lo que, en particular, implica que $\dim(\ker(T)) = 2$. Con esto,
+    \[
+        \dim(\img(T)) = \dim(\R^{2\times 2}) - \dim(\ker(T)) = 4 - 2 = 2,
+    \]
+    de modo que $\img(T) = \R^2$.
+    
+    \item Sea $p(x)=a+bx+cx^2+dx^3\in\R_3[x]$, entonces $p(x)\in \ker(T)$ si y sólo si $p(0)+p'(0)=0$, es decir, si y sólo si $a+b=0$. Por ende
+    \[
+        \ker(T) = \{ p(x)=a+bx+cx^2+dx^3\in\R_3[x] : a+b = 0 \}.
+    \]
+    Ahora, notemos que $T(1) = 1$, de modo que $1\in\img(T)$. Con esto,
+    \[
+        \R = \gen\{1\}\subseteq \img(T) \subseteq\R,
+    \]
+    de donde $\img(T) = \R$.
+    
+    \item Sea $A\in\R^{n\times n}$, entonces $A\in\ker(T)$ si y sólo si $A-A^\intercal = 0$, es decir, si y sólo si $A$ es simétrica, por ende
+    \[
+        \ker(T) = \{A\in\R^{n\times n} : A\text{ es simétrica}\}.
+    \]
+    Ahora, notemos que para toda $A\in\R^{n\times n}$ se tiene que
+    \[
+        T(A)^\intercal = (A-A^\intercal)^{\intercal} = A^\intercal - A = -T(A),
+    \]
+    por ende $T(A)$ es antisimétrica. Recíprocamente, si $B\in\R^{n\times n} $ es antisimétrica, tenemos que
+    \[
+        T\left( \frac{1}{2}B \right) =  \frac{1}{2}B -  \frac{1}{2}B^\intercal =  \frac{1}{2}B +  \frac{1}{2}B = B,
+    \]
+    de modo que 
+    \[
+        \img(T) = \{A\in\R^{n\times n} : A \text{ es antisimétrica}\}.
+    \]  
+    
+    \item Sea $p(x) = \dsum_{k=0}^n a_k x^k\in \R_n[x]$, entonces $p(x)\in \ker(T)$ si y sólo si
+    \[
+        \sum_{k=0}^n \frac{a_k}{k+1}x^{k+1} = 0,
+    \]
+    es decir, si y sólo si $a_0 = a_1 = \cdots = a_n = 0$, por ende $\ker(T) = \{0\}$. 
+    
+    Sea $q(x) = \dsum_{k=0}^{n+1} b_k x^k\in \R_{n+1}[x]$, tenemos que $q(x)\in\img(T)$ si y sólo si existe $p(x) = \dsum_{k=0}^n a_k x^k\in \R_n[x]$ tal que
+    \[
+        \sum_{k=0}^{n+1} b_k x^k = \sum_{k=0}^n \frac{a_k}{k+1}x^{k+1},
+    \]
+    de donde se tiene que $q(0) = b_0 = 0$ y $b_k = \dfrac{a_{k-1}}{k}$ si $k\in\{1,\dots,n+1\}$. De este modo,
+    \[
+        \img(T) = \{q(x)\in \R_{n+1}[x] : q(0) = 0\}.
+    \]
+    
+    \item Sea $f\in\mathcal{C}^1(\R)$, entonces $f\in\ker(T)$ si y sólo si $f'+\alpha f = 0$, es decir, si $f'(x) + \alpha f(x) = 0$ para todo $x\in \R$. Entonces, tenemos que
+    \[
+        e^{\alpha x}(f'(x) + \alpha f(x)) = 0,
+    \]
+    es decir,
+    \[
+        (e^{\alpha x}f(x)) ' = 0.
+    \]
+    Esto sucede si y solamente sí existe $c\in\R$ tal que $e^{\alpha x}f(x) = c$, para todo $x\in\R$, es decir, $f(x) = ce^{-\alpha x}$, para todo $x\in\R$. Definamos la función $\varphi:\R\to\R$ mediante $\varphi(x) = e^{-\alpha x}$, de modo que $f=c\varphi$. Con esto,
+    \[
+        \ker(T) = \gen\{\varphi\}.
+    \]
+    
+    Ahora, sea $g\in\mathcal{C}(\R)$. Supongamos que $g\in\img(T)$, entonces existe $f\in\mathcal{C}^1(\R)$ tal que $g = f' + \alpha f$, de modo que, para todo $x\in\R$
+    \[
+        e^{\alpha x}g(x) = (e^{\alpha x}f(x))',
+    \]
+    de donde, por el segundo teorema fundamental del cálculo,
+    \[
+        \int_0^x e^{\alpha t}g(t) \; dt = e^{\alpha x}f(x) - f(0).
+    \]
+    Así, tenemos que si, para todo $x\in\R$,
+    \[
+        f(x) = e^{-\alpha x}\int_0^x e^{\alpha t}g(t) \; dt,
+    \]
+    entonces $f\in\mathcal{C}^1(\R)$ y, por el primer teorema fundamental del cálculo,
+    \[
+        T(f)(x) = f'(x) + \alpha f(x) = -\alpha e^{-\alpha x}\int_0^x e^{\alpha t}g(t) \; dt + e^{-\alpha x} e^{\alpha x}g(x) + \alpha e^{-\alpha x}\int_0^x e^{\alpha t}g(t) \; dt = g(x),
+    \]
+    de donde $T$ es sobreyectiva, y por ende $\img(T)=\mathcal{C}(\R)$.
+\end{enumerate}
+\end{proof}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    En cada caso, determinar si las aplicaciones lineales dadas son o no isomorfismos.
+\begin{enumerate}
+    \item $T:\R^4\to \R^{2\times 2}$ dada por 
+    \[
+        T(x) = \begin{pmatrix}
+        x_1 + x_2 & x_2 + x_3\\
+        x_3 + x_4 & x_4 + x_1
+        \end{pmatrix}
+    \]
+    para todo $x\in\R^4$.
+    \item $T:\R_3[x]\to \R^{2\times 2}$ dada por
+    \[
+        T(p(x)) = \begin{pmatrix}
+        p(0) & p'(0) \\
+        p''(0) & p'''(0)
+        \end{pmatrix}.
+    \]
+    \item $T:\R^3 \to \R^3$ dado por $T(x) = x\times e^2$.
+    \item $T:\R^+\to \R$ definida por $T(x)=\ln(x)$, para todo $x\in\R^+$, donde sobre $\R^+$ se considera la estructura de espacio vectorial dada por las operaciones
+    \[
+        x\oplus y = xy \texty \alpha\odot x = x^\alpha,
+    \]
+    para todo $x\in\R^+$ y todo $\alpha\in\R$.
+\end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+        \item Sea $x\in\R^4$, tenemos que $x\in\ker(T)$ si y sólo si $T(x)=0$, es decir,
+        \[
+            \begin{pmatrix}
+            x_1 + x_2 & x_2 + x_3\\
+            x_3 + x_4 & x_4 + x_1
+            \end{pmatrix} = 0,
+        \]
+        o, lo que es equivalente,
+        \[
+            \begin{pmatrix}
+            1 & 1 & 0 & 0\\
+            0 & 1 & 1 & 0\\
+            0 & 0 & 1 & 1\\
+            1 & 0 & 0 & 1 
+            \end{pmatrix} \begin{pmatrix}
+            x_1 \\ x_2 \\ x_3 \\ x_4
+            \end{pmatrix} = \begin{pmatrix}
+            0 \\ 0 \\ 0 \\ 0
+            \end{pmatrix}.
+        \]
+        Dado que
+        \[
+            \begin{vmatrix}
+            1 & 1 & 0 & 0\\
+            0 & 1 & 1 & 0\\
+            0 & 0 & 1 & 1\\
+            1 & 0 & 0 & 1 
+            \end{vmatrix} = 0,
+        \]
+        se sigue que existe $x\neq 0$ tal que $T(x) = 0$, por ende $\ker(T)\neq \{0\}$ y así $T$ no es inyectiva. Consecuentemente, $T$ no es un isomorfismo.
+        
+        \item Sea $p(x)\in\R_3[x]$, entonces $T(p(x))= 0$ si y sólo si
+        \[
+            \begin{pmatrix}
+        p(0) & p'(0) \\
+        p''(0) & p'''(0)
+        \end{pmatrix} = 0,
+        \]
+        es decir, si y sólo si 
+        \[
+            p(0) = p'(0) = p''(0) = p'''(0).
+        \]
+        Si $p(x) = a + bx + cx^2 + dx^3$, entonces tenemos que $a = b = 2c = 6d = 0$, de donde se tiene que $\ker(T)=\{0\}$, y así, $T$ es inyectiva. Ahora, dado que
+        \[
+           \dim(\R_3[x]) = 4 = \dim(\R^{2\times 2}) = \dim(\ker(T)) + \dim(\img(T)),
+        \]
+        se tiene que $\dim(\img(T)) = 4 = \dim(\R^{2\times 2})$, de donde $\img(T)=\R^{2\times 2}$, lo que implica que $T$ es sobreyectiva. Así $T$ es biyectiva y por ende un isomorfismo.
+        
+        \item Dado que $T(e^2) = e^2\times e^2 = 0$, se tiene que $T$ no es inyectiva, y por ende $T$ no es un isomorfismo.
+        \item Sea $x\in\R^+$. Tenemos que $T(x)=0$ si y sólo si $\ln(x)=0$, lo que sucede si y sólo si $x=1$, pero $1$ es el vector nulo del espacio $\R^+$, así $\ker(T)=\{1\}$ y por ende $T$ es inyectiva. Ahora, sea $y\in\R$, entonces $T(e^y) = \ln(e^y) = y$, por ende $\img(T)=\R$, lo que significa que $T$ es sobreyectiva. Como $T$ es biyectiva, $T$ es un isomorfismo.
+    \end{enumerate}
+\end{proof}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{ejer}
+    Dada la transformación lineal
+    \[
+        \funcion{f}{\R^{2}}{\R^{3}}{(x,y)}{(x-2y,2x+y,x+y).}
+    \]
+    Sean $S$ y $T$ las bases canónicas de $\R^{2}$ y $\R^{3}$, respectivamente. Además, sean 
+    \[
+        S' = \{(1, -1),(0, 1)\}
+    \] 
+    y
+    \[
+        T' = \{(1,1,0), (0,1,1), (1,-1,1)\}
+    \]
+    bases para $\R^{2}$ y $\R^{3}$, respectivamente.
+    \begin{enumerate}
+        \item Determine $[f]_{T,S}$. %$S$ y $T$.
+        \item Determine $[f]_{T',S'}$ a través de la expresión $[f]_{T',S'} = P_{T'\leftarrow T} [f]_{T,S} P_{S\leftarrow S'}$.
+        \item Verifique que se cumple que:
+        \[
+            [f(1,2)]_{T'} = [f]_{T',S'}[(1,2)]_{S'}.
+        \]
+    \end{enumerate}
+\end{ejer}
+
+\begin{proof}[Solución]\hspace{0pt}
+    \begin{enumerate}
+    \item Notemos que 
+    \[
+        f(1, 0) = (1, 2, 1)
+        \texty
+        f(0, 1) = (-2, 1, 1),
+    \]
+    luego, 
+    \[
+        [f(1, 0)]_{T} = (1, 2, 1)
+        \texty
+        [f(0, 1)]_{T} = (-2, 1, 1),
+    \]
+    por lo cual
+    \[
+        [f]_{T,S} = 
+        \begin{pmatrix}
+            1 & -2\\
+            2 & 1\\
+            1 & 1
+        \end{pmatrix}.
+    \]
+    \item Notemos que 
+    \[
+        P_{S \leftarrow S'} = 
+        \begin{pmatrix}
+            1 & 0\\
+            -1 & 1
+        \end{pmatrix}
+        \texty
+        P_{T' \leftarrow T} = 
+        \begin{pmatrix}
+            2/3 & 1/3 & -1/3\\
+            -1/3 & 1/3 & 2/3\\
+            1/3 & -1/3 & 1/3
+        \end{pmatrix}
+    \]
+    por lo tanto
+    \[
+        [f]_{T',S'} = P_{T'\leftarrow T} [f]_{T,S} P_{S\leftarrow S'} = \begin{pmatrix}
+            2/3 & 1/3 & -1/3\\
+            -1/3 & 1/3 & 2/3\\
+            1/3 & -1/3 & 1/3
+        \end{pmatrix}
+        \begin{pmatrix}
+            1 & -2\\
+            2 & 1\\
+            1 & 1
+        \end{pmatrix}
+        \begin{pmatrix}
+            1 & 0\\
+            -1 & 1
+        \end{pmatrix}
+        = 
+        \begin{pmatrix}
+            7/3 & -4/3\\
+            -2/3 & 5/3\\
+            2/3 & -2/3
+        \end{pmatrix}.
+    \]
+    \item Dado que $[(1, 2)]_{S'} = (1, 3)$, tenemos que
+    \[
+        [f(1, 2)]_{T'} = [f]_{T',S'}[(1, 2)]_{S'} = \begin{pmatrix}
+            7/3 & -4/3\\
+            -2/3 & 5/3\\
+            2/3 & -2/3
+        \end{pmatrix}
+        \begin{pmatrix}
+            1\\
+            3
+        \end{pmatrix}
+        =
+        \begin{pmatrix}
+            -5/3\\
+            13/3\\
+            -4/3
+        \end{pmatrix}.
+    \]
+    Además, se tiene que $f(1, 2) = (-3, 4, 3)$, a partir de lo cual buscamos escalares $a,b,c\in\R$ tales que
+    \[
+        (-3,4,3)=a(1,1,0)+b(0,1,1)+c(1,-1,1).
+    \]
+    Esto equivale al sistema
+    \[
+        \systeme{a+c=-3,a+b-c=4,b+c=3},
+    \]
+    cuya solución es
+    \[
+        (a,b,c)=\left(-\frac{5}{3},\frac{13}{3},-\frac{4}{3}\right).
+    \]
+    Por tanto,
+    \[
+        [f(1,2)]_{T'}=\left(-\frac{5}{3},\frac{13}{3},-\frac{4}{3}\right),
+    \]
+    que coincide con $[f]_{T',S'}[(1,2)]_{S'}$.
+\end{enumerate}
+\end{proof}
+
+\end{document}

@@ -1,0 +1,114 @@
+\documentclass[a4,11pt]{aleph-notas}
+% Se puede ver la documentación aquí:
+% https://github.com/alephsub0/LaTeX_aleph-notas
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{url}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{longtable}
+\hypersetup{
+    urlcolor=blue,
+    linkcolor=blue,
+}
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Tema 09: Espacios con producto interno}
+\autor{Andrés Merino}
+\fecha{Periodo 2026-01}
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Resultado de Aprendizaje}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{RdA de la asignatura:}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{RdA 1:} Comprender los conceptos fundamentales del Álgebra Lineal, incluyendo el estudio de matrices, determinantes, sistemas de ecuaciones lineales y espacios vectoriales, destacando su importancia en el análisis y resolución de problemas matemáticos.
+    \item \textbf{RdA 2:} Resolver problemas prácticos y teóricos relacionados con el Álgebra Lineal, utilizando técnicas de cálculo con matrices, determinantes y sistemas de ecuaciones, así como en el análisis de espacios vectoriales.    
+    % \item \textbf{RdA 3:} Aplicar los principios y métodos del Álgebra Lineal en una variedad de contextos demostrando comprensión de su relevancia y utilidad en situaciones prácticas y teóricas.
+\end{itemize}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{RdA de la actividad:}
+\begin{itemize}[leftmargin=*]
+    \item Calcular productos internos, normas y distancias en distintos espacios vectoriales.
+    \item Determinar ortogonalidad de vectores en $\mathbb{R}^n$, polinomios y funciones.
+    \item Aplicar Gram-Schmidt para construir bases ortogonales y ortonormales.
+    \item Determinar complementos ortogonales y calcular proyecciones ortogonales.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Introducción}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\paragraph{Control de lectura:}
+Antes de iniciar la clase, se aplicará el control de lectura del siguiente enlace:
+\href{https://gemini.google.com/share/7d22976ac15d}{Control de lectura - Clase 09}.
+
+\paragraph{Pregunta inicial:}
+¿Dos polinomios pueden ser perpendiculares? ¿Y dos matrices?
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Desarrollo}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection*{Actividad 1: Producto interno, norma y ortogonalidad}
+
+La clase inicia con una recuperación breve de norma y distancia en $\mathbb{R}^n$. Luego, mediante clase magistral y práctica guiada, se introduce la noción de producto interno en espacios abstractos, sus propiedades, la ortogonalidad y resultados asociados como Pitágoras, Cauchy-Schwarz y desigualdad triangular.
+
+\paragraph{¿Cómo lo haremos?}
+\begin{itemize}[leftmargin=*]
+    \item \textbf{Clase magistral:} se presentan las definiciones de producto interno, norma, distancia, ortogonalidad, conjuntos ortogonales/ortonormales, complemento ortogonal y proyección ortogonal. Se usan ejemplos en $\mathbb{R}^n$, matrices, polinomios y funciones. Se usa el resumen \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/01Resumen/Resumen09.pdf}{Resumen09.pdf}.
+    \item \textbf{Resolución de ejercicios:} se guiará a los estudiantes en la solución de ejercicios del documento \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/04Ejercicios/Ejercicios09.pdf}{Ejercicios09.pdf}, calculando productos internos, verificando ortogonalidad, aplicando Gram-Schmidt y calculando proyecciones.
+    \item \textbf{Recomendaciones de lectura:} 
+    \begin{itemize}
+        \item \href{https://blog.nekomath.com/algebra-lineal-i-producto-interior-y-desigualdad-de-cauchy-schwarz/}{Producto interior y desigualdad de Cauchy-Schwarz}
+    \end{itemize}
+\end{itemize}
+
+\paragraph{Verificación de aprendizaje:}
+\begin{enumerate}[leftmargin=*]
+    \item ¿Qué propiedades debe cumplir una aplicación para ser un producto interno?
+    \item ¿Cómo se determina si dos vectores son ortogonales en un espacio de polinomios o funciones?
+    \item ¿Cómo se usa Gram-Schmidt para construir una base ortonormal?
+    \item ¿Qué interpretación geométrica tiene la proyección ortogonal?
+\end{enumerate}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section*{Cierre}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\paragraph{Tarea:}
+Resolver del libro \href{https://catalogobiblioteca.puce.edu.ec/cgi-bin/koha/opac-detail.pl?biblionumber=86081}{Fundamentos de álgebra lineal de Larson}: sección 5.2, ejercicios: 1,3,5,7,9,17,21,31,32.39
+
+\paragraph{Pregunta de investigación:}
+\begin{enumerate}[leftmargin=*]
+    \item ¿Qué ventajas tiene trabajar con bases ortonormales frente a bases arbitrarias?
+    \item ¿Cómo se relaciona el complemento ortogonal con la solución de problemas de aproximación?
+    \item ¿Por qué la proyección ortogonal entrega el vector más cercano en un subespacio?
+\end{enumerate}
+
+\paragraph{Para el próximo tema:}  
+Visualizar el video \href{https://youtu.be/YJfS4_m_0Z8?si=kFS74G3kXhWGWq4L}{Transformaciones lineales}.
+Realizar la actividad de clase invertida: \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/07Act-ClaseInvertida/03ClsInv-AplicacionLineal.pdf}{03ClsInv-AplicacionLineal.pdf}.
+
+
+
+\end{document}

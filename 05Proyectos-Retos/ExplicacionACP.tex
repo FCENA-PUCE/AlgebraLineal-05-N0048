@@ -2,6 +2,8 @@
 
 % -- Paquetes adicionales
 \usepackage{aleph-comandos}
+\usepackage{booktabs}
+\usepackage{pdflscape}
 \hypersetup{
     urlcolor=colordef!70,
 }
@@ -35,7 +37,7 @@
 
 \begin{itemize}
 \item 
-    Aplica métodos de Álgebra Lineal para resolver sistemas de ecuaciones en contextos variados, demostrando habilidad para seleccionar y emplear el método más adecuado.
+    Aplica fundamentos de Álgebra Lineal y técnicas de análisis multivariado para reducir dimensionalidad, interpretar estructuras de datos y comunicar hallazgos reproducibles en contextos de ciencia de datos.
 \end{itemize}
 
 
@@ -43,88 +45,108 @@
 \section{Descripción}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-El análisis de componentes principales (ACP) es una técnica estadística poderosa utilizada para reducir la dimensionalidad de grandes conjuntos de datos, preservando al mismo tiempo la mayor cantidad posible de la variabilidad de los datos. Esta técnica es fundamental en el campo del álgebra lineal y se basa en conceptos de espacios vectoriales y transformaciones lineales. Al transformar las variables originales en nuevas variables ortogonales llamadas componentes principales, ACP facilita la visualización y la interpretación de datos complejos y multidimensionales. Esta metodología no solo es relevante para el análisis exploratorio de datos, sino que también juega un papel crucial en la mejora del rendimiento de modelos predictivos al eliminar redundancias y reducir el ruido. Su aplicación se extiende a una variedad de campos como la genómica, la economía, la psicología y más, donde la interpretación y reducción eficiente de datos es esencial.
+El análisis de componentes principales (ACP) es una técnica central en ciencia de datos para reducir dimensionalidad, eliminar redundancia y facilitar la interpretación de información multivariada. Este reto busca articular el fundamento matemático del ACP con su implementación computacional y su lectura analítica en un flujo de trabajo realista de análisis de datos.
 
-El reto propuesto culminará en la creación de tres productos: un documento detallado, un video explicativo y un notebook de Jupyter. El documento proporcionará una explicación clara y concisa sobre qué es el Análisis de Componentes Principales (ACP) y cómo se lleva a cabo, abarcando tanto la teoría subyacente como su aplicación práctica. Este será complementado por un video, que visualizará los conceptos y procedimientos descritos en el documento, facilitando así una comprensión más intuitiva y dinámica del tema. Por último, el notebook de Jupyter permitirá la experimentación directa con el ACP, incluyendo códigos ejecutables para análisis de datos reales. Juntos, estos materiales no solo serán de utilidad para los estudiantes y profesionales que buscan profundizar en técnicas avanzadas de reducción de datos, sino que también servirán como referencia educativa accesible y práctica para cualquier persona interesada en aplicaciones estadísticas y de ciencia de datos.
-
-
-\subsection{Parte 1: Investigación}
-
-Vas a explorar qué es el Análisis de Componentes Principales (ACP), sus fundamentos matemáticos y el procedimiento para ejecutarlo, desarrollando un minitutorial (video) que sirva como guía de aprendizaje. En esta parte, debes analizar la relación (donde interviene) cada uno de estos temas en el ACP:
-
-\begin{itemize}
-\item
-    Bases y dimensión.
-\item
-    Proyección ortogonal.
-\item
-    Transformación lineal.
-\item 
-    Valores y vectores propios.
+\subsection*{Pregunta esencial}
+\begin{itemize}[leftmargin=*]
+\item ¿Cómo transforma el ACP un conjunto de variables correlacionadas en nuevas variables informativas para apoyar decisiones en ciencia de datos?
 \end{itemize}
 
-Para este punto, puedes usar estas referencias, pero es necesario también incluir referencias a libros o artículos: 
-\begin{itemize}
-    \item \href{https://youtu.be/FgakZw6K1QQ?si=a9cxs4ePio-H6MXm}{StatQuest: Análisis de componentes principales (PCA), paso a paso}.
-    \item \href{https://youtu.be/7My_PBhxeP4?si=zQf5Hr18NOb6cerX}{Análisis de componentes principales (PCA)}.
+\subsection*{Reto}
+
+Tu desafío es doble: primero, explicar con claridad la base matemática del ACP; segundo, aplicarlo a un conjunto de datos real para extraer conclusiones interpretables.
+
+Debes entregar:
+\begin{itemize}[leftmargin=*]
+\item Un minitutorial en video (máx. 8 minutos) con explicación conceptual y procedimiento.
+\item Un informe en PDF redactado en \LaTeX\ con análisis teórico y resultados prácticos.
+\item Un notebook de Jupyter o Google Colab reproducible con el proceso completo.
 \end{itemize}
 
+\subsection*{Preguntas guía}
+\begin{itemize}[leftmargin=*]
+\item ¿Por qué el centrado y la estandarización de variables son pasos críticos antes del ACP?
+\item ¿Cómo se interpreta la varianza explicada por cada componente principal?
+\item ¿Qué relación existe entre autovalores/autovectores y la proyección ortogonal en el ACP?
+\item ¿Cómo decidir entre usar 2 o 3 componentes según el objetivo analítico?
+\item ¿Qué información aportan las cargas (loadings) para interpretar variables relevantes?
+\end{itemize}
 
-\subsection{Parte 2: Aplicación Práctica}
+\subsection*{Actividades guía}
+\begin{enumerate}[leftmargin=*, label={{\arabic*.}}]
+\item Investigar y explicar ACP desde Álgebra Lineal: base, dimensión, transformación lineal, ortogonalidad, autovalores y autovectores.
+\item Elaborar un guion para un video breve, claro y didáctico.
+\item Descargar el dataset \href{https://www.kaggle.com/datasets/konradb/real-world-vehicle-emissions}{Real-world vehicle emissions} y usar el archivo \texttt{2021 Cars Raw.csv}.
+\item Realizar preprocesamiento mínimo: selección de variables cuantitativas, limpieza de faltantes y estandarización.
+\item Aplicar ACP con \texttt{scikit-learn} para 2 y 3 componentes.
+\item Presentar visualizaciones: dispersión en espacio de componentes, varianza explicada y análisis de cargas.
+\item Verificar manualmente la proyección de al menos un registro usando la base ortonormal asociada a los componentes seleccionados.
+\item Redactar conclusiones enfocadas en hallazgos, utilidad del método y limitaciones del análisis.
+\end{enumerate}
 
-el Análisis de Componentes Principales (ACP) a un conjunto de datos de emisiones de vehículos en condiciones reales, demostrando comprensión y habilidad en el uso de este método.
-
-Para esto, descarga el conjunto de datos desde \href{https://www.kaggle.com/datasets/konradb/real-world-vehicle-emissions}{Kaggle}, específicamente el archivo llamado «2021 Cars Raw.csv». Luego, selecciona las columnas cuantitativas del dataset y realiza un ACP para dos y tres componentes utilizando el paquete de Python, Scikit-learn. Es fundamental que presentes gráficos de los resultados, mostrando la distribución de los puntos en el espacio de los componentes principales.
-
-Además, es importante que describas las bases vectoriales para cada uno de los casos de componentes principales y verifiques manualmente la proyección de al menos uno de los datos sobre estas bases.
+\subsection*{Recursos}
+\begin{itemize}[leftmargin=*]
+\item Video \href{https://youtu.be/FgakZw6K1QQ?si=a9cxs4ePio-H6MXm}{StatQuest: Análisis de componentes principales (PCA), paso a paso}.
+\item Video \href{https://youtu.be/7My_PBhxeP4?si=zQf5Hr18NOb6cerX}{Análisis de componentes principales (PCA)}.
+\item Documentación oficial de \href{https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.PCA.html}{\texttt{sklearn.decomposition.PCA}}.
+\item Complementar con al menos dos fuentes académicas (libro o artículo) citadas en formato APA.
+\end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Producto}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-El producto final de este reto será un documento, redactado en \LaTeX, que constará de tres secciones principales. A continuación, se detallan las instrucciones específicas para cada sección del documento.
-
-
-\subsection{Parte 1: Investigación y Minitutorial}
-
-\begin{enumerate}
-\item
-    Título de la Sección: Comienza esta sección con un título claro y directo, por ejemplo, «Introducción al Análisis de Componentes Principales».
-\item
-    Definición y explicación: Inicia con una introducción breve a qué es el Análisis de Componentes Principales (ACP) y su relevancia en el contexto de la reducción de dimensionalidad y el análisis de datos multivariados. Explica los principios matemáticos del ACP y su relación con el mismo, incluyendo bases y dimensión, proyección ortogonal, transformación lineal, valores y vectores propios.
-\item
-    Minitutorial (video): Bajo un nuevo subtítulo «Minitutorial sobre el Análisis de Componentes Principales», incluye un enlace a un video tutorial que hayas creado para complementar el contenido escrito. Utiliza \verb+\href{url}{texto enlace}+ para añadir el enlace. Asegúrate de que el enlace sea accesible para tus revisores y que el video sea claro y educativo.
-\end{enumerate}
-
-\subsection{Parte 2: Aplicación Práctica}
-
-\begin{enumerate}
-\item
-    Título de la Sección: Emplea el título «Aplicación Práctica del ACP» para señalar el comienzo de esta sección.
-\item
-    Describe el conjunto de datos que utilizas, e indica los principales resultados obtenidos al hacer en ACP.
-\item 
-    Incluye el enlace a un Jupyter Notebook de Google Colab donde se realicen todo lo solicitado en este reto.
-\end{enumerate}
-
-\subsection{Parte de Conclusión}
-
-    Concluye con una sección breve que resuma lo aprendido a través del reto, la utilidad del ACP en la exploración de grandes datasets y su impacto en la toma de decisiones basada en datos. Subraya cómo este método se integra en el ámbito más amplio del análisis de datos. No olvides incluir una bibliografía en formato APA para citar todas las referencias utilizadas.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Rúbrica de evaluación}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{itemize}
-\item
-    Definición y explicación (15 puntos): Se evaluará la claridad y precisión en la definición del ACP y la explicación de sus componentes.
-\item 
-    Minitutorial (15 puntos): Se valorará la calidad del tutorial para explicar el proceso del ACP.
-\item 
-    Aplicación práctica (15 puntos): Se evaluará la claridad y explicación del código del Jupyter Notebook.
-
-\item
-    Excelencia (5 puntos), este puntaje es dado únicamente si se tiene el puntaje completo en los otros puntos. Se premiará la creatividad en la presentación del contenido.
+\subsection{Minitutorial explicativo}
+Un video de máximo 8 minutos (formato libre) donde se explique con claridad:
+\begin{itemize}[leftmargin=*]
+\item Qué es el ACP y para qué se usa en ciencia de datos.
+\item Relación del ACP con base, dimensión, proyección ortogonal y autovectores.
+\item Flujo mínimo de implementación: preprocesamiento, ajuste, transformación e interpretación.
+\item Ejemplo breve de lectura de resultados (varianza explicada y gráfico de componentes).
 \end{itemize}
+
+\subsection{Informe de aplicación práctica}
+Un documento en formato PDF que contenga:
+
+\begin{enumerate}[leftmargin=*, label={\textbf{\arabic*.}}]
+\item \textbf{Introducción:} contexto del problema, objetivo analítico y pertinencia del ACP.
+\item \textbf{Fundamento matemático:} explicación conceptual de los elementos de Álgebra Lineal implicados.
+\item \textbf{Desarrollo computacional:} limpieza básica, selección de variables y ejecución de ACP (2 y 3 componentes) con \texttt{scikit-learn}.
+\item \textbf{Resultados e interpretación:} visualizaciones, varianza explicada, cargas y análisis de hallazgos.
+\item \textbf{Verificación manual:} proyección de al menos un dato sobre la base de componentes seleccionada.
+\item \textbf{Cierre y bibliografía:} conclusiones, limitaciones y referencias en formato APA.
+\end{enumerate}
+
+\subsection{Entrega técnica}
+\begin{itemize}[leftmargin=*]
+\item El informe debe ser elaborado en la plantilla \LaTeX\ institucional disponible en Overleaf: \href{https://www.overleaf.com/latex/templates/formato-tareas-puce/nkgwqjtcrvms}{Formato Tareas PUCE}.
+\item Incluir el enlace al video con permisos de acceso activos.
+\item Incluir el enlace al notebook (Google Colab o repositorio) con celdas ejecutables.
+\item Si los enlaces no permiten visualizar el material, la actividad no podrá ser calificada y se asignará \textbf{0}.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Rúbrica de calificación}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+En caso de presentar un video con voz en off, rostro no visible o fuera del rango de tiempo establecido, se reducirá un nivel a cada punto de la rúbrica.
+
+\begin{landscape}
+\begin{center}\footnotesize
+\begin{tabular}{p{5cm}p{4cm}p{4cm}p{4cm}p{4cm}}
+\toprule
+\textbf{Indicador} & \textbf{Excelente} & \textbf{Bueno} & \textbf{Aceptable} & \textbf{Insuficiente} \\ \midrule
+\textbf{Fundamento matemático del ACP (10 pts)} & Explica con rigor base, dimensión, proyección ortogonal y autovectores vinculados al ACP, con notación correcta (10) & Explicación correcta con una omisión menor conceptual o de notación (8) & Presenta ideas generales, pero con justificación parcial o confusa (6) & Presenta errores conceptuales importantes o no justifica (0) \\ \midrule
+\textbf{Implementación del ACP en notebook (15 pts)} & Preprocesa adecuadamente, ejecuta ACP para 2 y 3 componentes, y documenta el flujo de forma reproducible (15) & Implementación correcta con detalles menores faltantes (12) & Implementación parcial o con pasos incompletos (9) & Errores técnicos relevantes o sin evidencia funcional (0) \\ \midrule
+\textbf{Interpretación de resultados (15 pts)} & Interpreta correctamente varianza explicada, cargas y gráficos; incluye verificación manual de proyección (15) & Interpretación correcta con omisiones menores en el análisis (12) & Interpretación parcial o poco conectada con el problema (9) & Interpretación incorrecta o ausente (0) \\ \midrule
+\textbf{Presentación en video (5 pts)}
+& Exposición clara y fluida; rostro visible durante toda la presentación (5)
+& Exposición clara con ligeras interrupciones; rostro visible (4)
+& Exposición poco fluida o lectura excesiva; rostro visible parcial (3)
+& Voz en off o rostro no visible / exposición ininteligible (0) \\ \midrule
+\textbf{Gestión del tiempo (5 pts)} & 8:00 $\pm$ 30 s (5) & 8:00 $\pm$ 60 s (4) & 8:00 $\pm$ 90 s (3) & Fuera de $\pm$ 90 s (0) \\ \bottomrule
+\end{tabular}
+\end{center}
+\end{landscape}
 
 \end{document}

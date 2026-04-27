@@ -17,7 +17,7 @@
 \institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
 \carrera{Catálogo STEM}
 \asignatura{Álgebra lineal}
-\tema{Clase 09: Espacios con producto interno}
+\tema{Tema 10: Aplicaciones lineales}
 \autor{Andrés Merino}
 \fecha{Periodo 2026-01}
 
@@ -46,10 +46,10 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection*{RdA de la actividad:}
 \begin{itemize}[leftmargin=*]
-    \item Calcular productos internos, normas y distancias en distintos espacios vectoriales.
-    \item Determinar ortogonalidad de vectores en $\mathbb{R}^n$, polinomios y funciones.
-    \item Aplicar Gram-Schmidt para construir bases ortogonales y ortonormales.
-    \item Determinar complementos ortogonales y calcular proyecciones ortogonales.
+    \item Reconocer y verificar cuándo una función entre espacios vectoriales es una aplicación lineal.
+    \item Determinar núcleo, imagen, nulidad y rango de una aplicación lineal.
+    \item Analizar inyectividad, sobreyectividad, biyectividad e isomorfismos a partir del núcleo, la imagen y la dimensión.
+    \item Construir y utilizar la matriz asociada de una aplicación lineal respecto de bases dadas.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -62,33 +62,30 @@ Antes de iniciar la clase, se aplicará el control de lectura del siguiente enla
 \href{https://gemini.google.com/share/7d22976ac15d}{Control de lectura - Clase 09}.
 
 \paragraph{Pregunta inicial:}
-¿Dos polinomios pueden ser perpendiculares? ¿Y dos matrices?
+¿Cómo se reconoce una aplicación lineal y qué información esencial aporta su núcleo o su matriz asociada?
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section*{Desarrollo}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection*{Actividad 1: Producto interno, norma y ortogonalidad}
+\subsection*{Actividad 1: Aplicaciones lineales, núcleo e imagen}
 
-La clase inicia con una recuperación breve de norma y distancia en $\mathbb{R}^n$. Luego, mediante clase magistral y práctica guiada, se introduce la noción de producto interno en espacios abstractos, sus propiedades, la ortogonalidad y resultados asociados como Pitágoras, Cauchy-Schwarz y desigualdad triangular.
+La clase inicia con una recuperación breve de la definición de aplicación lineal y de sus propiedades básicas. Luego, mediante clase magistral y práctica guiada, se estudian el núcleo, la imagen, la nulidad, el rango y los criterios de inyectividad y sobreyectividad. Se cierra con la construcción de la matriz asociada a una aplicación lineal y su uso para representar transformaciones entre bases.
 
 \paragraph{¿Cómo lo haremos?}
 \begin{itemize}[leftmargin=*]
-    \item \textbf{Clase magistral:} se presentan las definiciones de producto interno, norma, distancia, ortogonalidad, conjuntos ortogonales/ortonormales, complemento ortogonal y proyección ortogonal. Se usan ejemplos en $\mathbb{R}^n$, matrices, polinomios y funciones. Se usa el resumen \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/01Resumen/Resumen09.pdf}{Resumen09.pdf}.
-    \item \textbf{Resolución de ejercicios:} se guiará a los estudiantes en la solución de ejercicios del documento \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/04Ejercicios/Ejercicios09.pdf}{Ejercicios09.pdf}, calculando productos internos, verificando ortogonalidad, aplicando Gram-Schmidt y calculando proyecciones.
-    \item \textbf{Recomendaciones de lectura:} 
-    \begin{itemize}
-        \item \href{https://blog.nekomath.com/algebra-lineal-i-producto-interior-y-desigualdad-de-cauchy-schwarz/}{Producto interior y desigualdad de Cauchy-Schwarz}
-    \end{itemize}
+    \item \textbf{Clase magistral:} se presentan las definiciones de aplicación lineal, núcleo, imagen, nulidad, rango, isomorfismo y matriz asociada. Se usan ejemplos en $\mathbb{R}^n$, matrices y polinomios. Se usa el resumen \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/01Resumen/Resumen10.pdf}{Resumen10.pdf}.
+    \item \textbf{Resolución de ejercicios:} se guiará a los estudiantes en la solución de ejercicios del documento \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/04Ejercicios/Ejercicios10.pdf}{Ejercicios10.pdf}, identificando aplicaciones lineales, calculando núcleos e imágenes, verificando isomorfismos y construyendo matrices asociadas.
+    \item \textbf{Visualización de video:} se recomendará el estudio con el video: \href{https://youtu.be/kYB8IZa5AuE?si=51z3YxrVrpOQwNTV}{Transformaciones lineales y matrices.}.
 \end{itemize}
 
 \paragraph{Verificación de aprendizaje:}
 \begin{enumerate}[leftmargin=*]
-    \item ¿Qué propiedades debe cumplir una aplicación para ser un producto interno?
-    \item ¿Cómo se determina si dos vectores son ortogonales en un espacio de polinomios o funciones?
-    \item ¿Cómo se usa Gram-Schmidt para construir una base ortonormal?
-    \item ¿Qué interpretación geométrica tiene la proyección ortogonal?
+    \item ¿Qué condiciones debe verificar una función para ser lineal?
+    \item ¿Cómo se determina el núcleo y la imagen de una aplicación lineal?
+    \item ¿Cómo se decide si una aplicación lineal es inyectiva, sobreyectiva o un isomorfismo?
+    \item ¿Cómo se construye la matriz asociada de una aplicación lineal respecto de bases dadas?
 \end{enumerate}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -96,16 +93,16 @@ La clase inicia con una recuperación breve de norma y distancia en $\mathbb{R}^
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \paragraph{Tarea:}
-Resolver del libro \href{https://catalogobiblioteca.puce.edu.ec/cgi-bin/koha/opac-detail.pl?biblionumber=86081}{Fundamentos de álgebra lineal de Larson}: sección 5.2, ejercicios: 1,3,5,7,9,17,21,31,32.39
+Resolver del libro \href{https://catalogobiblioteca.puce.edu.ec/cgi-bin/koha/opac-detail.pl?biblionumber=86081}{Fundamentos de álgebra lineal de Larson}: sección 6.1, ejercicios: 1, 3, 5, 7, 9, 11, 17; sección 6.2, ejercicios: 1, 3, 5, 7; sección 6.3, ejercicios: 1, 3, 5, 7, 9, 23, 25.
 
 \paragraph{Pregunta de investigación:}
 \begin{enumerate}[leftmargin=*]
-    \item ¿Qué ventajas tiene trabajar con bases ortonormales frente a bases arbitrarias?
-    \item ¿Cómo se relaciona el complemento ortogonal con la solución de problemas de aproximación?
-    \item ¿Por qué la proyección ortogonal entrega el vector más cercano en un subespacio?
+    \item ¿Por qué el núcleo determina la inyectividad de una aplicación lineal?
+    \item ¿Qué información geométrica codifica la imagen de una transformación lineal?
+    \item ¿Cómo cambian las matrices asociadas al cambiar de base?
 \end{enumerate}
 
-\paragraph{Para la próxima clase:}  
+\paragraph{Para el próximo tema:}  
 Visualizar el video \href{https://youtu.be/YJfS4_m_0Z8?si=kFS74G3kXhWGWq4L}{Transformaciones lineales}.
 Realizar la actividad de clase invertida: \href{https://fcena-puce.github.io/AlgebraLineal-05-N0048/07Act-ClaseInvertida/03ClsInv-AplicacionLineal.pdf}{03ClsInv-AplicacionLineal.pdf}.
 

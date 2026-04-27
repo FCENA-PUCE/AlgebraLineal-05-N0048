@@ -1,0 +1,338 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos} 
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catálogo STEM}
+\asignatura{Álgebra lineal}
+\tema{Resumen 10: Aplicaciones lineales}
+\autor[A. Merino]{Andrés Merino}
+\fecha{Periodo 2026-1} 
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 14
+%% Aplicaciones lineales
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Aplicaciones lineales}
+
+\begin{defi}[Aplicación lineal]
+    Sean $(E,+_1,\cdot_1,\K)$ y $(F,+_2,\cdot_2,\K)$ espacios vectoriales. A una función $\func{T}{E}{F}$ se la llama una aplicación lineal (transformación lineal) si satisface que para todo $\alpha \in \K$, y todo $u,v \in E$ se cumple
+    \begin{enumerate}
+    \item 
+        $T(u +_1 v) = T(u) +_2 T(v)\quad$ y
+    \item 
+        $T(\alpha \cdot_1 v ) = \alpha \cdot_2 T(v)$.
+    \end{enumerate}
+\end{defi}
+
+En adelante, consideraremos $(E,+_1,\cdot_1,\K)$ y $(F,+_2,\cdot_2,\K)$ espacios vectoriales. Notaremos por $\mathcal{L}(E,F)$ el espacio de las aplicaciones lineales de $E$ en $F$.
+
+\begin{advertencia}
+    En caso de que no exista riesgo de ambigüedad, dado $T \in \mathcal{L}(E,F)$, se denotará
+    \begin{enumerate}
+    \item 
+        $T(u + v) = T(u) + T(v)\quad$ y
+    \item 
+        $T(\alpha v ) = \alpha T(v)$,
+    \end{enumerate}
+    para $\alpha \in \K$ y $u,v \in E$.
+\end{advertencia}
+    
+\begin{teo}
+     Sea $T \in \mathcal{L}(E,F)$. Para todo $u,v, v_1, v_2, \ldots, v_n \in E$ y $\alpha_1, \alpha_2, \ldots, \alpha_n \in \K$
+     \begin{enumerate}
+         \item $T(0_E) = 0_F$;
+         \item $T(u-v) = T(u) - T(v)$; y
+         \item $T\left(\displaystyle \sum_{k=1}^n \alpha_k v_k \right)= 
+         \displaystyle \sum_{k=1}^n \alpha_k T\left(v_k \right)$.
+     \end{enumerate}
+\end{teo}
+
+\subsection{Ejemplos de transformaciones lineales}
+\begin{enumerate}
+\item 
+    Transformación nula, \[\funcion{T}{F}{F}{v}{0.}\]
+\item 
+    Transformación identidad, \[\funcion{T}{F}{F}{v}{v.}\]
+\item 
+    \[
+        \funcion{T}{\R^3}{\R^2}
+            {(x,y,z)}{(x, y).}
+    \]
+\item 
+    \[
+        \funcion{T}{\R^2}{\R^3}
+            {(x,y)}{(x, y,0).}
+    \]
+\item 
+    \[
+        \funcion{T}{\R^3}{\R^3}
+            {(x,y,z)}{(x+y, y + z,x).}
+    \]
+\item 
+    \[
+        \funcion{T}{\R^2}{\Mat{2}{2}}
+            {(x,y)}{\begin{pmatrix}x& 0\\ 0 &y\end{pmatrix}.}
+    \]
+\item 
+    \[
+        \funcion{T}{\R^3}{\R_2[t]}
+            {(x,y,z)}{x+(x-y)t + zt^2.}
+    \]
+\end{enumerate}
+
+
+
+\begin{teo}
+    Sea $T \in \mathcal{L}(E,F)$. Si $\{u_1,u_2,\ldots,u_n\}$ es una base de $E$, entonces $T$ está completamente determinada por
+    \[
+        \{T(u_1),T(u_2),\ldots,T(u_n)\}.
+    \]
+    Es decir, si se conoce el valor de $\{T(u_1),T(u_2),\ldots,T(u_n)\}$, entonces se conoce $T(u)$ para todo $u\in E$.
+\end{teo}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 14
+%% Núcleo e imagen
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Núcleo e imagen}
+
+\begin{defi}[Núcleo e imagen de una aplicación lineal]
+    Sea $T \in \mathcal{L}(E,F)$.
+    \begin{enumerate}
+    \item 
+        El núcleo de $T$, denotado por $\ker(T)$, está definido por:
+        \[
+            \ker(T) = \{v \in E: T(v) = 0_F\}.
+        \]
+    \item 
+        La imagen de $T$, denotada por $\img(T)$, está definida por:
+        \[
+            \img(T) = \{ w \in F: w = T(v) \text{ para algún } v \in E\}.
+        \]
+    \end{enumerate}
+\end{defi}
+
+\begin{teo}
+    Sea $T \in \mathcal{L}(E,F)$, entonces
+    \begin{enumerate}
+    \item 
+        $\ker(T)$ es un subespacio vectorial de $E$.
+    \item 
+        $\img(T)$ es un subespacio vectorial de $F$.
+    \end{enumerate}
+\end{teo}
+    
+\begin{teo}
+    Sea $T \in \mathcal{L}(E,F)$. Se tiene que $T$ es inyectiva si y solo si $\ker(T)=\{0\}$.
+\end{teo}
+
+\begin{defi}[Nulidad y rango de una aplicación lineal]
+    Sea $T \in \mathcal{L}(E,F)$.
+    \begin{enumerate}
+    \item 
+        Se llama nulidad de $T$ a $\dim(\ker(T))$.
+    \item 
+        Se llama rango de $T$ a $\dim(\img(T))$.
+    \end{enumerate}
+\end{defi}
+
+\begin{teo}
+    Sea $T \in \mathcal{L}(E,F)$ con $E$ un espacio de dimensión finita. Se tiene que
+    \[
+        \dim(E) = \dim(\ker(T)) +  \dim(\img(T)).
+    \]
+\end{teo}   
+
+\begin{teo}
+    Sea $T \in \mathcal{L}(E,F)$ con $E$ un espacio de dimensión finita. Si $\dim(E)=\dim(F)$, entonces se tiene que las siguientes son equivalentes
+    \begin{itemize}
+        \item $T$ es inyectiva,
+        \item $T$ es sobreyectiva.
+    \end{itemize}
+\end{teo}   
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 14
+%% Aplicaciones lineales
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Propiedades de aplicaciones lineales}
+
+\begin{teo}
+    Se tiene que $\mathcal{L}(E,F)$ es un espacio vectorial.
+\end{teo}
+
+
+\begin{teo}
+    Sean $T_1,T_2 \in \mathcal{L}(E,F)$ y $B= \{v_1, v_2, \ldots, v_n\}$ una base para $E$. Si
+    \[
+        T_1(v_i) = T_2(v_i)
+    \]
+    para todo $i \in \{1, 2, \ldots, n\}$, entonces se tiene que $T_1(v)=T_2(v)$, para todo $v\in E$, es decir, 
+    \[
+        T_1 = T_2.
+    \]
+\end{teo}
+
+\begin{teo}
+    Sean $B= \{v_1, v_2, \ldots, v_n\}$ una base para $E$ y $w_1, w_2, \ldots, w_n\in F$. Se tiene que existe una única transformación lineal $T \in \mathcal{L}(E,F)$ tal que
+    \[
+        T(v_i) = w_i
+    \]
+    para todo $i\in \{1, 2, \ldots, n\}$.
+\end{teo}
+
+
+\begin{teo}
+    Sea $T \in \mathcal{L}(E,F)$. Supongamos que $\dim(E) = n$ y $\dim(F) = m$, se tiene que:
+    \begin{enumerate}
+        \item si $n > m$, entonces $T$ no es inyectiva; y
+        \item si $m > n$, entonces $T$ no es sobreyectiva.
+    \end{enumerate}
+\end{teo} 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Isomorfismos}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{defi}[Isomorfismo]
+    Sea $T \in \mathcal{L}(E,F)$. Se dice que $T$ es un isomorfismo de $E$ en $F$ si $T$ es biyectiva.
+\end{defi}
+
+\begin{defi}[Espacios isomorfos]
+    Sean $(E,+,\cdot,\K)$ y $(F,+,\cdot,\K)$. Se dice que $E$ y $F$ son isomorfos si existe un isomorfismo $T$ de $E$ en $F$, se lo denota por $E \cong F$.
+\end{defi}
+
+\begin{teo}
+    Sea $T \in \mathcal{L}(E,F)$ un isomorfismo, se tiene que
+    \begin{enumerate}
+    \item 
+        si $\{v_1, v_2, \ldots, v_n\}$ genera a $E$, entonces 
+        \[
+            \{T(v_1), T(v_2), \ldots, T(v_n)\}
+        \]
+        genera a $F$;
+    \item 
+        si $\{v_1, v_2, \ldots, v_n\}$ son linealmente independientes en $E$, entonces 
+        \[
+            \{T(v_1), T(v_2), \ldots, T(v_n)\}
+        \] 
+        son linealmente independientes en $F$;
+    \item 
+        si $\{v_1, v_2, \ldots, v_n\}$ es base de $E$, entonces
+        \[
+            \{T(v_1), T(v_2), \ldots, T(v_n)\}
+        \]
+        es base de $F$; 
+    \item 
+        si $E$ es de dimensión finita, entonces $F$ es de dimensión finita y 
+        \[
+            \dim(E) = \dim(F).
+        \]
+    \end{enumerate}
+\end{teo} 
+
+\begin{teo}
+    Sean $(E,+,\cdot,\R)$ y $(F,+,\cdot,\R)$ espacios de dimensión finita tales que $\dim(E) = \dim(F)$, entonces $E \cong F$.
+\end{teo}
+
+\begin{teo}
+    Se tiene que
+    \begin{enumerate}
+        \item $\Mat{m}{n} \cong \R^{mn}$, con $m,n\in\N^*$;
+        \item $P_n[x] \cong \R^{n+1}$, con $n\in\N^*$.
+    \end{enumerate}
+\end{teo}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 14
+%% Matriz asociada
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Matriz asociada}
+
+En adelante, consideraremos $E$ y $F$ espacios vectoriales de dimensión finita tales que $\dim(E)=n$ y $\dim(F)=m$.
+
+\begin{defi}
+    Sean $T \in \mathcal{L}(E,F)$ y $B$, $D$ bases para $E$ y $F$, respectivamente. Se tiene que existe una única matriz de $\Mat[\K]{m}{n}$, denotada por $[T]_{D,B}$, tal que
+    \[
+        [T(v)]_{D} = [T]_{D,B} [v]_{B}
+    \]
+    para todo $v\in E$. A esta matriz se la llama matriz asociada a la aplicación lineal $T$.
+\end{defi}
+
+
+\begin{teo}
+    Sean $T \in \mathcal{L}(E,F)$ y 
+    \[
+        B = \{v_1,v_2,\ldots,v_n\}
+        \texty
+        D = \{u_1,u_2,\ldots,u_m\}
+    \]
+    bases para $E$ y $F$, respectivamente. Se tiene que las columnas de la matriz $[T]_{D,B}$ son los vectores de coordenadas de $T(v_j)$ en la base $D$, para $j\in\{1,2,\ldots,n\}$, es decir
+    \[
+        [T]_{D,B} = \begin{pmatrix}
+            [T(v_1)]_D & [T(v_2)]_D & \cdots & [T(v_n)]_D
+        \end{pmatrix}.
+    \]
+\end{teo}
+
+\begin{advertencia}
+    En caso de no existir riesgo de confusión en las bases que se utilizan, se denota simplemente $[T]$ a la matriz asociada a la aplicación lineal $T$. 
+\end{advertencia}
+
+
+Se pueden ver ejemplos del procedimiento para encontrar una matriz asociada a una aplicación lineal entre las páginas 522 y 527 del libro de Kolman.
+
+
+\begin{teo}
+    Sean $I \in \mathcal{L}(E,E)$ la aplicación identidad y $B,D$ dos bases para $E$, considerando $B$ para el conjunto de salida y $D$ para el conjunto de llegada. Se tiene que
+    \[
+        [I]_{D,B} = P_{D\leftarrow B}.
+    \]
+\end{teo}
+
+
+
+\begin{teo}
+    Sea $T \in \mathcal{L}(E,F)$. Se tiene que $T$ es biyectiva si y solo si $[T]_{D,B}$ es invertible.
+\end{teo}
+
+
+
+\begin{teo}
+    Sean $T_1 \in \mathcal{L}(E,F)$ y $T_2\in\mathcal{L}(F,G)$, con $G$ un espacio vectorial de dimensión finita. Si $B$, $D$ y $C$ son bases de $E$, $F$ y $G$, respectivamente, se tiene que
+    \[
+        [T_2\circ T_1]_{C,B} = [T_2]_{C,D}[T_1]_{D,B}.
+    \]
+\end{teo}
+
+
+\begin{teo}
+    Sea $T\in \mathcal{L}(E,F)$ una aplicación lineal invertible. Si $B$ y $D$ son bases de $E$ y $F$, respectivamente, se tiene que
+    \[
+        [T^{-1}]_{B,D} = \left([T]_{D,B}\right)^{-1}.
+    \]
+\end{teo}
+
+
+\begin{teo}
+    Se tiene que $\mathcal{L}(E,F)$ es isomorfo a $\Mat[\K]{m}{n}$, es decir
+    \[
+        \mathcal{L}(E,F)
+        \cong
+        \Mat[\K]{m}{n}.
+    \]
+\end{teo}
+
+\end{document}
