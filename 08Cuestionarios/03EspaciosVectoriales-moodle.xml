@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- This file was generated on 2026-03-15 by XeLaTeX -->
+<!-- This file was generated on 2026-04-27 by XeLaTeX -->
 <!-- running on *NIX with the package moodle v0.9 -->
 
 <quiz>
@@ -172,6 +172,141 @@
     <text><![CDATA[<p>Dos vectores son ortogonales si ambos tienen la misma norma.</p>]]></text>
   </answer>
 </question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Rn-07]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Si \( u \cdot v = 0 \) para dos vectores no nulos \(u\) y \(v\) en \(\mathbb {R}^n\), ¿qué se concluye? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Los vectores \(u\) y \(v\) son ortogonales.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Los vectores \(u\) y \(v\) son paralelos.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Los vectores \(u\) y \(v\) son iguales.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Los vectores \(u\) y \(v\) tienen la misma norma.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Rn-08]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Si \(u=(1,2)\) y \(v=(2,-1)\) en \(\mathbb {R}^2\), ¿cuál es el valor de \(u\cdot v\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>0</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>1</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>2</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>-2</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Rn-09]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Si \(u=(3,4)\) en \(\mathbb {R}^2\), ¿cuál es \(u\cdot u\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>25</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>7</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>5</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>12</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Rn-10]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál de los siguientes conjuntos representa la base canónica de \(\mathbb {R}^4\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\{(1,0,0,0),(0,1,0,0),(0,0,1,0),(0,0,0,1)\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(1,1,0,0),(0,1,1,0),(0,0,1,1),(1,0,0,1)\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(1,0,0,0),(0,1,0,0),(0,0,1,0)\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(1,0,0,0),(0,0,0,1)\}\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[Rn-11]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Si \(u\) y \(v\) son ortogonales en \(\mathbb {R}^n\), entonces necesariamente se cumple que </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(u\cdot v=0\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(u=v\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\|u\|=\|v\|\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(u\cdot v=1\).</p>]]></text>
+  </answer>
+</question>
  
 <question type="category">
   <category>
@@ -287,6 +422,141 @@
     <text><![CDATA[<p>Es el conjunto que contiene solo los vectores linealmente independientes del grupo inicial.</p>]]></text>
   </answer>
 </question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[EspVec-05]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Si \(U\) y \(W\) son subespacios de un espacio vectorial \(V\), ¿cuál de las siguientes afirmaciones es siempre verdadera? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(U \cap W\) es un subespacio de \(V\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(U \cup W\) es siempre un subespacio de \(V\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(U - W\) es siempre un subespacio de \(V\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Si \(u \in U\) y \(w \in W\), entonces \(u+w \notin V\).</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[EspVec-06]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Sea \(W=\{(x,y)\in \mathbb {R}^2:\ y=2x\}\). ¿Cuál afirmación es correcta? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(W\) es un subespacio de \(\mathbb {R}^2\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(W\) no es subespacio porque no contiene al vector cero.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(W\) no es subespacio porque no es cerrado bajo suma.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(W\) no es subespacio porque tiene infinitos vectores.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[EspVec-07]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál de los siguientes conjuntos es un subespacio de \(\mathbb {R}^3\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\{(x,y,z)\in \mathbb {R}^3:\ x-y+z=0\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(x,y,z)\in \mathbb {R}^3:\ x-y+z=1\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(x,y,z)\in \mathbb {R}^3:\ xyz=0\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(x,y,z)\in \mathbb {R}^3:\ x^2+y^2+z^2=1\}\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[EspVec-08]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Si \(S=\{(1,0),(0,1)\}\), el espacio generado por \(S\) es </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\mathbb {R}^2\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>solo \((1,1)\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(0,0)\}\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>una recta.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[EspVec-09]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Para que un subconjunto \(U\subseteq V\) sea subespacio, una condición necesaria es </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>contener al vector cero.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>tener un número finito de vectores.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>que todos sus vectores tengan la misma norma.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>estar formado por vectores ortogonales.</p>]]></text>
+  </answer>
+</question>
  
 <question type="category">
   <category>
@@ -346,6 +616,141 @@
   </answer>
   <answer fraction="0" format="html">
     <text><![CDATA[<p>Un conjunto de vectores es linealmente independiente si pueden ser sumados para obtener cualquier vector en el espacio.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[IndepLin-03]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Qué puede afirmarse sobre cualquier conjunto de 3 vectores en \(\mathbb {R}^2\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Siempre es linealmente dependiente.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Siempre es linealmente independiente.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Siempre forma una base de \(\mathbb {R}^2\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Siempre contiene al vector cero.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[IndepLin-04]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿El conjunto \(\{(1,0),(0,1),(1,1)\}\) en \(\mathbb {R}^2\) es linealmente independiente? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Sí, porque tiene tres vectores distintos.</p>]]></text>
+  </answer>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>No, porque en \(\mathbb {R}^2\) todo conjunto con más de dos vectores es dependiente.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Sí, porque no contiene al vector cero.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>No, porque sus vectores son ortogonales.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[IndepLin-05]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En \(\mathbb {R}^3\), el conjunto \(\{(1,0,0),(0,1,0),(0,0,1)\}\) es </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>linealmente independiente.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>linealmente dependiente.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>dependiente porque tiene tres vectores.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>dependiente porque no contiene al vector cero.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[IndepLin-06]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Si un conjunto de vectores contiene al vector cero, entonces el conjunto </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>es linealmente dependiente.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>es linealmente independiente.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>puede ser independiente o dependiente según el espacio.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>es ortogonal.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[IndepLin-07]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál de los siguientes conjuntos en \(\mathbb {R}^2\) es linealmente independiente? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\{(1,2),(2,1)\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(1,2),(2,4)\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(0,0),(1,1)\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(1,1),(2,2),(3,3)\}\)</p>]]></text>
   </answer>
 </question>
  
@@ -426,13 +831,13 @@
   <answer fraction="0" format="html">
     <text><![CDATA[<p>\(\{(1, 2)\}\)</p>]]></text>
   </answer>
-  <answer fraction="100" format="html">
+  <answer fraction="0" format="html">
     <text><![CDATA[<p>\(\{(1, 0), (0, 1), (1, 1)\}\)</p>]]></text>
   </answer>
   <answer fraction="0" format="html">
     <text><![CDATA[<p>\(\{(1, 0), (0, 0)\}\)</p>]]></text>
   </answer>
-  <answer fraction="0" format="html">
+  <answer fraction="100" format="html">
     <text><![CDATA[<p>\(\{(1, 1), (1, -1)\}\)</p>]]></text>
   </answer>
 </question>
@@ -453,14 +858,149 @@
   <answer fraction="0" format="html">
     <text><![CDATA[<p>\(\left \{ \begin {pmatrix} 1 & 0 \\ 0 & 1 \end {pmatrix}, \begin {pmatrix} 1 & 0 \\ 1 & 1 \end {pmatrix}, \begin {pmatrix} 1 & 1 \\ 0 & 1 \end {pmatrix} \right \}\)</p>]]></text>
   </answer>
-  <answer fraction="0" format="html">
+  <answer fraction="100" format="html">
     <text><![CDATA[<p>\(\left \{ \begin {pmatrix} 1 & 0 \\ 0 & 0 \end {pmatrix}, \begin {pmatrix} 0 & 1 \\ 0 & 0 \end {pmatrix}, \begin {pmatrix} 0 & 0 \\ 1 & 0 \end {pmatrix}, \begin {pmatrix} 0 & 0 \\ 0 & 1 \end {pmatrix} \right \}\)</p>]]></text>
   </answer>
   <answer fraction="0" format="html">
     <text><![CDATA[<p>\(\left \{ \begin {pmatrix} 1 & 0 \\ 0 & 0 \end {pmatrix}, \begin {pmatrix} 0 & 1 \\ 0 & 0 \end {pmatrix}, \begin {pmatrix} 0 & 0 \\ 0 & 0 \end {pmatrix}, \begin {pmatrix} 0 & 0 \\ 1 & 0 \end {pmatrix} \right \}\)</p>]]></text>
   </answer>
-  <answer fraction="100" format="html">
+  <answer fraction="0" format="html">
     <text><![CDATA[<p>\(\left \{ \begin {pmatrix} 1 & 1 \\ 1 & 1 \end {pmatrix}, \begin {pmatrix} 2 & 1 \\ 2 & 2 \end {pmatrix}, \begin {pmatrix} 3 & 3 \\ 1 & 1 \end {pmatrix}, \begin {pmatrix} 0 & 0 \\ 1 & 1 \end {pmatrix}, \begin {pmatrix} 3 & 3 \\ 0 & 0 \end {pmatrix} \right \}\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[BasesEspVec-05]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Si un espacio vectorial \(V\) tiene dimensión \(n\), ¿qué propiedad cumplen todas sus bases? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>Todas tienen exactamente \(n\) vectores.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Todas tienen más de \(n\) vectores.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>Todas tienen menos de \(n\) vectores.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>El número de vectores depende de la base elegida y puede variar libremente.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[BasesEspVec-06]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál de los siguientes conjuntos es una base de \(\mathbb {R}^3\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\{(1,0,0),(0,1,0),(0,0,1)\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(1,0,0),(0,1,0)\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(1,1,1),(2,2,2),(0,0,1)\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(1,0,0),(0,1,0),(0,0,0)\}\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[BasesEspVec-07]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál de los siguientes conjuntos es base de \(\mathbb {R}^2\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\{(2,1),(1,-1)\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(1,2),(2,4)\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(1,0)\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(0,0),(1,1)\}\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[BasesEspVec-08]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál es una base natural de \(\mathbb {R}_1[x]\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\{1,x\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{x,x^2\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{0,x\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{1,2,x\}\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[BasesEspVec-09]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Si un conjunto genera \(V\) pero es linealmente dependiente, entonces </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>no es una base de \(V\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>sí es una base de \(V\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>tiene necesariamente un único vector.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>no puede generar \(V\).</p>]]></text>
   </answer>
 </question>
  
@@ -518,6 +1058,86 @@
     <tolerance>0</tolerance>
   </answer>
 </question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Dimension-04]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál es la dimensión del subespacio de \(\mathbb {R}^3\) generado por los vectores \((1,0,0)\), \((0,1,0)\) y \((1,1,0)\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Dimension-05]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál es la dimensión del espacio vectorial \(\mathbb {R}^4\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>4</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Dimension-06]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál es la dimensión del subespacio de \(\mathbb {R}^2\) generado por \((2,4)\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>1</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Dimension-07]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál es la dimensión del espacio de polinomios \(\mathbb {R}_3[x]\) (grado menor o igual a 3)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>4</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[Dimension-08]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>¿Cuál es la dimensión del espacio nulo \(\{0\}\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>0</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
  
 <question type="category">
   <category>
@@ -554,7 +1174,7 @@
 </question>
 <question type="multichoice">
   <name format="html">
-    <text><![CDATA[CoordVec-01]]></text>
+    <text><![CDATA[CoordVec-02]]></text>
   </name>
   <questiontext format="html">
     <text><![CDATA[<p>Dado el espacio vectorial \( \mathbb {R}^2 \) y la base \( B = \{(1, 1), (-1, 2)\} \), si \([v]_B = \begin {pmatrix}2\\-2\end {pmatrix}\), ¿cuál es el vector \(v\)? </p>]]></text>
@@ -577,6 +1197,141 @@
   </answer>
   <answer fraction="0" format="html">
     <text><![CDATA[<p>\((-2,2)\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[CoordVec-03]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En \(\mathbb {R}^2\), sea la base \(B=\{(1,0),(1,1)\}\) y el vector \(v=(3,2)\). ¿Cuál es \([v]_B\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\begin {pmatrix}3\\2\end {pmatrix}\)</p>]]></text>
+  </answer>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\begin {pmatrix}1\\2\end {pmatrix}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\begin {pmatrix}2\\1\end {pmatrix}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\begin {pmatrix}1\\1\end {pmatrix}\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[CoordVec-04]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En \(\mathbb {R}^2\), sea la base canónica \(E=\{(1,0),(0,1)\}\) y el vector \(v=(5,-3)\). ¿Cuál es \([v]_E\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\begin {pmatrix}5\\-3\end {pmatrix}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\begin {pmatrix}-3\\5\end {pmatrix}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\begin {pmatrix}5\\3\end {pmatrix}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\begin {pmatrix}2\\-1\end {pmatrix}\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[CoordVec-05]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En \(\mathbb {R}^2\), sea la base \(B=\{(1,0),(0,2)\}\) y \(v=(3,4)\). ¿Cuál es \([v]_B\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\begin {pmatrix}3\\2\end {pmatrix}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\begin {pmatrix}3\\4\end {pmatrix}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\begin {pmatrix}2\\3\end {pmatrix}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\begin {pmatrix}1\\2\end {pmatrix}\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[CoordVec-06]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Si \([v]_B=\begin {pmatrix}0\\-1\end {pmatrix}\) respecto de \(B=\{(2,0),(0,3)\}\), entonces \(v\) es </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\((0,-3)\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\((-2,0)\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\((0,-1)\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\((2,-3)\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[CoordVec-07]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>En \(\mathbb {R}^2\), si \(B=\{(1,1),(1,-1)\}\) y \([v]_B=\begin {pmatrix}2\\1\end {pmatrix}\), ¿cuál es \(v\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\((3,1)\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\((2,1)\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\((1,3)\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\((3,-1)\)</p>]]></text>
   </answer>
 </question>
  
@@ -608,6 +1363,86 @@
   </name>
   <questiontext format="html">
     <text><![CDATA[<p>Considera las matrices \( A = \begin {pmatrix} 1 & 2 \\ 3 & 4 \end {pmatrix} \) y \( B = \begin {pmatrix} 1 & 0 \\ 2 & 0 \end {pmatrix} \). ¿Cuál es el valor del producto interno \( \langle A , B\rangle \)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>7</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[ProdInt-03]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Considera los vectores \(u=(1,2,-1)\) y \(v=(2,0,3)\) en \(\mathbb {R}^3\). ¿Cuál es el valor del producto interno \(\langle u,v\rangle \)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>-1</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[ProdInt-04]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Considera los vectores \(u=(2,1)\) y \(v=(3,-4)\) en \(\mathbb {R}^2\). ¿Cuál es el valor del producto interno \(\langle u,v\rangle \)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>2</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[ProdInt-05]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Considera los vectores \(u=(1,1,1)\) y \(v=(2,-1,0)\) en \(\mathbb {R}^3\). ¿Cuál es el valor del producto interno \(\langle u,v\rangle \)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>1</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[ProdInt-06]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Considera los vectores \(u=(0,5)\) y \(v=(3,0)\) en \(\mathbb {R}^2\). ¿Cuál es el valor del producto interno \(\langle u,v\rangle \)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <answer fraction="100" format="plain_text">
+    <text>0</text>
+    <tolerance>0</tolerance>
+  </answer>
+</question>
+<question type="numerical">
+  <name format="html">
+    <text><![CDATA[ProdInt-07]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Considera las matrices \(A=\begin {pmatrix}1&0\\0&1\end {pmatrix}\) y \(B=\begin {pmatrix}2&3\\4&5\end {pmatrix}\). ¿Cuál es el valor del producto interno de Frobenius \(\langle A,B\rangle \)? </p>]]></text>
   </questiontext>
   <defaultgrade>1.0</defaultgrade>
   <generalfeedback format="html"><text/></generalfeedback>
@@ -726,7 +1561,7 @@
     <text><![CDATA[ApLin-05]]></text>
   </name>
   <questiontext format="html">
-    <text><![CDATA[<p>Considera la aplicación lineal \( T: \mathbb {R}^3 \rightarrow \mathbb {R}^2 \) definida por \( T(x, y, z) = (x + y, y-z, z+x) \). ¿Cuál de los siguientes vectores es parte del núcleo de \( T \)? </p>]]></text>
+    <text><![CDATA[<p>Considera la aplicación lineal \( T: \mathbb {R}^3 \rightarrow \mathbb {R}^3 \) definida por \( T(x, y, z) = (x + y, y-z, z+x) \). ¿Cuál de los siguientes vectores es parte del núcleo de \( T \)? </p>]]></text>
   </questiontext>
   <defaultgrade>1.0</defaultgrade>
   <generalfeedback format="html"><text/></generalfeedback>
@@ -746,6 +1581,141 @@
   </answer>
   <answer fraction="0" format="html">
     <text><![CDATA[<p>\((-1, -1, -1)\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[ApLin-06]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Si \(T:V\rightarrow W\) es lineal y \(\ker (T)=\{0\}\), entonces \(T\) es </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>inyectiva.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>sobreyectiva.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>nula.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>no lineal.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[ApLin-07]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Sea \(T:\mathbb {R}^2\rightarrow \mathbb {R}^2\) definida por \(T(x,y)=(2x,2y)\). ¿Cuál afirmación es correcta? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(T\) es lineal e inyectiva.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(T\) no es lineal porque multiplica por 2.</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\ker (T)=\mathbb {R}^2\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>La imagen de \(T\) no es un subespacio.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[ApLin-08]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Sea \(T:\mathbb {R}^2\to \mathbb {R}^2\) dada por \(T(x,y)=(x+y,x-y)\). ¿Cuál es \(T(1,2)\)? </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\((3,-1)\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\((1,2)\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\((2,1)\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\((3,1)\)</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[ApLin-09]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Si \(T:V\to W\) es lineal, entonces necesariamente se cumple que </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(T(0_V)=0_W\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(T(v+w)=T(v)+w\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(T(av)=a+T(v)\).</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(T\) es biyectiva.</p>]]></text>
+  </answer>
+</question>
+<question type="multichoice">
+  <name format="html">
+    <text><![CDATA[ApLin-10]]></text>
+  </name>
+  <questiontext format="html">
+    <text><![CDATA[<p>Sea \(T:\mathbb {R}^2\to \mathbb {R}\) definida por \(T(x,y)=x-2y\). El núcleo de \(T\) es </p>]]></text>
+  </questiontext>
+  <defaultgrade>1.0</defaultgrade>
+  <generalfeedback format="html"><text/></generalfeedback>
+  <penalty>0.10</penalty>
+  <hidden>0</hidden>
+  <single>true</single>
+  <shuffleanswers>1</shuffleanswers>
+  <answernumbering>abc</answernumbering>
+  <answer fraction="100" format="html">
+    <text><![CDATA[<p>\(\{(x,y)\in \mathbb {R}^2:\ x=2y\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(x,y)\in \mathbb {R}^2:\ x+y=0\}\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\mathbb {R}^2\)</p>]]></text>
+  </answer>
+  <answer fraction="0" format="html">
+    <text><![CDATA[<p>\(\{(0,0)\}\)</p>]]></text>
   </answer>
 </question>
  
