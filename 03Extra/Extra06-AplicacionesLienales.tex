@@ -1,0 +1,229 @@
+\documentclass[a4,11pt]{aleph-notas}
+
+% -- Paquetes adicionales
+\usepackage{enumitem}
+\usepackage{aleph-comandos}
+\usepackage{systeme}
+
+% -- Datos  
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Ciencia de datos}
+\asignatura{Álgebra lineal}
+\tema{Material extra no. 6: Aplicaciones Lineales}
+\autor{Andrés Merino}
+\fecha{Periodo 2026-1}
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+% -- Comandos adicionales
+\setlist[enumerate]{label=\roman*.}
+
+\begin{document}
+
+\encabezado
+
+\begin{ejer}
+	Sea $\func{T}{\R^4}{\Mat{2}{2}}$ la aplicación lineal definida por
+	\[
+		T(a,b,c,d)=
+		\begin{pmatrix}
+			a+b & b+c\\
+			c+d & d+a
+		\end{pmatrix}.
+	\]
+	Calcule la nulidad de $T$.
+\end{ejer}
+
+\begin{proof}[Solución]
+	Para calcular la nulidad de $T$, determinamos primero el kernel. Tomemos $(a,b,c,d)\in\R^4$ tal que
+	\[
+		T(a,b,c,d)=
+		\begin{pmatrix}
+			0 & 0\\
+			0 & 0
+		\end{pmatrix},
+	\]
+    es decir,
+    \[
+        \begin{pmatrix}
+			a+b & b+c\\
+			c+d & d+a
+		\end{pmatrix}=
+        \begin{pmatrix}
+            0 & 0\\
+            0 & 0
+        \end{pmatrix}.
+    \]
+	lo cual equivale al sistema de ecuaciones
+	\[
+		\systeme{
+		a+b = 0{,},
+		b+c = 0{,},
+		c+d = 0{,},
+		d+a = 0{.}
+		}
+	\]
+	La matriz aumentada asociada al sistema es
+	\[
+		\left(
+		\begin{array}{cccc|c}
+			1 & 1 & 0 & 0 & 0\\
+			0 & 1 & 1 & 0 & 0\\
+			0 & 0 & 1 & 1 & 0\\
+			1 & 0 & 0 & 1 & 0
+		\end{array}
+		\right)
+		\sim
+		\left(
+		\begin{array}{cccc|c}
+			1 & 0 & 0 & 1 & 0\\
+			0 & 1 & 0 & -1 & 0\\
+			0 & 0 & 1 & 1 & 0\\
+			0 & 0 & 0 & 0 & 0
+		\end{array}
+		\right).
+	\]
+	De aquí obtenemos que
+	\[
+		a=-d,\qquad b=d,\qquad c=-d.
+	\]
+	Si ponemos $d=t$ con $t\in\R$, entonces la solución general del sistema es
+	\[
+		(a,b,c,d)=(-t,t,-t,t).
+	\]
+	Por lo tanto,
+	\[
+		\ker(T)=\{(-t,t,-t,t): t\in\R\}.
+	\]
+
+    Ahora, busquemos una base para $\ker(T)$, tomemos un elemento y tenemos que
+    \[
+        (-t,t,-t,t) = t (-1,1,-1,1)
+    \]
+	Así, una posible base de $\ker(T)$ es
+	\[
+		B=\{(-1,1,-1,1)\}.
+	\]
+	Como esta base tiene un solo vector, el linealmente independiente, se concluye que
+	\[
+		\dim(\ker(T))=1.
+	\]
+	Por definición, la nulidad de $T$ es
+	\[
+		\operatorname{nul}(T)=\dim(\ker(T))=1.
+	\]
+	En consecuencia, la nulidad de $T$ es $1$.\qedhere
+\end{proof}
+
+\begin{ejer}
+	Sea $\func{T}{\R^4}{\Mat{2}{2}}$ la aplicación lineal definida por
+	\[
+		T(a,b,c,d)=
+		\begin{pmatrix}
+			a+b & b+c\\
+			c+d & d+a
+		\end{pmatrix}.
+	\]
+	Calcule el rango de $T$.
+\end{ejer}
+
+\begin{proof}[Solución]
+	Para calcular el rango de $T$, determinamos primero la imagen. Tomemos $\begin{pmatrix}x & y\\
+z & w
+\end{pmatrix}\in\Mat{2}{2}$ tal que
+	\[
+		T(a,b,c,d)=
+		\begin{pmatrix}
+			x & y\\
+            z & w
+		\end{pmatrix},
+	\]
+    es decir,
+    \[
+        \begin{pmatrix}
+			a+b & b+c\\
+			c+d & d+a
+		\end{pmatrix}=
+        \begin{pmatrix}
+            x & y\\
+            z & w
+        \end{pmatrix}.
+    \]
+	lo cual equivale al sistema de ecuaciones
+	\[
+		\systeme{
+		a+b = x{,},
+		b+c = y{,},
+		c+d = z{,},
+		d+a = w{.}
+		}
+	\]
+	La matriz aumentada asociada al sistema es
+	\[
+		\left(
+		\begin{array}{cccc|c}
+			1 & 1 & 0 & 0 & x\\
+			0 & 1 & 1 & 0 & y\\
+			0 & 0 & 1 & 1 & z\\
+			1 & 0 & 0 & 1 & w
+		\end{array}
+		\right)
+		\sim
+		\left(
+		\begin{array}{cccc|c}
+			1 & 1 & 0 & 0 & x\\
+			0 & 1 & 1 & 0 & y\\
+			0 & 0 & 1 & 1 & z\\
+			0 & 0 & 0 & 0 & w-x+y-z
+		\end{array}
+		\right).
+	\]
+	De aquí, para que el sistema sea consistente, se debe cumplir que $w-x+y-z=0$, es decir, $w=x-y+z$. Por lo tanto, la imagen de $T$ es
+    \[
+        \img(T)=\left\{\begin{pmatrix}x & y\\
+            z & w
+            \end{pmatrix}\in\Mat{2}{2}: w=x-y+z\right\}.
+    \]
+    Podemos escribir cada elemento de la imagen como
+    \[
+        \begin{pmatrix}x & y\\
+            z & w
+            \end{pmatrix}=
+        \begin{pmatrix}x & y \\
+            z & x-y+z
+            \end{pmatrix}=
+        x\begin{pmatrix}1 & 0\\
+            0 & 1
+            \end{pmatrix}+
+        y\begin{pmatrix}0 & 1\\
+            0 & -1
+            \end{pmatrix}+
+        z\begin{pmatrix}0 & 0\\
+            1 & 1
+            \end{pmatrix}.
+    \]
+    Así, una posible base de $\img(T)$ es
+    \[
+        B=\left\{\begin{pmatrix}1 & 0\\
+            0 & 1
+            \end{pmatrix},\begin{pmatrix}0 & 1\\
+            0 & -1
+            \end{pmatrix},\begin{pmatrix}0 & 0\\
+            1 & 1
+            \end{pmatrix}\right\}.
+    \]
+    Este conjunto es linealmente independiente (se debería verificar), por lo que se concluye que
+    \[
+        \dim(\img(T))=3.
+    \]
+    Por definición, el rango de $T$ es
+    \[
+        \operatorname{rango}(T)=\dim(\img(T))=3.
+    \]
+    En consecuencia, el rango de $T$ es $3$.\qedhere
+\end{proof}
+
+\end{document}
