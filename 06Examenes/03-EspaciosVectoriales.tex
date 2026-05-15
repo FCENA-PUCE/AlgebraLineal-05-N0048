@@ -1,0 +1,491 @@
+\documentclass[11pt,respuestas,a4]{aleph-examen}
+% \documentclass[10pt,a5]{aleph-examen}
+
+% -- Paquetes extra
+\usepackage{aleph-comandos}
+\usepackage{booktabs}
+\usepackage{multicol}
+\usepackage{systeme}
+
+% -- Datos
+\institucion{Facultad de Ciencias Exactas, Naturales y Ambientales}
+\carrera{Catalogo STEM}
+\asignatura{Algebra lineal}
+\tema{Examen no. 2: Espacios vectoriales}
+\autor{Andres Merino}
+\fecha{Periodo 2026-1}
+
+\logouno[0.16\textwidth]{Logos/logoPUCE_04_ac}
+\definecolor{colortext}{HTML}{1957d1}
+\definecolor{colordef}{HTML}{1957d1}
+\fuente{montserrat}
+
+\begin{document}
+
+\encabezado
+
+\vspace{-5mm}\small
+\section*{Indicaciones}
+\begin{itemize}[leftmargin=*]
+\item
+    En esta actividad se evalua si el estudiante (Citerios 3.1) resuelve operaciones en espacios vectoriales y aplicaciones lineales, incluyendo el cálculo de bases, núcleo, imagen, así como valores y vectores propios.
+\item
+    Los ejercicios deben ser resueltos a mano, sin ayuda de resumenes o asistentes computacionales.
+\item
+    Las resoluciones deben entregarse en hojas de forma fisica al docente.
+\item
+    Se encuentra prohibido el uso de cualquier otra fuente de informacion durante todo el examen.
+\item
+    En caso de considerar que existe un error en la pregunta o que esta se encuentra mal planteada, se debe indicar cual es el error y justificarlo.
+\item
+    Todas las soluciones deben estar correctamente redactadas y explicadas. \puntaje{1}
+\end{itemize}
+
+\section*{Ejercicios}
+
+\begin{preguntas}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Base
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+    Responda las siguientes preguntas, justificando sus respuestas.
+    \begin{enumerate}[leftmargin=*]
+    \item 
+        Considere $B$ un subconjunto de $\R^{5}$. Si $B$ tiene $4$ elementos, ¿puede ser $B$ un conjunto linealmente independiente?, ¿puede ser $B$ un conjunto generador de $E$?\puntaje{1}
+    \item 
+        Considere $B$ un subconjunto de $\R^{2\times 2}$. Si $B$ tiene $5$ elementos, ¿puede ser $B$ un conjunto linealmente independiente?, ¿puede ser $B$ un conjunto generador de $E$?\puntaje{1}
+    \item 
+        En $\R^{2\times 3}$, ¿puede un conjunto de $5$ elementos ser base?, ¿puede un conjunto de $7$ elementos ser base?\puntaje{1}
+    \item 
+        En cualquier espacio, ¿por qué un conjunto que contenga el vector nulo no puede ser base del espacio?\puntaje{1}
+    \end{enumerate}
+
+\begin{respuesta}[Respuesta]\hspace{0pt}
+    \begin{enumerate}
+    \item 
+        Como $|B|=4$ y $\dim(\R^{5}) = 5$, tenemos que $|B| < \dim(\R^{5})$, por lo tanto, el conjunto no puede ser un conjunto generador. Por otro lado, sí puede ser un conjunto linealmente independiente. 
+    \item 
+        Como $|B|=5$ y $\dim(\R^{2\times 2}) = 4$, tenemos que $|B| > \dim(\R^{2\times 2})$, por lo tanto, el conjunto no puede ser un conjunto linealmente independiente. Por otro lado, sí puede ser un conjunto generador.
+    \item
+        Como $\dim(\R^{2\times 3}) = 6$, para que un conjunto sea base, debe tener $6$ elementos, por lo tanto, la respuesta a ambas preguntas es no.
+    \item 
+        Si el conjunto contiene el vector nulo, entonces el conjunto no es linealmente independiente, por lo tanto, no puede ser base. \qedhere
+    \end{enumerate}
+\end{respuesta}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Conjunto generado
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+    En $\R^4$, se considera el conjunto
+    \[
+        S=\big\{
+            (1,0,1,1),
+            (0,1,1,-1)
+        \big\}.
+    \]
+    \begin{enumerate}
+    \item
+        Determine el conjunto generado por $S$ y escribalo en funcion de sus restricciones.\puntaje{8}
+    \item
+        Sin resolver un nuevo sistema completo, determine si $(3,1,4,2)$ y $(1,2,3,0)$ pertenecen a $\gen(S)$.\puntaje{2}
+    \end{enumerate}
+
+\begin{respuesta}\hspace{0pt}
+\begin{enumerate}
+\item
+    Si $(w,x,y,z)\in\gen(S)$, entonces existen $a,b\in\R$ tales que
+    \[
+        a(1,0,1,1)+b(0,1,1,-1)=(w,x,y,z).
+    \]
+    Esto equivale al sistema
+    \[
+        \systeme[ab]{
+            a=w,
+            b=x,
+            a+b=y,
+            a-b=z
+        }.
+    \]
+    Su matriz ampliada es
+    \[
+        \begin{pmatrix}
+            1 & 0 & | & w\\
+            0 & 1 & | & x\\
+            1 & 1 & | & y\\
+            1 & -1 & | & z
+        \end{pmatrix}
+        \sim
+        \begin{pmatrix}
+            1 & 0 & | & w\\
+            0 & 1 & | & x\\
+            0 & 0 & | & y-w-x\\
+            0 & 0 & | & z-w+x
+        \end{pmatrix}.
+    \]
+    Por lo tanto, el sistema tiene solucion si y solo si
+    \[
+        y=w+x
+        \qquad\text{y}\qquad
+        z=w-x.
+    \]
+    Por lo tanto,
+    \[
+        \gen(S)=
+        \big\{(w,x,y,z)\in\R^4:\ y=w+x\ \land\ z=w-x\big\}.
+    \]
+\item
+    Para $(3,1,4,2)$, se cumple
+    \[
+        4=3+1
+        \qquad\text{y}\qquad
+        2=3-1.
+    \]
+    Por lo tanto, $(3,1,4,2)\in\gen(S)$.
+
+    Para $(1,2,3,0)$, se cumple $3=1+2$, pero
+    \[
+        0\neq 1-2.
+    \]
+    Por lo tanto, $(1,2,3,0)\notin\gen(S)$.\qedhere
+\end{enumerate}
+\end{respuesta}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Independencia lineal
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+    Sea $\alpha\in\R$. En $\R^4$, se considera el conjunto
+    \[
+        B_\alpha=\big\{
+            (1,0,0,1),
+            (0,1,0,1),
+            (2,2,\alpha,4)
+        \big\}.
+    \]
+    \begin{enumerate}
+    \item
+        Determine para que valores de $\alpha$ el conjunto $B_\alpha$ es linealmente independiente.\puntaje{8}
+    \end{enumerate}
+
+\begin{respuesta}\hspace{0pt}
+\begin{enumerate}
+\item
+    Para analizar si $B_\alpha$ es linealmente independiente, planteamos
+    \[
+        c_1(1,0,0,1)+c_2(0,1,0,1)+c_3(2,2,\alpha,4)=(0,0,0,0).
+    \]
+    Esto equivale al sistema homogeneo
+    \[
+        \systeme[c_1c_2c_3]{
+            c_1+2c_3=0,
+            c_2+2c_3=0,
+            \alpha c_3=0,
+            c_1+c_2+4c_3=0
+        }.
+    \]
+    La matriz ampliada asociada es
+    \[
+        \begin{pmatrix}
+            1 & 0 & 2 & | & 0\\
+            0 & 1 & 2 & | & 0\\
+            0 & 0 & \alpha & | & 0\\
+            1 & 1 & 4 & | & 0
+        \end{pmatrix}
+        \sim
+        \begin{pmatrix}
+            1 & 0 & 2 & | & 0\\
+            0 & 1 & 2 & | & 0\\
+            0 & 0 & \alpha & | & 0\\
+            0 & 0 & 0 & | & 0
+        \end{pmatrix}.
+    \]
+    Si $\alpha\neq 0$, entonces el sistema homogeneo tiene solamente la solucion trivial y $B_\alpha$ es linealmente independiente.
+
+    Si $\alpha=0$, el sistema tiene infinitas soluciones y por ende el conjunto es linealmente dependiente.
+
+    En consecuencia,
+    \[
+        B_\alpha \text{ es linealmente independiente si y solo si } \alpha\neq 0.
+        \qedhere
+    \]
+\end{enumerate}
+\end{respuesta}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Aplicaciones lineales
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+    Sea $T:\R^4\to\R^3$ la aplicacion lineal definida por
+    \[
+        T(x,y,z,w)=(x+y,\ y+z,\ x+2y+z).
+    \]
+    \begin{enumerate}
+    \item
+        Sin calcular el nucleo ni la imagen, indique si $T$ podria ser inyectiva y si podria ser sobreyectiva.\puntaje{2}
+    \item
+        Determine el nucleo de $T$ y una base para este.\puntaje{8}
+    \item
+        Determine la imagen de $T$ y una base para esta.\puntaje{8}
+    \item
+        Con lo anterior, determine si $T$ es inyectiva, sobreyectiva o isomorfismo.\puntaje{2}
+    \end{enumerate}
+
+\begin{respuesta}\hspace{0pt}
+\begin{enumerate}
+\item
+    Como $\dim(\R^4)=4$ y $\dim(\R^3)=3$, una aplicacion lineal de $\R^4$ en $\R^3$ no puede ser inyectiva. En cambio, si podria ser sobreyectiva, pues el espacio de llegada tiene menor dimension que el espacio de partida.
+\item
+    Para calcular el nucleo, resolvemos
+    \[
+        T(x,y,z,w)=(0,0,0),
+    \]
+    es decir,
+    \[
+        (x+y,\ y+z,\ x+2y+z)=(0,0,0).
+    \]
+    Entonces,
+    \[
+        \systeme[xyzw]{
+            x+y=0{,},
+            y+z=0{,},
+            x+2y+z=0{.}
+        }
+    \]
+    La matriz ampliada del sistema es
+    \[
+        \begin{pmatrix}
+            1 & 1 & 0 & 0 & | & 0\\
+            0 & 1 & 1 & 0 & | & 0\\
+            1 & 2 & 1 & 0 & | & 0
+        \end{pmatrix}
+        \sim
+        \begin{pmatrix}
+            1 & 0 & -1 & 0 & | & 0\\
+            0 & 1 & 1 & 0 & | & 0\\
+            0 & 0 & 0 & 0 & | & 0
+        \end{pmatrix}.
+    \]
+    Por lo tanto, el sistema equivalente es
+    \[
+        x=-y
+        \qquad\text{y}\qquad
+        z=-y.
+    \]
+    Tomando $y=t$ y $w=s$, se tiene
+    \[
+        (x,y,z,w)=(-t,t,-t,s)
+        =
+        t(-1,1,-1,0)+s(0,0,0,1).
+    \]
+    Por lo tanto,
+    \[
+        \ker(T)=
+        \gen\big\{(-1,1,-1,0),(0,0,0,1)\big\}.
+    \]
+    Una base para $\ker(T)$ es
+    \[
+        \big\{(-1,1,-1,0),(0,0,0,1)\big\}.
+    \]
+\item
+    Tomamos $(a,b,c)\in\R^3$ y buscamos
+    $r,s,t\in\R$ tales que
+    \[
+        r(1,0,1)+s(1,1,2)+t(0,1,1)=(a,b,c).
+    \]
+    Esto equivale al sistema
+    \[
+        \systeme[rst]{
+            r+s=a,
+            s+t=b,
+            r+2s+t=c
+        }.
+    \]
+    Su matriz ampliada es
+    \[
+        \begin{pmatrix}
+            1 & 1 & 0 & | & a\\
+            0 & 1 & 1 & | & b\\
+            1 & 2 & 1 & | & c
+        \end{pmatrix}
+        \sim
+        \begin{pmatrix}
+            1 & 0 & -1 & | & a-b\\
+            0 & 1 & 1 & | & b\\
+            0 & 0 & 0 & | & c-a-b
+        \end{pmatrix}.
+    \]
+    Entonces, el sistema tiene solucion si y solo si $c=a+b$. Por lo tanto,
+    \[
+        \img(T)=\big\{(a,b,c)\in\R^3:\ c=a+b\big\}.
+    \]
+    Además, como
+    \[
+        (a,b,c) = (a,b,a+b) = a(1,0,1)+b(0,1,1),
+    \]
+    se tiene que
+    \[
+        \img(T)=
+        \gen\big\{(1,0,1),(0,1,1)\big\}.
+    \]
+    Así, una base para la imagen es
+    \[
+        \big\{(1,0,1),(0,1,1)\big\}.
+    \]
+\item
+    Como $\ker(T)\neq\{(0,0,0,0)\}$, la aplicacion no es inyectiva. Como
+    \[
+        \img(T)=\big\{(a,b,c)\in\R^3:\ c=a+b\big\}\neq\R^3,
+    \]
+    la aplicacion no es sobreyectiva. En consecuencia, $T$ no es un isomorfismo.\qedhere
+\end{enumerate}
+\end{respuesta}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%% Aplicaciones lineales
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\item
+    Considere la siguiente aplicación lineal:
+    \[
+        \funcion{T}{\R^4}{\R^{2\times 2}}
+            {(a,b,c,d)}{\displaystyle\begin{pmatrix} a+b && b+c\\ c+d && d+a \end{pmatrix};}
+    \]
+    además, considere las siguientes bases de $\R^4$ y $\R^{2\times 2}$, respectivamente:
+    \[
+        B_1=\{ (1,2,0,0),\ (0,1,2,0),\ (0,0,1,2),\ (0,0,0,2)\}
+    \]
+    y
+    \[
+        B_2=\left\{
+            \begin{pmatrix} 1 & 0 \\ 0 & 0 \end{pmatrix},\ 
+            \begin{pmatrix} 0 & 1 \\ 0 & 0 \end{pmatrix},\ 
+            \begin{pmatrix} 0 & 0 \\ 1 & 0 \end{pmatrix},\ 
+            \begin{pmatrix} 0 & 0 \\ 0 & 1 \end{pmatrix}
+        \right\}.
+    \]
+    \begin{enumerate}
+    \item
+        Evalúe la aplicación $T$ en cada elemento de $B_1$. \puntaje{2}
+    \item
+        Determine el vector de coordenadas en la base $B_2$ de cada uno de los resultados del punto anterior. \puntaje{2}
+    \item
+        Determine la matriz asociada a la aplicación lineal $T$, es decir, determine $[T]$. \puntaje{1}
+    \item
+        ¿Para qué sirve $[T]$? \puntaje{2}
+    \end{enumerate}
+
+\begin{respuesta}\hspace{0pt}
+    \begin{enumerate}
+    \item 
+        Tenemos que
+        \begin{align*}
+            T(1,2,0,0) & = \begin{pmatrix}
+                1+2 & 2+0 \\
+                0+0 & 0+1
+            \end{pmatrix} = \begin{pmatrix}
+                3 & 2 \\
+                0 & 1
+            \end{pmatrix},\\[2mm]
+            T(0,1,2,0) & = \begin{pmatrix}
+                0+1 & 1+2 \\
+                2+0 & 0+0
+            \end{pmatrix} = \begin{pmatrix}
+                1 & 3 \\
+                2 & 0
+            \end{pmatrix},\\[2mm]
+            T(0,0,1,2) & = \begin{pmatrix}
+                0+0 & 0+1 \\
+                1+2 & 2+0
+            \end{pmatrix} = \begin{pmatrix}
+                0 & 1 \\
+                3 & 2
+            \end{pmatrix},\\[2mm]
+            T(0,0,0,2) & = \begin{pmatrix}
+                0+0 & 0+0 \\
+                0+2 & 2+0
+            \end{pmatrix} = \begin{pmatrix}
+                0 & 0 \\
+                2 & 2
+            \end{pmatrix}.
+        \end{align*}
+    \item 
+         Como $B_2$ es la matriz canónica, se tiene que:
+        \begin{align*}
+            [T(1,2,0,0)]_{B_2} &=
+            \left[\begin{pmatrix}
+                3 & 2 \\
+                0 & 1
+            \end{pmatrix}\right]_{B_2}
+            =
+            \begin{pmatrix}
+                3 \\
+                2 \\
+                0 \\
+                1
+            \end{pmatrix}.\\[2mm]
+            [T(0,1,2,0)]_{B_2} &=
+            \left[\begin{pmatrix}
+                1 & 3 \\
+                2 & 0
+            \end{pmatrix}\right]_{B_2}
+            =
+            \begin{pmatrix}
+                1 \\
+                3 \\
+                2 \\
+                0
+            \end{pmatrix},\\[2mm]
+            [T(0,0,1,2)]_{B_2} &=
+            \left[\begin{pmatrix}
+                0 & 1 \\
+                3 & 2
+            \end{pmatrix}\right]_{B_2}
+            =
+            \begin{pmatrix}
+                0 \\
+                1 \\
+                3 \\
+                2
+            \end{pmatrix},\\[2mm]
+            [T(0,0,0,2)]_{B_2} &=
+            \left[\begin{pmatrix}
+                0 & 0 \\
+                2 & 2
+            \end{pmatrix}\right]_{B_2}
+            =
+            \begin{pmatrix}
+                0 \\
+                0 \\
+                2 \\
+                2
+            \end{pmatrix}.
+        \end{align*}
+    \item
+        Para determinar la matriz asociada a la aplicación lineal $T$ debemos calcular la
+        imagen de cada vector de la base $B_1$ y luego expresar cada imagen en la base
+        $B_2$. Esos vectores de coordenadas forman las columnas de $[T]$.
+        Así, se tiene que
+        \[
+            [T] = \begin{pmatrix}
+                3 & 1 & 0 & 0 \\
+                2 & 3 & 1 & 0 \\
+                0 & 2 & 3 & 2 \\
+                1 & 0 & 2 & 2
+            \end{pmatrix}.
+        \]
+    \item 
+        La matriz $[T]$ sirve para calcular las coordenadas de $T(v)$ en la base $B_2$ a
+        partir de las coordenadas de $v$ en la base $B_1$. Es decir, para todo
+        $v\in\R^4$ se cumple
+        \[
+            [T(v)]_{B_2}=[T]\,[v]_{B_1}.
+        \]
+        Por lo tanto, $[T]$ permite representar la aplicación lineal mediante una
+        multiplicación matricial. \qedhere
+    \end{enumerate}
+\end{respuesta}
+
+\end{preguntas}
+
+\end{document}
